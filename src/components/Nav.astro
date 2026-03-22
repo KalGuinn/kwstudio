@@ -1,0 +1,130 @@
+---
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = '' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/book', label: 'Book' },
+  { href: '/podcast', label: 'Podcast' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const socialLinks = [
+  { href: 'https://www.instagram.com/kelleewynne', label: 'Instagram', icon: 'IG' },
+  { href: 'https://www.youtube.com/c/kelleewynne', label: 'YouTube', icon: 'YT' },
+  { href: 'https://www.pinterest.com/kelleewynne/', label: 'Pinterest', icon: 'PIN' },
+];
+---
+
+<nav class="sticky top-0 z-50 bg-transparent border-transparent transition-all">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0">
+        <img
+          src="/images/kellee-wynne-logo.png"
+          alt="Kellee Wynne Studios"
+          class="h-8 w-auto"
+        />
+      </a>
+
+      <!-- Nav Links (desktop) -->
+      <div class="hidden md:flex items-center gap-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'text-sm font-medium tracking-wider uppercase transition-colors',
+              currentPage === link.href
+                ? 'text-brand-pink'
+                : 'text-brand-dark/60 hover:text-brand-pink',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Social Links (desktop) -->
+      <div class="hidden md:flex items-center gap-4">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs font-medium text-brand-dark/40 hover:text-brand-pink transition-colors"
+            aria-label={link.label}
+          >
+            {link.icon}
+          </a>
+        ))}
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-brand-dark/60 hover:text-brand-pink"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col gap-2">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-3 py-2 text-sm font-medium tracking-wider uppercase rounded-lg transition-colors',
+              currentPage === link.href
+                ? 'text-brand-pink bg-brand-pink/5'
+                : 'text-brand-dark/60 hover:text-brand-pink hover:bg-brand-pink/5',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+      <div class="flex items-center gap-4 mt-4 px-3">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs font-medium text-brand-dark/40 hover:text-brand-pink transition-colors"
+          >
+            {link.icon}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+
+  // Scroll-aware nav: transparent at top, solid on scroll
+  const nav = document.querySelector('nav');
+  const updateNav = () => {
+    if (window.scrollY > 50) {
+      nav?.classList.add('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-gray-100');
+      nav?.classList.remove('bg-transparent', 'border-transparent');
+    } else {
+      nav?.classList.remove('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-gray-100');
+      nav?.classList.add('bg-transparent', 'border-transparent');
+    }
+  };
+  updateNav();
+  window.addEventListener('scroll', updateNav);
+</script>
