@@ -9,40 +9,80 @@ import Footer from '../components/Footer.astro';
   <Nav currentPage="/contact" />
 
   <!-- Header -->
-  <section class="bg-white py-16 sm:py-24 text-center">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-xs sm:text-sm font-medium tracking-[0.15em] text-brand-pink uppercase mb-3">
+  <section class="relative py-16 sm:py-24 text-center overflow-hidden">
+    <!-- Art background with warm white overlay -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div class="absolute inset-0 bg-brand-warm/88"></div>
+
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="font-accent text-brand-pink text-lg sm:text-xl mb-3">
         Get In Touch
       </p>
-      <h1 class="font-display text-3xl sm:text-5xl text-brand-dark uppercase leading-tight mb-4">
+      <h1 class="font-display text-3xl sm:text-5xl text-brand-dark uppercase leading-tight mb-5">
         Send Us a Message
       </h1>
-      <p class="text-brand-dark/60 leading-relaxed">
+      <p class="font-body text-brand-dark/70 leading-relaxed max-w-xl mx-auto">
         Do you have a question about a course or workshop, or have tech trouble?
-        Please contact <a href="mailto:admin@kelleewynnestudios.com" class="text-brand-pink hover:underline">admin@kelleewynnestudios.com</a>
+        We'd love to hear from you — reach out to
+        <a href="mailto:admin@kelleewynnestudios.com" class="text-brand-pink hover:text-brand-pink-dark underline underline-offset-2 transition-colors">
+          admin@kelleewynnestudios.com
+        </a>
         or fill out the form below.
       </p>
     </div>
   </section>
 
   <!-- Form -->
-  <section class="bg-brand-warm py-16 sm:py-20">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <ContactForm />
+  <section class="relative py-16 sm:py-20 overflow-hidden">
+    <!-- Subtle art background behind form -->
+    <div
+      class="absolute inset-0 bg-cover bg-center opacity-20"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div class="absolute inset-0 bg-brand-warm/80"></div>
+
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Warm intro above form -->
+      <div class="text-center mb-10">
+        <p class="font-accent text-brand-dark/60 text-lg sm:text-xl italic">
+          Every message is read personally — we'll get back to you soon.
+        </p>
+      </div>
+
+      <!-- Form card -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-gold/20 px-6 py-10 sm:px-10">
+        <ContactForm />
+      </div>
     </div>
   </section>
 
   <!-- Our Promise -->
-  <section class="bg-brand-dark text-white py-16 sm:py-20">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-2xl sm:text-3xl uppercase mb-4">Our Promise</h2>
-      <p class="text-white/70 leading-relaxed mb-4">
-        We take our art as wildly playful, but our customers seriously. All our courses are backed by a
-        14 day guarantee. If you don't love it you can request a refund.
+  <section class="relative py-16 sm:py-20 overflow-hidden">
+    <!-- Art texture behind dark overlay -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div class="absolute inset-0 bg-brand-dark/92"></div>
+
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-accent text-brand-gold text-lg sm:text-xl italic mb-2">
+        you're in good hands
       </p>
-      <p class="text-white/60 text-sm">
+      <h2 class="font-display text-2xl sm:text-3xl text-white uppercase mb-5">
+        Our Promise
+      </h2>
+      <p class="font-body text-white/75 leading-relaxed mb-5 max-w-xl mx-auto">
+        We take our art as wildly playful, but our customers seriously. All our courses are backed by a
+        <span class="text-brand-gold font-semibold">14-day guarantee</span>.
+        If you don't love it, you can request a refund — no hoops, no hassle.
+      </p>
+      <p class="font-body text-white/50 text-sm">
         Questions? Reach out to
-        <a href="mailto:admin@kelleewynnestudios.com" class="text-brand-gold hover:underline">
+        <a href="mailto:admin@kelleewynnestudios.com" class="text-brand-gold hover:text-brand-gold/80 underline underline-offset-2 transition-colors">
           admin@kelleewynnestudios.com
         </a>
       </p>

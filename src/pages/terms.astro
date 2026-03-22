@@ -7,74 +7,97 @@ import Footer from '../components/Footer.astro';
 <Layout title="Terms & Conditions">
   <Nav currentPage="/terms" />
 
-  <article class="bg-white py-16 sm:py-24">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-xs sm:text-sm font-medium tracking-[0.15em] text-brand-pink uppercase mb-3 text-center">
-        Legal
-      </p>
-      <h1 class="font-display text-3xl sm:text-4xl text-brand-dark uppercase text-center mb-8">
-        Terms and Conditions
-      </h1>
-      <p class="text-sm text-brand-dark/40 text-center mb-12">Last modified 11/2020</p>
+  <div class="relative bg-brand-warm overflow-hidden">
+    <!-- Subtle art-background texture -->
+    <div
+      class="absolute inset-0 opacity-[0.04] mix-blend-multiply pointer-events-none"
+      style="background-image: url('/images/art-background.jpg'); background-size: cover; background-position: center;"
+    ></div>
 
-      <div class="prose prose-gray max-w-none text-brand-dark/70 leading-relaxed space-y-6">
-        <p>Terms of Use for the Online Classroom &ldquo;School&rdquo; for all e-courses and subscriptions for Kellee Wynne Studios.</p>
+    <article class="relative z-10 py-16 sm:py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <h2>1. Terms</h2>
-        <ul>
-          <li>By accessing this School, you are agreeing to be bound by these Terms of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this School are protected by applicable copyright and trademark law.</li>
-          <li>The School has the right to refuse service to anyone for any reason.</li>
-        </ul>
+        <!-- Page header -->
+        <header class="text-center mb-12">
+          <p class="text-xs sm:text-sm font-medium tracking-[0.15em] text-brand-pink uppercase mb-3">
+            Legal
+          </p>
+          <h1 class="font-display text-3xl sm:text-4xl text-brand-dark uppercase mb-4">
+            Terms and Conditions
+          </h1>
+          <!-- Pink accent divider -->
+          <div class="w-24 h-1 bg-brand-pink mx-auto mb-5 rounded-full"></div>
+          <p class="text-sm text-brand-dark/40">Last modified 11/2020</p>
+        </header>
 
-        <h2>2. Course Access</h2>
-        <ul>
-          <li>A &ldquo;membership&rdquo; course grants the Student temporary access while their fees are current. Once the membership payment is canceled the course material, all videos, content and support are terminated. Access is granted on a 30 day payment cycle or 365 annual cycle and automatically renews. User may cancel at anytime, but at such time that the payment cycle expires, so does the Student&rsquo;s access to all course material.</li>
-          <li>A &ldquo;one-time&rdquo; purchase grants the user rights to only the specific program in which a course was purchased. Access to said program will be indefinitely through the School for as long as the course and/or the school exists. No additional charges for the specific program and/or course will be levied.</li>
-          <li>A &ldquo;Free&rdquo; course grants the user the ability to participate at no cost and no obligation. There are no guarantees or rights granted to the user when participating in a free course and the access can be removed or rejected at any time.</li>
-          <li>A &ldquo;Donation&rdquo; offer does not grant the participant any rights to continue access after the event or course is complete. There are no guarantees or rights granted to the user when participating in a donation course and the access can be removed or rejected at any time. The donation is made to the School and does not imply a 501c3 donation. Thank you for your generosity as we can continue free and reduced programs.</li>
-          <li>The School reserves the right to &ldquo;retire&rdquo; or change any course and/or content from the course(s) without notification or compensation.</li>
-          <li>There is no guarantee of a time frame for the School&rsquo;s existence, though longevity is the School&rsquo;s main objective.</li>
-        </ul>
+        <!-- Prose content -->
+        <div class="prose prose-gray max-w-none
+          prose-headings:font-display prose-headings:uppercase prose-headings:tracking-wide
+          prose-headings:text-brand-dark prose-h2:text-lg prose-h2:mt-8 prose-h2:mb-3
+          prose-h2:border-l-4 prose-h2:border-brand-pink prose-h2:pl-3
+          prose-p:text-brand-dark/70 prose-li:text-brand-dark/70
+          prose-a:text-brand-pink hover:prose-a:text-brand-pink-dark
+          leading-relaxed">
 
-        <h2>3. Use License</h2>
-        <ul>
-          <li>
-            <p>Permission is granted to temporarily download one copy of any downloadable materials on the School&rsquo;s website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
-            <ul>
-              <li>modify or copy the materials;</li>
-              <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-              <li>attempt to decompile or reverse engineer any software contained on the School&rsquo;s web site;</li>
-              <li>remove any copyright or other proprietary notations from the materials; or</li>
-              <li>transfer the materials to another person or &lsquo;mirror&rsquo; the materials on any other server.</li>
-            </ul>
-          </li>
-          <li>Permission is NOT granted to share the content of this course, videos of you working on the projects from any of the lessons provided in the course or teach these methods online or in person.</li>
-          <li>This license shall automatically terminate if you violate any of these restrictions and may be terminated by Company at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.</li>
-        </ul>
+          <p>Terms of Use for the Online Classroom &ldquo;School&rdquo; for all e-courses and subscriptions for Kellee Wynne Studios.</p>
 
-        <h2>4. Disclaimer</h2>
-        <p>The materials on the School&rsquo;s website are provided &lsquo;as is&rsquo;. The School makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, the School does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.</p>
+          <h2>1. Terms</h2>
+          <ul>
+            <li>By accessing this School, you are agreeing to be bound by these Terms of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this School are protected by applicable copyright and trademark law.</li>
+            <li>The School has the right to refuse service to anyone for any reason.</li>
+          </ul>
 
-        <h2>5. Limitations</h2>
-        <p>In no event shall the School be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on the School&rsquo;s website, even if the School or an authorized representative of the School has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
+          <h2>2. Course Access</h2>
+          <ul>
+            <li>A &ldquo;membership&rdquo; course grants the Student temporary access while their fees are current. Once the membership payment is canceled the course material, all videos, content and support are terminated. Access is granted on a 30 day payment cycle or 365 annual cycle and automatically renews. User may cancel at anytime, but at such time that the payment cycle expires, so does the Student&rsquo;s access to all course material.</li>
+            <li>A &ldquo;one-time&rdquo; purchase grants the user rights to only the specific program in which a course was purchased. Access to said program will be indefinitely through the School for as long as the course and/or the school exists. No additional charges for the specific program and/or course will be levied.</li>
+            <li>A &ldquo;Free&rdquo; course grants the user the ability to participate at no cost and no obligation. There are no guarantees or rights granted to the user when participating in a free course and the access can be removed or rejected at any time.</li>
+            <li>A &ldquo;Donation&rdquo; offer does not grant the participant any rights to continue access after the event or course is complete. There are no guarantees or rights granted to the user when participating in a donation course and the access can be removed or rejected at any time. The donation is made to the School and does not imply a 501c3 donation. Thank you for your generosity as we can continue free and reduced programs.</li>
+            <li>The School reserves the right to &ldquo;retire&rdquo; or change any course and/or content from the course(s) without notification or compensation.</li>
+            <li>There is no guarantee of a time frame for the School&rsquo;s existence, though longevity is the School&rsquo;s main objective.</li>
+          </ul>
 
-        <h2>6. Revisions and Errata</h2>
-        <p>The materials appearing on the School&rsquo;s website may include technical, typographical, or photographic errors. The School does not warrant that any of the materials on its web site are accurate, complete, or current. The School may make changes to the materials contained on its web site at any time without notice. The School does not, however, make any commitment to update the materials.</p>
+          <h2>3. Use License</h2>
+          <ul>
+            <li>
+              <p>Permission is granted to temporarily download one copy of any downloadable materials on the School&rsquo;s website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+              <ul>
+                <li>modify or copy the materials;</li>
+                <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+                <li>attempt to decompile or reverse engineer any software contained on the School&rsquo;s web site;</li>
+                <li>remove any copyright or other proprietary notations from the materials; or</li>
+                <li>transfer the materials to another person or &lsquo;mirror&rsquo; the materials on any other server.</li>
+              </ul>
+            </li>
+            <li>Permission is NOT granted to share the content of this course, videos of you working on the projects from any of the lessons provided in the course or teach these methods online or in person.</li>
+            <li>This license shall automatically terminate if you violate any of these restrictions and may be terminated by Company at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.</li>
+          </ul>
 
-        <h2>7. Links</h2>
-        <p>The School has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by the School of the site. Use of any such linked website is at the user&rsquo;s own risk.</p>
+          <h2>4. Disclaimer</h2>
+          <p>The materials on the School&rsquo;s website are provided &lsquo;as is&rsquo;. The School makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, the School does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.</p>
 
-        <h2>8. Refund Policy</h2>
-        <p>Because of the nature of online education, we do not offer refunds unless stated otherwise on the offer page. The student must make sure you have adequate internet speeds and your computer&rsquo;s compatibility is current. Please read all details and FAQs to ensure you make an informed decision before finalizing your purchase.</p>
+          <h2>5. Limitations</h2>
+          <p>In no event shall the School be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on the School&rsquo;s website, even if the School or an authorized representative of the School has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
 
-        <h2>9. Site Terms of Use Modifications</h2>
-        <p>The School may revise these Terms of Use for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms of Use.</p>
+          <h2>6. Revisions and Errata</h2>
+          <p>The materials appearing on the School&rsquo;s website may include technical, typographical, or photographic errors. The School does not warrant that any of the materials on its web site are accurate, complete, or current. The School may make changes to the materials contained on its web site at any time without notice. The School does not, however, make any commitment to update the materials.</p>
 
-        <h2>10. Governing Law</h2>
-        <p>Any claim relating to the School&rsquo;s website shall be governed by the laws of the School Owner&rsquo;s home jurisdiction without regard to its conflict of law provisions.</p>
+          <h2>7. Links</h2>
+          <p>The School has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by the School of the site. Use of any such linked website is at the user&rsquo;s own risk.</p>
+
+          <h2>8. Refund Policy</h2>
+          <p>Because of the nature of online education, we do not offer refunds unless stated otherwise on the offer page. The student must make sure you have adequate internet speeds and your computer&rsquo;s compatibility is current. Please read all details and FAQs to ensure you make an informed decision before finalizing your purchase.</p>
+
+          <h2>9. Site Terms of Use Modifications</h2>
+          <p>The School may revise these Terms of Use for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms of Use.</p>
+
+          <h2>10. Governing Law</h2>
+          <p>Any claim relating to the School&rsquo;s website shall be governed by the laws of the School Owner&rsquo;s home jurisdiction without regard to its conflict of law provisions.</p>
+        </div>
+
       </div>
-    </div>
-  </article>
+    </article>
+  </div>
 
   <Footer />
 </Layout>

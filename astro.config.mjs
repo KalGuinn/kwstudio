@@ -4,7 +4,4 @@ import icon from 'astro-icon';
 
 export default defineConfig({
   integrations: [tailwind(), icon()],
-  redirects: {
-    '/podcast': 'https://www.maderemarkable.com/blog',
-  },
 });

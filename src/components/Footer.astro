@@ -13,21 +13,47 @@ const legalLinks = [
 ];
 ---
 
-<footer class="bg-brand-dark text-white/60 py-16">
-  <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
+<!-- Warm top accent border -->
+<div class="h-1 bg-gradient-to-r from-brand-pink via-brand-gold to-brand-orange"></div>
+
+<footer class="bg-brand-dark text-white/60 py-16 relative overflow-hidden">
+  <!-- Subtle warm overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 text-center">
+
+    <!-- Tagline -->
+    <p class="font-display text-xl uppercase tracking-widest text-white/30 mb-8">
+      Where creativity meets business
+    </p>
+
+    <!-- Decorative gold separator -->
+    <div class="flex items-center justify-center gap-3 mb-8">
+      <div class="h-px w-16 bg-brand-gold/30"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-brand-gold/50"></div>
+      <div class="h-px w-16 bg-brand-gold/30"></div>
+    </div>
+
     <!-- Social -->
-    <div class="flex items-center justify-center gap-6 mb-8">
+    <div class="flex items-center justify-center gap-7 mb-8">
       {socialLinks.map((link) => (
         <a
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-white/50 hover:text-brand-gold transition-colors duration-200"
+          class="text-white/40 hover:text-brand-gold transition-all duration-200 hover:scale-110 inline-block"
           aria-label={link.label}
         >
-          <Icon name={link.icon} class="w-6 h-6" />
+          <Icon name={link.icon} class="w-7 h-7" />
         </a>
       ))}
+    </div>
+
+    <!-- Decorative gold separator -->
+    <div class="flex items-center justify-center gap-3 mb-8">
+      <div class="h-px w-16 bg-brand-gold/30"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-brand-gold/50"></div>
+      <div class="h-px w-16 bg-brand-gold/30"></div>
     </div>
 
     <!-- Legal -->
@@ -40,7 +66,7 @@ const legalLinks = [
     </div>
 
     <!-- Copyright -->
-    <p class="text-xs text-white/30">
+    <p class="text-xs text-white/25">
       &copy; {new Date().getFullYear()} Kellee Wynne Studios. All rights reserved.
     </p>
   </div>

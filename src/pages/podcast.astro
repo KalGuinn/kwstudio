@@ -1,0 +1,268 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import { Icon } from 'astro-icon/components';
+
+const platforms = [
+  {
+    name: 'Apple Podcasts',
+    icon: 'simple-icons:applepodcasts',
+    href: 'https://podcasts.apple.com/us/podcast/made-remarkable/id1557387863',
+    color: '#fc3c44',
+    label: 'Listen on',
+  },
+  {
+    name: 'Spotify',
+    icon: 'simple-icons:spotify',
+    href: 'https://open.spotify.com/show/2LuAIEd0DnKiVCXJFHJxhU',
+    color: '#1db954',
+    label: 'Listen on',
+  },
+  {
+    name: 'YouTube',
+    icon: 'simple-icons:youtube',
+    href: 'https://www.youtube.com/c/kelleewynne',
+    color: '#ff0000',
+    label: 'Watch on',
+  },
+  {
+    name: 'Listen on the Web',
+    icon: 'simple-icons:rss',
+    href: 'https://www.maderemarkable.com/blog',
+    color: '#e6b81d',
+    label: 'Or',
+  },
+];
+---
+
+<Layout
+  title="Made Remarkable Podcast"
+  description="Made Remarkable — a podcast by Kellee Wynne about creative entrepreneurship, artist interviews, and building a remarkable business."
+>
+  <Nav currentPage="/podcast" />
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO — Art background, immersive, painterly
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden -mt-20">
+    <!-- Layer 1: Painterly art background texture -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+
+    <!-- Layer 2: Soft white wash -->
+    <div class="absolute inset-0 bg-white/[.34]"></div>
+
+    <!-- Layer 3: Subtle warm gradient for depth -->
+    <div
+      class="absolute inset-0"
+      style="background:
+        radial-gradient(ellipse at 70% 30%, transparent 40%, rgba(255,255,255,0.25) 100%),
+        linear-gradient(to bottom, transparent 55%, rgba(250,245,240,0.6) 100%);"
+    ></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 w-full pt-36 pb-20 text-center">
+      <!-- Label -->
+      <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] text-brand-pink uppercase mb-4 hero-item">
+        The Podcast
+      </p>
+
+      <!-- Title -->
+      <h1 class="font-display text-[3.5rem] sm:text-7xl lg:text-[6rem] text-brand-dark uppercase leading-[0.9] mb-6 tracking-tight hero-item">
+        Made<br />
+        <span style="color: #fe3676;">Remarkable</span>
+      </h1>
+
+      <!-- Accent line -->
+      <p class="font-accent text-xl sm:text-2xl text-brand-dark/70 mb-6 italic hero-item">
+        with Kellee Wynne
+      </p>
+
+      <!-- Description -->
+      <p class="font-body text-base sm:text-lg text-brand-dark/70 max-w-xl mx-auto leading-relaxed mb-10 hero-item">
+        Real conversations about building a creative business, the messy middle of being an artist-entrepreneur,
+        and what it truly means to make something remarkable.
+      </p>
+
+      <!-- CTA Button -->
+      <div class="hero-item">
+        <a
+          href="https://www.maderemarkable.com/blog"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-brand-gold text-brand-dark font-bold text-sm sm:text-base px-10 py-4 uppercase tracking-widest hover:brightness-110 transition-all duration-300 shadow-lg"
+        >
+          Listen Now
+        </a>
+      </div>
+    </div>
+
+    <!-- Decorative bottom fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ABOUT THE SHOW — Warm, personal, editorial
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-brand-warm py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+        <!-- Decorative mic / quote block -->
+        <div class="flex-shrink-0 text-center lg:text-left">
+          <div
+            class="w-52 h-52 sm:w-64 sm:h-64 rounded-full flex items-center justify-center mx-auto lg:mx-0"
+            style="background: linear-gradient(135deg, #fe3676 0%, #ff5031 50%, #e6b81d 100%);"
+          >
+            <span class="font-display text-white text-[5rem] sm:text-[6rem] uppercase leading-none select-none">
+              MR
+            </span>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div>
+          <p class="text-xs font-semibold tracking-[0.18em] text-brand-orange uppercase mb-3">
+            About the Show
+          </p>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark uppercase leading-tight mb-6">
+            For the Artist Who<br />
+            <span class="text-brand-pink">Dares to Dream Big</span>
+          </h2>
+          <p class="text-brand-dark/75 text-base sm:text-lg leading-relaxed mb-4">
+            Made Remarkable is a podcast for creative entrepreneurs — artists, makers, and visionaries
+            who are building businesses around the work they love.
+          </p>
+          <p class="text-brand-dark/60 text-base leading-relaxed mb-4">
+            Each episode dives into the real, unfiltered side of creative business: the strategies that
+            actually work, the mindset shifts that change everything, and the stories of artists who
+            chose to bet on themselves.
+          </p>
+          <p class="text-brand-dark/60 text-base leading-relaxed mb-8">
+            Hosted by Kellee Wynne — artist, author, and mentor — who has helped hundreds of creatives
+            turn their passion into a profitable, purpose-driven business.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            {['Creative Entrepreneurship', 'Artist Interviews', 'Business Strategy', 'Mindset & Growth'].map((tag) => (
+              <span class="text-xs font-semibold tracking-wider uppercase px-4 py-2 border border-brand-dark/20 text-brand-dark/60 bg-white/60">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       WHERE TO LISTEN — Platform grid
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative py-20 sm:py-28 bg-white overflow-hidden">
+    <!-- Subtle texture hint -->
+    <div
+      class="absolute inset-0 bg-cover bg-center opacity-[0.04]"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <p class="text-xs font-semibold tracking-[0.18em] text-brand-pink uppercase mb-3">
+        Available Everywhere
+      </p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark uppercase mb-4">
+        Where to Listen
+      </h2>
+      <div class="w-20 h-1 bg-brand-gold mx-auto mb-14 rounded-full"></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {platforms.map((platform) => (
+          <a
+            href={platform.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-5 bg-brand-warm border border-brand-dark/10 px-7 py-6 hover:border-brand-dark/30 hover:shadow-md transition-all duration-300 text-left"
+          >
+            <div
+              class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110"
+              style={`background-color: ${platform.color};`}
+            >
+              <Icon name={platform.icon} class="w-5 h-5" />
+            </div>
+            <div>
+              <p class="text-xs font-medium tracking-widest uppercase text-brand-dark/40 mb-0.5">
+                {platform.label}
+              </p>
+              <p class="font-display text-lg sm:text-xl uppercase text-brand-dark group-hover:text-brand-pink transition-colors duration-300">
+                {platform.name}
+              </p>
+            </div>
+            <span class="ml-auto text-brand-dark/20 group-hover:text-brand-pink group-hover:translate-x-1 transition-all duration-300 text-xl">
+              →
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <p class="mt-10 text-sm text-brand-dark/40 font-body">
+        New episodes drop regularly. Subscribe so you never miss one.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       QUOTE / PULL — Editorial moment before CTA
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative py-20 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div class="absolute inset-0 bg-brand-dark/80"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <p class="font-accent text-2xl sm:text-3xl lg:text-4xl italic text-white leading-relaxed mb-6">
+        "You were made for more than ordinary.<br />
+        <span style="color: #e6b81d;">Go make something remarkable."</span>
+      </p>
+      <p class="text-white/50 text-sm tracking-widest uppercase font-semibold">— Kellee Wynne</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       CTA — Drive to business mentorship
+       ═══════════════════════════════════════════════════ -->
+  <CTA
+    headline="Ready to Build Your Creative Business?"
+    subtitle="Join the artists and makers turning their passion into profit — one remarkable step at a time."
+    buttonText="Work With Kellee →"
+    buttonHref="/contact"
+    variant="dark"
+  />
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero-item {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+  .hero-item:nth-child(1) { animation-delay: 0.0s; }
+  .hero-item:nth-child(2) { animation-delay: 0.1s; }
+  .hero-item:nth-child(3) { animation-delay: 0.2s; }
+  .hero-item:nth-child(4) { animation-delay: 0.3s; }
+  .hero-item:nth-child(5) { animation-delay: 0.4s; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

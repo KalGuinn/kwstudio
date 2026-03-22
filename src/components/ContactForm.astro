@@ -3,7 +3,7 @@
 const formAction = 'https://formspree.io/f/YOUR_FORM_ID';
 ---
 
-<form action={formAction} method="POST" class="max-w-lg mx-auto space-y-4">
+<form action={formAction} method="POST" class="font-body max-w-lg mx-auto space-y-5">
   <div>
     <label for="name" class="sr-only">First and Last Name</label>
     <input
@@ -12,7 +12,7 @@ const formAction = 'https://formspree.io/f/YOUR_FORM_ID';
       name="name"
       placeholder="First and Last Name"
       required
-      class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-brand-dark placeholder:text-brand-dark/40 focus:outline-none focus:ring-2 focus:ring-brand-pink/50 focus:border-brand-pink transition"
+      class="w-full px-5 py-4 rounded-xl border border-brand-gold/30 bg-brand-warm text-brand-dark placeholder:text-brand-dark/35 focus:outline-none focus:ring-2 focus:ring-brand-gold/50 focus:border-brand-gold transition"
     />
   </div>
   <div>
@@ -23,7 +23,7 @@ const formAction = 'https://formspree.io/f/YOUR_FORM_ID';
       name="email"
       placeholder="Email Address"
       required
-      class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-brand-dark placeholder:text-brand-dark/40 focus:outline-none focus:ring-2 focus:ring-brand-pink/50 focus:border-brand-pink transition"
+      class="w-full px-5 py-4 rounded-xl border border-brand-gold/30 bg-brand-warm text-brand-dark placeholder:text-brand-dark/35 focus:outline-none focus:ring-2 focus:ring-brand-gold/50 focus:border-brand-gold transition"
     />
   </div>
   <div>
@@ -31,15 +31,15 @@ const formAction = 'https://formspree.io/f/YOUR_FORM_ID';
     <textarea
       id="message"
       name="message"
-      placeholder="Your Message"
+      placeholder="Your message — we read every single one."
       rows="5"
       required
-      class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-brand-dark placeholder:text-brand-dark/40 focus:outline-none focus:ring-2 focus:ring-brand-pink/50 focus:border-brand-pink transition resize-none"
+      class="w-full px-5 py-4 rounded-xl border border-brand-gold/30 bg-brand-warm text-brand-dark placeholder:text-brand-dark/35 focus:outline-none focus:ring-2 focus:ring-brand-gold/50 focus:border-brand-gold transition resize-none"
     ></textarea>
   </div>
   <button
     type="submit"
-    class="w-full bg-brand-pink text-white font-semibold py-3 rounded-full hover:bg-brand-pink-dark transition-colors"
+    class="w-full bg-brand-gold text-brand-dark font-semibold font-body py-4 rounded-full hover:bg-brand-gold/85 transition-colors tracking-wide"
   >
     Send Message →
   </button>
