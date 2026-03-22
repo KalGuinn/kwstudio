@@ -1,0 +1,44 @@
+---
+const socialLinks = [
+  { href: 'https://www.instagram.com/kelleewynne', label: 'Instagram' },
+  { href: 'https://www.youtube.com/c/kelleewynne', label: 'YouTube' },
+  { href: 'https://www.pinterest.com/kelleewynne/', label: 'Pinterest' },
+];
+
+const legalLinks = [
+  { href: '/terms', label: 'Terms' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<footer class="bg-brand-dark text-white/60 py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <!-- Social -->
+    <div class="flex items-center justify-center gap-6 mb-6">
+      {socialLinks.map((link) => (
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm hover:text-brand-gold transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Legal -->
+    <div class="flex items-center justify-center gap-4 mb-6 text-xs">
+      {legalLinks.map((link) => (
+        <a href={link.href} class="hover:text-white transition-colors">
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-xs text-white/40">
+      &copy; {new Date().getFullYear()} Kellee Wynne Studios. All rights reserved.
+    </p>
+  </div>
+</footer>

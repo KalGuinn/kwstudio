@@ -1,11 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Home">
   <Nav currentPage="/" />
-  <main class="flex items-center justify-center min-h-screen">
-    <h1 class="font-display text-4xl text-brand-pink">Kellee Wynne Studios</h1>
-  </main>
+  <Hero
+    label="Kellee Wynne Studios"
+    title="I'm so happy you're here!"
+    subtitle="Where your wild, weird, and brilliant ideas turn into something remarkable."
+    image={{ src: '/images/kellee-portrait-standing.png', alt: 'Kellee Wynne', rounded: true }}
+  />
+  <Footer />
 </Layout>

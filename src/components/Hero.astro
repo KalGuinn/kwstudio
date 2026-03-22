@@ -1,0 +1,49 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  subtitle?: string;
+  image?: { src: string; alt: string; rounded?: boolean };
+  cta?: { text: string; href: string };
+}
+
+const { label, title, subtitle, image, cta } = Astro.props;
+---
+
+<section class="bg-white py-16 sm:py-24 text-center">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-xs sm:text-sm font-medium tracking-[0.15em] text-brand-pink uppercase mb-3">
+      {label}
+    </p>
+    <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl text-brand-dark uppercase leading-tight mb-6">
+      {title}
+    </h1>
+    {image && (
+      <div class="mb-8">
+        <img
+          src={image.src}
+          alt={image.alt}
+          class:list={[
+            'mx-auto object-cover',
+            image.rounded
+              ? 'w-32 h-32 sm:w-40 sm:h-40 rounded-full'
+              : 'max-w-full rounded-lg shadow-lg',
+          ]}
+        />
+      </div>
+    )}
+    {subtitle && (
+      <p class="text-base sm:text-lg text-brand-dark/60 max-w-xl mx-auto leading-relaxed mb-8">
+        {subtitle}
+      </p>
+    )}
+    {cta && (
+      <a
+        href={cta.href}
+        class="inline-block bg-brand-pink text-white font-semibold text-sm px-8 py-3 rounded-full hover:bg-brand-pink-dark transition-colors"
+      >
+        {cta.text}
+      </a>
+    )}
+  </div>
+</section>
