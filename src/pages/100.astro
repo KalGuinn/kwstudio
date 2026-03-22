@@ -81,6 +81,7 @@ import Footer from '../components/Footer.astro';
                 <input
                   id="first-name-top"
                   type="text"
+                  name="first_name"
                   placeholder="Your first name"
                   class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
                 />
@@ -92,6 +93,7 @@ import Footer from '../components/Footer.astro';
                 <input
                   id="email-top"
                   type="email"
+                  name="email"
                   placeholder="Your best email"
                   class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
                 />
@@ -218,6 +220,7 @@ import Footer from '../components/Footer.astro';
             src="/images/kellee-splat-portrait.png"
             alt="Kellee Wynne"
             class="w-52 sm:w-64 drop-shadow-xl"
+            loading="lazy"
           />
         </div>
 
@@ -271,16 +274,19 @@ import Footer from '../components/Footer.astro';
           src="/images/kellee-brand-1.jpg"
           alt="Kellee Wynne lifestyle"
           class="w-full aspect-square object-cover rounded-xl shadow-sm"
+          loading="lazy"
         />
         <img
           src="/images/kellee-brand-2.jpg"
           alt="Kellee Wynne lifestyle"
           class="w-full aspect-square object-cover rounded-xl shadow-sm"
+          loading="lazy"
         />
         <img
           src="/images/kellee-brand-3.jpg"
           alt="Kellee Wynne lifestyle"
           class="w-full aspect-square object-cover rounded-xl shadow-sm"
+          loading="lazy"
         />
       </div>
     </div>
@@ -300,6 +306,7 @@ import Footer from '../components/Footer.astro';
             src="/images/testimonial-tish.png"
             alt="Testimonial from Tish"
             class="w-full"
+            loading="lazy"
           />
         </div>
         <div class="rounded-xl overflow-hidden shadow-sm border border-brand-dark/5">
@@ -307,6 +314,7 @@ import Footer from '../components/Footer.astro';
             src="/images/testimonial-brooke.png"
             alt="Testimonial from Brooke"
             class="w-full"
+            loading="lazy"
           />
         </div>
       </div>
@@ -337,6 +345,7 @@ import Footer from '../components/Footer.astro';
             src="/images/steal-my-ideas-bottom.png"
             alt="100 Ways PDF Guidebook"
             class="w-40 sm:w-48 lg:w-full mx-auto drop-shadow-lg"
+            loading="lazy"
           />
         </div>
 
@@ -364,6 +373,7 @@ import Footer from '../components/Footer.astro';
                 <input
                   id="first-name-bottom"
                   type="text"
+                  name="first_name"
                   placeholder="Your first name"
                   class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
                 />
@@ -375,6 +385,7 @@ import Footer from '../components/Footer.astro';
                 <input
                   id="email-bottom"
                   type="email"
+                  name="email"
                   placeholder="Your best email"
                   class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
                 />
@@ -418,8 +429,4 @@ import Footer from '../components/Footer.astro';
     }
   }
 
-  /* Smooth scroll for CTA anchor link */
-  html {
-    scroll-behavior: smooth;
-  }
 </style>

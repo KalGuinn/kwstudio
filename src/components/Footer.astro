@@ -23,7 +23,7 @@ const legalLinks = [
   <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 text-center">
 
     <!-- Tagline -->
-    <p class="font-display text-xl uppercase tracking-widest text-white/30 mb-8">
+    <p class="font-display text-xl uppercase tracking-widest text-white/40 mb-8">
       Where creativity meets business
     </p>
 
@@ -35,19 +35,21 @@ const legalLinks = [
     </div>
 
     <!-- Social -->
-    <div class="flex items-center justify-center gap-7 mb-8">
-      {socialLinks.map((link) => (
-        <a
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-white/40 hover:text-brand-gold transition-all duration-200 hover:scale-110 inline-block"
-          aria-label={link.label}
-        >
-          <Icon name={link.icon} class="w-7 h-7" />
-        </a>
-      ))}
-    </div>
+    <nav role="navigation" aria-label="Social media links">
+      <div class="flex items-center justify-center gap-7 mb-8">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/40 hover:text-brand-gold transition-all duration-200 hover:scale-110 inline-block"
+            aria-label={link.label}
+          >
+            <Icon name={link.icon} class="w-7 h-7" />
+          </a>
+        ))}
+      </div>
+    </nav>
 
     <!-- Decorative gold separator -->
     <div class="flex items-center justify-center gap-3 mb-8">
@@ -66,7 +68,7 @@ const legalLinks = [
     </div>
 
     <!-- Copyright -->
-    <p class="text-xs text-white/25">
+    <p class="text-xs text-white/50">
       &copy; {new Date().getFullYear()} Kellee Wynne Studios. All rights reserved.
     </p>
   </div>

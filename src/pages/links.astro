@@ -42,7 +42,7 @@ const socialLinks = [
       <p class="font-accent text-white/85 text-sm mb-8 italic">Artist · Author · Mentor</p>
 
       <!-- Links -->
-      <div class="w-full max-w-sm space-y-3">
+      <nav aria-label="Quick links" class="w-full max-w-sm space-y-3">
         {links.map((link) => (
           <a
             href={link.href}
@@ -58,7 +58,7 @@ const socialLinks = [
             {link.label}
           </a>
         ))}
-      </div>
+      </nav>
 
       <!-- Social icons -->
       <div class="flex items-center gap-7 mt-10">

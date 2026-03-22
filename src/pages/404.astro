@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Page Not Found"
+  description="Oops! This page has wandered off. Let's get you back to the creative goodness at Kellee Wynne Studios."
+>
+  <Nav />
+
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <!-- Warm gradient background -->
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, #fdf7f2 0%, #fef0e6 40%, #fdf0f5 70%, #fdf7f2 100%);"></div>
+
+    <!-- Decorative paint-stroke blobs -->
+    <div class="absolute top-16 left-10 w-48 h-48 rounded-full opacity-20 blur-3xl" style="background: #f2306a;"></div>
+    <div class="absolute bottom-20 right-12 w-64 h-64 rounded-full opacity-15 blur-3xl" style="background: #c9a118;"></div>
+    <div class="absolute top-1/2 left-1/4 w-32 h-32 rounded-full opacity-10 blur-2xl" style="background: #f2306a;"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-2xl mx-auto px-6 text-center">
+
+      <!-- Big 404 display -->
+      <div class="mb-4">
+        <span
+          class="font-display uppercase leading-none select-none"
+          style="font-size: clamp(6rem, 20vw, 12rem); color: transparent; -webkit-text-stroke: 3px #f2306a; letter-spacing: -0.02em;"
+        >
+          404
+        </span>
+      </div>
+
+      <!-- Friendly headline -->
+      <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl uppercase text-brand-dark leading-tight mb-4 tracking-tight">
+        Oh no — this page got lost<br class="hidden sm:block" /> in the paint water!
+      </h1>
+
+      <!-- Warm subtext -->
+      <p class="text-brand-dark/60 text-lg leading-relaxed mb-10 max-w-lg mx-auto">
+        The page you're looking for has wandered off on a creative adventure. But hey — that just means
+        there's something even better waiting for you back home.
+      </p>
+
+      <!-- Gold CTA button -->
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 bg-brand-gold text-brand-dark font-semibold px-8 py-4 rounded-lg hover:brightness-105 hover:-translate-y-0.5 transition-all duration-200 shadow-md hover:shadow-lg text-base tracking-wide"
+      >
+        Back to Home
+        <span class="text-lg leading-none">&rarr;</span>
+      </a>
+
+      <!-- Secondary navigation nudge -->
+      <p class="mt-8 text-sm text-brand-dark/40">
+        Or explore:&nbsp;
+        <a href="/priority" class="text-brand-pink hover:underline font-medium">Build It Remarkable</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/podcast" class="text-brand-pink hover:underline font-medium">Podcast</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/contact" class="text-brand-pink hover:underline font-medium">Contact</a>
+      </p>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

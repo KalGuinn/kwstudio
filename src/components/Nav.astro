@@ -23,7 +23,7 @@ const socialLinks = [
 ];
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
+<nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
@@ -41,6 +41,7 @@ const socialLinks = [
           link.cta ? (
             <a
               href={link.href}
+              aria-current={currentPage === link.href ? 'page' : undefined}
               class:list={[
                 'text-sm font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full border-2 transition-all duration-200',
                 currentPage === link.href
@@ -53,6 +54,7 @@ const socialLinks = [
           ) : (
             <a
               href={link.href}
+              aria-current={currentPage === link.href ? 'page' : undefined}
               class:list={[
                 'relative text-sm font-semibold tracking-wider uppercase transition-colors duration-200',
                 'after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:bg-brand-pink after:transition-all after:duration-300',
@@ -88,6 +90,7 @@ const socialLinks = [
         class="md:hidden p-2 text-brand-dark/60 hover:text-brand-pink"
         aria-label="Toggle menu"
         aria-expanded="false"
+        aria-controls="mobile-menu"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -102,6 +105,7 @@ const socialLinks = [
           link.cta ? (
             <a
               href={link.href}
+              aria-current={currentPage === link.href ? 'page' : undefined}
               class:list={[
                 'mx-4 my-1 px-4 py-3 text-sm font-semibold tracking-wider uppercase rounded-full border-2 text-center transition-all duration-200',
                 currentPage === link.href
@@ -114,6 +118,7 @@ const socialLinks = [
           ) : (
             <a
               href={link.href}
+              aria-current={currentPage === link.href ? 'page' : undefined}
               class:list={[
                 'px-4 py-3 text-sm font-semibold tracking-wider uppercase rounded-lg transition-colors',
                 currentPage === link.href
