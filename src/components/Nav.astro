@@ -23,7 +23,7 @@ const socialLinks = [
 ];
 ---
 
-<nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
+<nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm" id="main-nav">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
@@ -159,15 +159,4 @@ const socialLinks = [
     btn?.setAttribute('aria-expanded', String(!isHidden));
   });
 
-  const nav = document.getElementById('main-nav');
-  const updateNav = () => {
-    if (window.scrollY > 80) {
-      nav?.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'border-b', 'border-brand-pink/10');
-      nav?.classList.remove('shadow-sm');
-    } else {
-      nav?.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'shadow-sm', 'border-b', 'border-brand-pink/10');
-    }
-  };
-  updateNav();
-  window.addEventListener('scroll', updateNav, { passive: true });
 </script>
