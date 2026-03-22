@@ -11,20 +11,17 @@ import Footer from '../components/Footer.astro';
   <Nav currentPage="/priority" />
 
   <!-- ═══════════════════════════════════════════════════
-       HERO — Immersive, high-urgency, art-textured background
+       HERO — Premium dark gradient — sales page energy, no art texture
        BIR logo + cohort portrait + headline
        ═══════════════════════════════════════════════════ -->
   <section class="relative min-h-screen flex items-center overflow-hidden -mt-20">
-    <!-- Layer 1: Art texture -->
+    <!-- Layer 1: Deep premium dark gradient — authoritative, focused -->
     <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute inset-0"
+      style="background: linear-gradient(155deg, #0f0f1a 0%, #1c1218 50%, #1a0f0f 100%);"
     ></div>
 
-    <!-- Layer 2: Deep warm overlay — darker than homepage hero, more drama -->
-    <div class="absolute inset-0 bg-brand-dark/60"></div>
-
-    <!-- Layer 3: Pink-to-gold gradient bloom from left -->
+    <!-- Layer 2: Pink-to-gold gradient bloom — warm, aspirational -->
     <div
       class="absolute inset-0"
       style="background: radial-gradient(ellipse at 10% 60%, rgba(254,54,118,0.28) 0%, transparent 55%), radial-gradient(ellipse at 90% 20%, rgba(230,184,29,0.18) 0%, transparent 50%);"
@@ -110,14 +107,14 @@ import Footer from '../components/Footer.astro';
        QUOTE — Howard Thurman. Big, atmospheric, serif.
        ═══════════════════════════════════════════════════ -->
   <section class="relative py-20 sm:py-28 overflow-hidden bg-brand-warm">
-    <!-- Faint art texture corners -->
+    <!-- Subtle CSS radial accents in corners — no art texture -->
     <div
-      class="absolute top-0 left-0 w-80 h-80 bg-cover bg-top opacity-[0.06] rounded-br-full"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute top-0 left-0 w-80 h-80 rounded-br-full pointer-events-none"
+      style="background: radial-gradient(ellipse at top left, rgba(230,184,29,0.10) 0%, transparent 70%);"
     ></div>
     <div
-      class="absolute bottom-0 right-0 w-64 h-64 bg-cover bg-bottom opacity-[0.06] rounded-tl-full"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute bottom-0 right-0 w-64 h-64 rounded-tl-full pointer-events-none"
+      style="background: radial-gradient(ellipse at bottom right, rgba(254,54,118,0.07) 0%, transparent 70%);"
     ></div>
 
     <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-10 text-center">
@@ -250,15 +247,15 @@ import Footer from '../components/Footer.astro';
 
   <!-- ═══════════════════════════════════════════════════
        ABOUT KELLEE — Meet your guide section
-       Art texture + splat portrait + bio
+       Dark with warm radial accents
        ═══════════════════════════════════════════════════ -->
   <section class="relative py-20 sm:py-28 overflow-hidden">
-    <!-- Art background -->
+    <!-- Dark solid with subtle warm gradient — no art texture -->
+    <div class="absolute inset-0 bg-brand-dark"></div>
     <div
-      class="absolute inset-0 bg-cover bg-center opacity-15"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse at 0% 50%, rgba(254,54,118,0.12) 0%, transparent 50%), radial-gradient(ellipse at 100% 0%, rgba(230,184,29,0.09) 0%, transparent 45%);"
     ></div>
-    <div class="absolute inset-0 bg-brand-dark/92"></div>
 
     <!-- Gold bloom accent -->
     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-brand-gold/8 blur-3xl pointer-events-none"></div>
@@ -307,14 +304,14 @@ import Footer from '../components/Footer.astro';
        Warm background, generous spacing, checkmarks
        ═══════════════════════════════════════════════════ -->
   <section class="relative py-20 sm:py-28 overflow-hidden bg-brand-warm">
-    <!-- Corner art textures -->
+    <!-- CSS radial corner accents — no art texture -->
     <div
-      class="absolute top-0 right-0 w-72 h-72 bg-cover bg-top-right opacity-[0.07] rounded-bl-full"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute top-0 right-0 w-72 h-72 rounded-bl-full pointer-events-none"
+      style="background: radial-gradient(ellipse at top right, rgba(254,54,118,0.08) 0%, transparent 70%);"
     ></div>
     <div
-      class="absolute bottom-0 left-0 w-72 h-72 bg-cover bg-bottom-left opacity-[0.07] rounded-tr-full"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute bottom-0 left-0 w-72 h-72 rounded-tr-full pointer-events-none"
+      style="background: radial-gradient(ellipse at bottom left, rgba(230,184,29,0.09) 0%, transparent 70%);"
     ></div>
 
     <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-10">
@@ -443,18 +440,17 @@ import Footer from '../components/Footer.astro';
 
   <!-- ═══════════════════════════════════════════════════
        WAITLIST FORM — Bottom anchor, high-contrast, urgent
-       Pink/dark gradient + BIR logo + form
+       Premium dark gradient + BIR logo + form
        ═══════════════════════════════════════════════════ -->
   <section id="waitlist-form" class="relative py-20 sm:py-28 overflow-hidden">
-    <!-- Art texture -->
-    <div
-      class="absolute inset-0 bg-cover bg-center opacity-20"
-      style="background-image: url('/images/art-background.jpg');"
-    ></div>
-    <!-- Dark overlay with pink bloom -->
-    <div class="absolute inset-0 bg-brand-dark/88"></div>
+    <!-- Deep premium dark — matches hero, bookends the page — no art texture -->
     <div
       class="absolute inset-0"
+      style="background: linear-gradient(155deg, #0f0f1a 0%, #1c1218 60%, #1a0f0f 100%);"
+    ></div>
+    <!-- Pink bloom top-center + gold bloom bottom-right -->
+    <div
+      class="absolute inset-0 pointer-events-none"
       style="background: radial-gradient(ellipse at 50% 0%, rgba(254,54,118,0.20) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(230,184,29,0.12) 0%, transparent 50%);"
     ></div>
 

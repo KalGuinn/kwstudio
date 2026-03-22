@@ -11,6 +11,8 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/book', label: 'Book' },
   { href: '/podcast', label: 'Podcast' },
+  { href: '/priority', label: 'Build It Remarkable', cta: true },
+  { href: '/100', label: 'Free Guide' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -34,20 +36,34 @@ const socialLinks = [
       </a>
 
       <!-- Nav Links (desktop) -->
-      <div class="hidden md:flex items-center gap-10">
+      <div class="hidden md:flex items-center gap-8">
         {navLinks.map((link) => (
-          <a
-            href={link.href}
-            class:list={[
-              'relative text-sm font-semibold tracking-wider uppercase transition-colors duration-200',
-              'after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:bg-brand-pink after:transition-all after:duration-300',
-              currentPage === link.href
-                ? 'text-brand-pink after:w-full'
-                : 'text-brand-dark/70 hover:text-brand-pink after:w-0 hover:after:w-full',
-            ]}
-          >
-            {link.label}
-          </a>
+          link.cta ? (
+            <a
+              href={link.href}
+              class:list={[
+                'text-sm font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full border-2 transition-all duration-200',
+                currentPage === link.href
+                  ? 'bg-brand-gold border-brand-gold text-white'
+                  : 'border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white',
+              ]}
+            >
+              {link.label}
+            </a>
+          ) : (
+            <a
+              href={link.href}
+              class:list={[
+                'relative text-sm font-semibold tracking-wider uppercase transition-colors duration-200',
+                'after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:bg-brand-pink after:transition-all after:duration-300',
+                currentPage === link.href
+                  ? 'text-brand-pink after:w-full'
+                  : 'text-brand-dark/70 hover:text-brand-pink after:w-0 hover:after:w-full',
+              ]}
+            >
+              {link.label}
+            </a>
+          )
         ))}
       </div>
 
@@ -83,17 +99,31 @@ const socialLinks = [
     <div id="mobile-menu" class="hidden md:hidden pb-6 bg-white/95 backdrop-blur-sm rounded-b-2xl shadow-lg -mx-4 px-4">
       <div class="flex flex-col gap-1 pt-2">
         {navLinks.map((link) => (
-          <a
-            href={link.href}
-            class:list={[
-              'px-4 py-3 text-sm font-semibold tracking-wider uppercase rounded-lg transition-colors',
-              currentPage === link.href
-                ? 'text-brand-pink bg-brand-pink/5'
-                : 'text-brand-dark/60 hover:text-brand-pink hover:bg-brand-pink/5',
-            ]}
-          >
-            {link.label}
-          </a>
+          link.cta ? (
+            <a
+              href={link.href}
+              class:list={[
+                'mx-4 my-1 px-4 py-3 text-sm font-semibold tracking-wider uppercase rounded-full border-2 text-center transition-all duration-200',
+                currentPage === link.href
+                  ? 'bg-brand-gold border-brand-gold text-white'
+                  : 'border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white',
+              ]}
+            >
+              {link.label}
+            </a>
+          ) : (
+            <a
+              href={link.href}
+              class:list={[
+                'px-4 py-3 text-sm font-semibold tracking-wider uppercase rounded-lg transition-colors',
+                currentPage === link.href
+                  ? 'text-brand-pink bg-brand-pink/5'
+                  : 'text-brand-dark/60 hover:text-brand-pink hover:bg-brand-pink/5',
+              ]}
+            >
+              {link.label}
+            </a>
+          )
         ))}
       </div>
       <div class="flex items-center gap-5 mt-4 px-4 pt-4 border-t border-gray-100">

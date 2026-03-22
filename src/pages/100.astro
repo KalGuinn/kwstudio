@@ -12,16 +12,19 @@ import Footer from '../components/Footer.astro';
 
   <!-- ═══════════════════════════════════════════════════
        HERO — "Would Somebody Please Steal My Ideas?"
-       Art background, energetic, lead magnet focus
+       Bright warm gradient — fun, energetic, lead magnet focus
        ═══════════════════════════════════════════════════ -->
   <section class="relative overflow-hidden -mt-20">
-    <!-- Layer 1: Painterly art background texture -->
+    <!-- Layer 1: Bright cream-to-gold-tinted warm gradient — fun and energetic -->
     <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute inset-0"
+      style="background: linear-gradient(135deg, #fff8ee 0%, #fdf0d5 40%, #fce8c8 75%, #fdf5ee 100%);"
     ></div>
-    <!-- Layer 2: Warm overlay — heavier than homepage to keep text legible -->
-    <div class="absolute inset-0 bg-brand-warm/80"></div>
+    <!-- Layer 2: Bold pink radial left + gold radial right — playful energy -->
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse at 5% 40%, rgba(254,54,118,0.14) 0%, transparent 50%), radial-gradient(ellipse at 95% 20%, rgba(230,184,29,0.16) 0%, transparent 45%);"
+    ></div>
     <!-- Layer 3: Bottom fade into next section -->
     <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
 
@@ -181,11 +184,16 @@ import Footer from '../components/Footer.astro';
        MID-PAGE CTA BAND
        ═══════════════════════════════════════════════════ -->
   <section class="relative py-14 overflow-hidden">
+    <!-- Bold pink-to-dark color block — energetic, no art texture -->
     <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute inset-0"
+      style="background: linear-gradient(120deg, #fe3676 0%, #ff5031 50%, #2b1a1a 100%);"
     ></div>
-    <div class="absolute inset-0 bg-brand-dark/75"></div>
+    <!-- Subtle gold highlight -->
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse at 80% 50%, rgba(230,184,29,0.18) 0%, transparent 50%);"
+    ></div>
 
     <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
       <a
@@ -309,12 +317,16 @@ import Footer from '../components/Footer.astro';
        BOTTOM CTA SECTION — Repeat signup + bottom graphic
        ═══════════════════════════════════════════════════ -->
   <section class="relative overflow-hidden">
-    <!-- Art background texture -->
+    <!-- Warm cream-to-gold gradient — echoes hero, bookends the page — no art texture -->
     <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute inset-0"
+      style="background: linear-gradient(150deg, #fdf0d5 0%, #fdf5ee 50%, #fff8ee 100%);"
     ></div>
-    <div class="absolute inset-0 bg-brand-warm/85"></div>
+    <!-- Pink accent bottom-left, gold top-right -->
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse at 0% 100%, rgba(254,54,118,0.10) 0%, transparent 50%), radial-gradient(ellipse at 100% 0%, rgba(230,184,29,0.12) 0%, transparent 45%);"
+    ></div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 py-20 sm:py-28">
       <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">

@@ -5,12 +5,16 @@ export default {
     extend: {
       colors: {
         brand: {
-          pink: '#fe3676',
-          'pink-dark': '#fa0050',
-          gold: '#e6b81d',
-          orange: '#ff5031',
-          dark: '#2b2b2b',
-          warm: '#faf5f0',
+          // Core palette — same family, slightly warmed/deepened
+          pink: '#f2306a',        // was #fe3676 — pulled slightly deeper/more coral
+          'pink-dark': '#d4004a', // was #fa0050 — richer, less electric
+          'pink-light': '#fce8ef', // new: soft blush for subtle backgrounds
+          gold: '#c9a118',        // was #e6b81d — richer, deeper amber-gold
+          'gold-light': '#f5e9c0', // new: pale gold for backgrounds/highlights
+          orange: '#f0481f',      // was #ff5031 — slightly muted, more terracotta
+          dark: '#2b2b2b',        // unchanged
+          warm: '#fdf7f2',        // was #faf5f0 — fractionally more peachy
+          gray: '#7a7570',        // new: warm mid-gray for secondary text
         },
       },
       fontFamily: {
