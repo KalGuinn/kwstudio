@@ -1,0 +1,654 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Build It Remarkable — Join the Priority List"
+  description="A heart-led program for creative educators. Courses, memberships, workshops & coaching. Limited enrollment. Join the waitlist now."
+>
+  <Nav currentPage="/priority" />
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO — Immersive, high-urgency, art-textured background
+       BIR logo + cohort portrait + headline
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative min-h-screen flex items-center overflow-hidden -mt-20">
+    <!-- Layer 1: Art texture -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+
+    <!-- Layer 2: Deep warm overlay — darker than homepage hero, more drama -->
+    <div class="absolute inset-0 bg-brand-dark/60"></div>
+
+    <!-- Layer 3: Pink-to-gold gradient bloom from left -->
+    <div
+      class="absolute inset-0"
+      style="background: radial-gradient(ellipse at 10% 60%, rgba(254,54,118,0.28) 0%, transparent 55%), radial-gradient(ellipse at 90% 20%, rgba(230,184,29,0.18) 0%, transparent 50%);"
+    ></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-32 pb-16 lg:pt-36 lg:pb-20">
+      <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-14">
+
+        <!-- LEFT: BIR logo + cohort portrait stacked -->
+        <div class="hero-visual flex-shrink-0 flex flex-col items-center gap-0 lg:w-[44%]">
+          <!-- BIR program logo -->
+          <img
+            src="/images/build-it-remarkable-logo.png"
+            alt="Build It Remarkable"
+            class="w-52 sm:w-64 lg:w-72 drop-shadow-xl mb-[-1.5rem] relative z-10"
+            loading="eager"
+          />
+          <!-- Cohort opens soon portrait — grounded, textured -->
+          <img
+            src="/images/bir-cohort-opens-soon.png"
+            alt="Kellee Wynne — Next Cohort Opens Soon"
+            class="w-64 sm:w-80 lg:w-full max-w-sm drop-shadow-2xl"
+            loading="eager"
+          />
+        </div>
+
+        <!-- RIGHT: Headline + tagline + CTA -->
+        <div class="text-center lg:text-left lg:w-[56%]">
+
+          <!-- Eyebrow label -->
+          <p class="hero-eyebrow inline-block text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-brand-gold mb-5 px-4 py-1.5 border border-brand-gold/40 rounded-full bg-brand-gold/10">
+            A Heart-Led Program for Creative Educators
+          </p>
+
+          <!-- Main headline -->
+          <h1 class="hero-headline font-display text-[2.8rem] sm:text-6xl lg:text-7xl uppercase leading-[0.92] text-white mb-6 tracking-tight">
+            Don't Let<br />
+            <span class="text-brand-pink">Another Day</span><br />
+            Pass Without<br />
+            <span class="text-brand-gold">Your Dreams</span>
+          </h1>
+
+          <!-- Tagline -->
+          <p class="hero-sub font-accent text-xl sm:text-2xl text-white/80 leading-relaxed mb-4 max-w-lg lg:max-w-none">
+            Designed just for Artists, Makers and Creatives!
+          </p>
+
+          <!-- Description -->
+          <p class="hero-desc text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-lg lg:max-w-none">
+            Structured for creative educators who have courses, memberships, workshops or coaching programs — with limited enrollment to make sure <em class="text-white/80 not-italic font-semibold">you actually master the skills</em> needed to build a profitable, sustainable business that fits your vision.
+          </p>
+
+          <!-- Urgency badge -->
+          <div class="hero-urgency inline-flex items-center gap-3 bg-brand-pink/20 border border-brand-pink/40 rounded-xl px-6 py-3 mb-8">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-pink animate-pulse flex-shrink-0"></span>
+            <span class="font-display text-sm sm:text-base tracking-widest text-brand-pink uppercase">We'll Be Back Early Spring 2026!</span>
+          </div>
+
+          <!-- Primary CTA -->
+          <div class="hero-cta">
+            <a
+              href="#waitlist-form"
+              class="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark font-display text-base sm:text-lg tracking-[0.1em] uppercase px-10 py-4 rounded-lg shadow-xl hover:brightness-105 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <span>Please Add Me to the List!</span>
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom fade to next section -->
+    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       QUOTE — Howard Thurman. Big, atmospheric, serif.
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative py-20 sm:py-28 overflow-hidden bg-brand-warm">
+    <!-- Faint art texture corners -->
+    <div
+      class="absolute top-0 left-0 w-80 h-80 bg-cover bg-top opacity-[0.06] rounded-br-full"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div
+      class="absolute bottom-0 right-0 w-64 h-64 bg-cover bg-bottom opacity-[0.06] rounded-tl-full"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-10 text-center">
+      <!-- Decorative opening mark -->
+      <div class="text-brand-gold/30 font-display text-[9rem] leading-none select-none -mb-10 block" aria-hidden="true">&ldquo;</div>
+
+      <blockquote class="font-accent text-2xl sm:text-3xl lg:text-4xl text-brand-dark leading-snug mb-8">
+        Don't ask what the world needs. Ask what makes you come alive, and go do it. Because what the world needs is people who have come alive.
+      </blockquote>
+
+      <!-- Gold separator + attribution -->
+      <div class="flex items-center justify-center gap-4 mb-3">
+        <div class="h-px w-12 bg-brand-gold/50"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>
+        <div class="h-px w-12 bg-brand-gold/50"></div>
+      </div>
+      <cite class="not-italic font-semibold text-sm tracking-widest uppercase text-brand-dark/50">
+        Howard Thurman
+      </cite>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       TESTIMONIALS — Personal, trustworthy, card grid
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative py-20 sm:py-28 overflow-hidden bg-white">
+    <!-- Subtle pink bloom top-right -->
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-brand-pink/5 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
+
+      <!-- Section header -->
+      <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-pink text-center mb-3">
+        Real Results. Real Builders.
+      </p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark text-center uppercase leading-tight mb-4">
+        Hear What the Builders Have to<br class="hidden sm:block" /> Say About Working with Kellee
+      </h2>
+      <div class="w-20 h-1 bg-brand-gold mx-auto mb-14 rounded-full"></div>
+
+      <!-- Testimonial grid: 2 columns + 1 feature card spanning width on mobile -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Testimonial 1 — Drew Steinbrecher -->
+        <div class="testimonial-card group relative bg-brand-warm border border-brand-gold/20 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-brand-gold/40 font-display text-5xl leading-none select-none mb-4" aria-hidden="true">&ldquo;</div>
+          <blockquote class="text-brand-dark/75 text-base leading-relaxed mb-6">
+            I have had the privilege of working with Kellee for the past three years, and I can confidently say that partnering with her has been one of the best decisions for my business. Kellee's expertise and guidance have been instrumental in scaling my online art class business from a modest five-figure income to <strong class="text-brand-dark">a thriving operation generating multiple six figures annually.</strong>
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-pink/15 flex items-center justify-center flex-shrink-0">
+              <span class="font-display text-brand-pink text-base">D</span>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-brand-dark">Drew Steinbrecher</p>
+              <p class="text-xs text-brand-dark/40 tracking-wide">Build It Remarkable Alumni</p>
+            </div>
+          </div>
+          <!-- Accent corner -->
+          <div class="absolute top-0 right-0 w-12 h-12 rounded-tr-2xl overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-bl from-brand-gold/20 to-transparent"></div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 — Sue Bulmer -->
+        <div class="testimonial-card group relative bg-brand-warm border border-brand-gold/20 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-brand-pink/40 font-display text-5xl leading-none select-none mb-4" aria-hidden="true">&ldquo;</div>
+          <blockquote class="text-brand-dark/75 text-base leading-relaxed mb-6">
+            Build It Remarkable gave me the foundations and building blocks to begin to construct a solid framework for my creative business. Since taking the course, I have developed two juicy lead magnets and <strong class="text-brand-dark">my email list has grown by an amazing 270%.</strong> I now have clarity in my direction and the tools to take me where I want to go.
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-gold/15 flex items-center justify-center flex-shrink-0">
+              <span class="font-display text-brand-gold text-base">S</span>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-brand-dark">Sue Bulmer</p>
+              <p class="text-xs text-brand-dark/40 tracking-wide">Build It Remarkable Alumni</p>
+            </div>
+          </div>
+          <div class="absolute top-0 right-0 w-12 h-12 rounded-tr-2xl overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-bl from-brand-pink/15 to-transparent"></div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 — Cat Rains -->
+        <div class="testimonial-card group relative bg-brand-warm border border-brand-gold/20 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-brand-orange/40 font-display text-5xl leading-none select-none mb-4" aria-hidden="true">&ldquo;</div>
+          <blockquote class="text-brand-dark/75 text-base leading-relaxed mb-6">
+            Working with Kellee to build my online art course business was hands down <strong class="text-brand-dark">the single best and most cost effective decision I've made.</strong> I've gotten so much from what Kellee teaches that I've signed up 3 years in a row and continue to exponentially grow every year. My only regret is that I didn't work with her years earlier.
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center flex-shrink-0">
+              <span class="font-display text-brand-orange text-base">C</span>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-brand-dark">Cat Rains</p>
+              <p class="text-xs text-brand-dark/40 tracking-wide">3-Year Build It Remarkable Alumni</p>
+            </div>
+          </div>
+          <div class="absolute top-0 right-0 w-12 h-12 rounded-tr-2xl overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-bl from-brand-orange/15 to-transparent"></div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 — Tania Ahmed -->
+        <div class="testimonial-card group relative bg-brand-warm border border-brand-gold/20 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-brand-gold/40 font-display text-5xl leading-none select-none mb-4" aria-hidden="true">&ldquo;</div>
+          <blockquote class="text-brand-dark/75 text-base leading-relaxed mb-6">
+            Kellee shares this sales page format, which is just absolute gold. Like that alone is just worth it. I did the launch like you told us — with the live webinars, kept promoting last minute mail shots, kept focusing on my newsletter. And it worked. <strong class="text-brand-dark">I have never made that much money off a single product.</strong>
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-pink/15 flex items-center justify-center flex-shrink-0">
+              <span class="font-display text-brand-pink text-base">T</span>
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-brand-dark">Tania Ahmed</p>
+              <p class="text-xs text-brand-dark/40 tracking-wide">Build It Remarkable Alumni</p>
+            </div>
+          </div>
+          <div class="absolute top-0 right-0 w-12 h-12 rounded-tr-2xl overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-bl from-brand-gold/20 to-transparent"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       ABOUT KELLEE — Meet your guide section
+       Art texture + splat portrait + bio
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative py-20 sm:py-28 overflow-hidden">
+    <!-- Art background -->
+    <div
+      class="absolute inset-0 bg-cover bg-center opacity-15"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div class="absolute inset-0 bg-brand-dark/92"></div>
+
+    <!-- Gold bloom accent -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-brand-gold/8 blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
+      <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+
+        <!-- Splat portrait -->
+        <div class="flex-shrink-0 about-portrait">
+          <img
+            src="/images/kellee-splat-portrait.png"
+            alt="Kellee Wynne"
+            class="w-52 sm:w-64 md:w-72 drop-shadow-2xl"
+          />
+        </div>
+
+        <!-- Bio content -->
+        <div class="text-center md:text-left">
+          <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-gold mb-3">
+            Your Guide
+          </p>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl uppercase text-white leading-tight mb-6">
+            Hi! I'm Kellee Wynne
+          </h2>
+          <p class="font-accent text-lg sm:text-xl text-white/70 leading-relaxed mb-5">
+            Artist, Writer and Strategy Expert for Art Course Creators
+          </p>
+          <p class="text-white/55 text-base leading-relaxed mb-4">
+            After more than a decade of online business experience and mentoring some of the best known creative educators, I've carved out a simpler, more sustainable path to success rooted in purpose, creativity, and actually <em class="text-white/75 not-italic font-semibold">enjoying the life you're building.</em>
+          </p>
+          <p class="text-white/55 text-base leading-relaxed mb-4">
+            I host the <span class="text-brand-gold font-semibold">Made Remarkable™ Podcast</span>, write <span class="text-brand-gold font-semibold">Build it with Kellee Wynne</span> — a weekly newsletter for creatives ready to do business with more soul and strategy — and my own art courses have reached over <span class="text-white/80 font-semibold">20,000 students around the world.</span>
+          </p>
+          <p class="text-white/50 text-sm leading-relaxed">
+            My book <em class="text-white/65 not-italic">Mixed Media Color Workshop</em> published by Quarto Books dives into modern color theory.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       IS THIS RIGHT FOR YOU? — Qualifying checklist
+       Warm background, generous spacing, checkmarks
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative py-20 sm:py-28 overflow-hidden bg-brand-warm">
+    <!-- Corner art textures -->
+    <div
+      class="absolute top-0 right-0 w-72 h-72 bg-cover bg-top-right opacity-[0.07] rounded-bl-full"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div
+      class="absolute bottom-0 left-0 w-72 h-72 bg-cover bg-bottom-left opacity-[0.07] rounded-tr-full"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-10">
+
+      <!-- Section header -->
+      <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-pink text-center mb-3">
+        Find Out If It's Your Time
+      </p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark text-center uppercase leading-tight mb-4">
+        Is Build It Remarkable<br class="hidden sm:block" /> the Right Path for You?
+      </h2>
+      <div class="w-20 h-1 bg-brand-pink mx-auto mb-14 rounded-full"></div>
+
+      <!-- Qualifying checklist -->
+      <ul class="space-y-5">
+
+        <li class="qualify-item flex items-start gap-5 bg-white/80 rounded-xl p-5 shadow-sm border border-brand-gold/15 hover:border-brand-gold/35 hover:shadow-md transition-all duration-300">
+          <div class="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center mt-0.5">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <p class="text-brand-dark/80 text-base leading-relaxed">
+            You have <strong class="text-brand-dark">Big Audacious Dreams</strong> of growing your course or membership business into a profitable, sustainable income that truly supports your creative life.
+          </p>
+        </li>
+
+        <li class="qualify-item flex items-start gap-5 bg-white/80 rounded-xl p-5 shadow-sm border border-brand-gold/15 hover:border-brand-gold/35 hover:shadow-md transition-all duration-300">
+          <div class="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center mt-0.5">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <p class="text-brand-dark/80 text-base leading-relaxed">
+            You know you can make a bigger impact, but you struggle knowing how to <strong class="text-brand-dark">structure your business</strong> so it grows beyond trading your time for dollars.
+          </p>
+        </li>
+
+        <li class="qualify-item flex items-start gap-5 bg-white/80 rounded-xl p-5 shadow-sm border border-brand-gold/15 hover:border-brand-gold/35 hover:shadow-md transition-all duration-300">
+          <div class="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center mt-0.5">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <p class="text-brand-dark/80 text-base leading-relaxed">
+            You feel like you've been <strong class="text-brand-dark">spinning your wheels</strong> for far too long — putting in the effort but not seeing the growth to show for it.
+          </p>
+        </li>
+
+        <li class="qualify-item flex items-start gap-5 bg-white/80 rounded-xl p-5 shadow-sm border border-brand-gold/15 hover:border-brand-gold/35 hover:shadow-md transition-all duration-300">
+          <div class="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center mt-0.5">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <p class="text-brand-dark/80 text-base leading-relaxed">
+            You've tried so many tactics to get your business to take off, but nothing has been a reliable system that produces <strong class="text-brand-dark">consistent, repeatable results.</strong>
+          </p>
+        </li>
+
+        <li class="qualify-item flex items-start gap-5 bg-white/80 rounded-xl p-5 shadow-sm border border-brand-gold/15 hover:border-brand-gold/35 hover:shadow-md transition-all duration-300">
+          <div class="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center mt-0.5">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <p class="text-brand-dark/80 text-base leading-relaxed">
+            You're ready to <strong class="text-brand-dark">think outside the box</strong> with fresh strategies — and open to a new way of building that doesn't compromise your creativity or values.
+          </p>
+        </li>
+
+        <li class="qualify-item flex items-start gap-5 bg-white/80 rounded-xl p-5 shadow-sm border border-brand-gold/15 hover:border-brand-gold/35 hover:shadow-md transition-all duration-300">
+          <div class="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center mt-0.5">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <p class="text-brand-dark/80 text-base leading-relaxed">
+            You are <strong class="text-brand-dark">committed to growing your creative business</strong> — not just dreaming about it — and ready to do the real, focused work it takes.
+          </p>
+        </li>
+
+        <li class="qualify-item flex items-start gap-5 bg-white/80 rounded-xl p-5 shadow-sm border border-brand-gold/15 hover:border-brand-gold/35 hover:shadow-md transition-all duration-300">
+          <div class="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center mt-0.5">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <p class="text-brand-dark/80 text-base leading-relaxed">
+            You thrive in a <strong class="text-brand-dark">Diverse, Equitable and Inclusive</strong> environment where every creative voice is celebrated and respected.
+          </p>
+        </li>
+
+        <li class="qualify-item flex items-start gap-5 bg-white/80 rounded-xl p-5 shadow-sm border border-brand-gold/15 hover:border-brand-gold/35 hover:shadow-md transition-all duration-300">
+          <div class="flex-shrink-0 w-7 h-7 rounded-full bg-brand-gold flex items-center justify-center mt-0.5">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <p class="text-brand-dark/80 text-base leading-relaxed">
+            You're looking for genuine <strong class="text-brand-dark">support, community, and accountability</strong> — people who get it, who cheer you on, and who hold you to your own big goals.
+          </p>
+        </li>
+
+      </ul>
+
+      <!-- Mid-page CTA pull-through -->
+      <div class="mt-14 text-center">
+        <p class="font-accent text-xl sm:text-2xl text-brand-dark/70 mb-6 leading-relaxed">
+          If you're nodding along — you belong in Build It Remarkable.
+        </p>
+        <a
+          href="#waitlist-form"
+          class="inline-flex items-center gap-3 bg-brand-pink text-white font-display text-sm sm:text-base tracking-[0.1em] uppercase px-10 py-4 rounded-lg shadow-lg hover:brightness-105 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+        >
+          Save My Spot on the List
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       WAITLIST FORM — Bottom anchor, high-contrast, urgent
+       Pink/dark gradient + BIR logo + form
+       ═══════════════════════════════════════════════════ -->
+  <section id="waitlist-form" class="relative py-20 sm:py-28 overflow-hidden">
+    <!-- Art texture -->
+    <div
+      class="absolute inset-0 bg-cover bg-center opacity-20"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <!-- Dark overlay with pink bloom -->
+    <div class="absolute inset-0 bg-brand-dark/88"></div>
+    <div
+      class="absolute inset-0"
+      style="background: radial-gradient(ellipse at 50% 0%, rgba(254,54,118,0.20) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(230,184,29,0.12) 0%, transparent 50%);"
+    ></div>
+
+    <div class="relative z-10 max-w-xl mx-auto px-6 lg:px-10 text-center">
+
+      <!-- BIR Logo above form -->
+      <img
+        src="/images/build-it-remarkable-logo.png"
+        alt="Build It Remarkable"
+        class="w-40 sm:w-48 mx-auto mb-6 drop-shadow-lg"
+        loading="lazy"
+      />
+
+      <!-- Form heading -->
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl uppercase text-white leading-tight mb-3">
+        Build It Remarkable<br />Priority List
+      </h2>
+
+      <!-- Urgency copy -->
+      <div class="inline-flex items-center gap-2 bg-brand-gold/15 border border-brand-gold/40 rounded-full px-5 py-2 mb-6">
+        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse flex-shrink-0"></span>
+        <span class="text-brand-gold font-semibold text-xs sm:text-sm tracking-widest uppercase">
+          The Next Cohort Opens Early Spring 2026!
+        </span>
+      </div>
+
+      <p class="text-white/55 text-base leading-relaxed mb-10">
+        Be the first to know when enrollment opens — and get exclusive early-access details before anyone else.
+      </p>
+
+      <!-- Form card -->
+      <div class="bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-2xl p-8 shadow-2xl">
+        <form class="space-y-4" onsubmit="return false;" aria-label="Build It Remarkable Priority Waitlist">
+
+          <!-- First Name -->
+          <div class="text-left">
+            <label for="bir-first-name" class="block text-xs font-semibold tracking-[0.15em] uppercase text-white/50 mb-2">
+              First Name
+            </label>
+            <input
+              type="text"
+              id="bir-first-name"
+              name="first_name"
+              placeholder="Your first name"
+              autocomplete="given-name"
+              class="w-full bg-white/10 border border-white/15 rounded-lg px-5 py-3.5 text-white placeholder-white/30 text-base focus:outline-none focus:border-brand-gold focus:bg-white/15 transition-all duration-200"
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="text-left">
+            <label for="bir-email" class="block text-xs font-semibold tracking-[0.15em] uppercase text-white/50 mb-2">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="bir-email"
+              name="email"
+              placeholder="your@email.com"
+              autocomplete="email"
+              class="w-full bg-white/10 border border-white/15 rounded-lg px-5 py-3.5 text-white placeholder-white/30 text-base focus:outline-none focus:border-brand-gold focus:bg-white/15 transition-all duration-200"
+            />
+          </div>
+
+          <!-- Submit -->
+          <div class="pt-2">
+            <button
+              type="submit"
+              class="group w-full bg-brand-gold text-brand-dark font-display text-base tracking-[0.12em] uppercase px-10 py-4 rounded-lg shadow-xl hover:brightness-105 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3"
+            >
+              <span>Yes, Put Me on the List!</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </button>
+          </div>
+
+          <p class="text-white/25 text-xs pt-1">
+            No spam, ever. Unsubscribe anytime. Your email is safe with us.
+          </p>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <Footer />
+</Layout>
+
+<style>
+  /* ── Hero entrance animations ─────────────────────── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(1.5rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-1.5rem); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .hero-visual    { animation: fadeInLeft 0.9s ease-out 0.05s both; }
+  .hero-eyebrow   { animation: fadeInUp  0.7s ease-out 0.15s both; }
+  .hero-headline  { animation: fadeInUp  0.8s ease-out 0.25s both; }
+  .hero-sub       { animation: fadeInUp  0.8s ease-out 0.38s both; }
+  .hero-desc      { animation: fadeInUp  0.8s ease-out 0.48s both; }
+  .hero-urgency   { animation: fadeInUp  0.8s ease-out 0.58s both; }
+  .hero-cta       { animation: fadeInUp  0.8s ease-out 0.68s both; }
+
+  /* ── Scroll-reveal for qualifying items ───────────── */
+  @keyframes revealItem {
+    from { opacity: 0; transform: translateX(-1rem); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .qualify-item {
+    opacity: 0;
+    animation: revealItem 0.5s ease-out forwards;
+  }
+
+  /* Stagger each checklist item */
+  .qualify-item:nth-child(1) { animation-delay: 0.05s; }
+  .qualify-item:nth-child(2) { animation-delay: 0.12s; }
+  .qualify-item:nth-child(3) { animation-delay: 0.19s; }
+  .qualify-item:nth-child(4) { animation-delay: 0.26s; }
+  .qualify-item:nth-child(5) { animation-delay: 0.33s; }
+  .qualify-item:nth-child(6) { animation-delay: 0.40s; }
+  .qualify-item:nth-child(7) { animation-delay: 0.47s; }
+  .qualify-item:nth-child(8) { animation-delay: 0.54s; }
+
+  /* ── Testimonial card entrance ────────────────────── */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(1rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .testimonial-card {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+  .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+  .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+  .testimonial-card:nth-child(4) { animation-delay: 0.4s; }
+
+  /* ── About portrait entrance ──────────────────────── */
+  .about-portrait {
+    animation: fadeInLeft 0.9s ease-out 0.1s both;
+  }
+
+  /* ── Scroll-triggered reveals (IntersectionObserver) handled via JS below */
+
+  /* ── Smooth scroll anchor offset to account for fixed nav ── */
+  #waitlist-form {
+    scroll-margin-top: 5rem;
+  }
+</style>
+
+<script>
+  // Intersection Observer: replay animations when sections enter viewport
+  // This ensures checklist / testimonials animate when scrolled to, not on page load
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -60px 0px',
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Reset and re-trigger animations on scroll-in
+        const items = entry.target.querySelectorAll('.qualify-item, .testimonial-card');
+        items.forEach(item => {
+          (item as HTMLElement).style.animationPlayState = 'running';
+          (item as HTMLElement).style.opacity = '';
+        });
+      }
+    });
+  }, observerOptions);
+
+  // Observe the qualifying and testimonials sections
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
+
+  // Pause animation-driven elements until they're visible
+  // (so they fire on scroll, not prematurely on load off-screen)
+  const deferItems = document.querySelectorAll('.qualify-item, .testimonial-card');
+  deferItems.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top > window.innerHeight) {
+      (item as HTMLElement).style.animationPlayState = 'paused';
+    }
+  });
+</script>

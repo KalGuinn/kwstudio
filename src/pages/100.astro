@@ -1,0 +1,413 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="100 Ways to Build a Profitable Creative Educator Business"
+  description="Get Kellee Wynne's free PDF: 100 Ways to Build a Profitable Creative Educator Business. Grab your free instant download now!"
+>
+  <Nav />
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO — "Would Somebody Please Steal My Ideas?"
+       Art background, energetic, lead magnet focus
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden -mt-20">
+    <!-- Layer 1: Painterly art background texture -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <!-- Layer 2: Warm overlay — heavier than homepage to keep text legible -->
+    <div class="absolute inset-0 bg-brand-warm/80"></div>
+    <!-- Layer 3: Bottom fade into next section -->
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 w-full pt-36 pb-16 lg:pb-24">
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+        <!-- Product graphic -->
+        <div class="flex-shrink-0 w-full max-w-sm lg:max-w-none lg:w-[46%] hero-item">
+          <img
+            src="/images/steal-my-ideas-graphics.png"
+            alt="Steal My Ideas — 100 Ways PDF by Kellee Wynne"
+            class="w-full drop-shadow-[0_12px_40px_rgba(0,0,0,0.18)]"
+            loading="eager"
+          />
+        </div>
+
+        <!-- Text + form -->
+        <div class="lg:w-[54%] text-center lg:text-left">
+          <!-- Pink overline label -->
+          <p class="text-xs sm:text-sm font-semibold tracking-[0.22em] text-brand-pink uppercase mb-4 hero-item">
+            Free PDF Download
+          </p>
+
+          <!-- Big punchy headline -->
+          <h1 class="font-display text-[2.8rem] sm:text-6xl lg:text-[5rem] text-brand-dark uppercase leading-[0.9] mb-6 tracking-tight hero-item">
+            Would Somebody<br />
+            <span style="color: #fe3676;">Please Steal</span><br />
+            My Ideas?
+          </h1>
+
+          <!-- Sub-copy -->
+          <p class="font-semibold text-base sm:text-lg text-brand-dark leading-snug mb-4 max-w-xl hero-item">
+            There are thousands of ways possible to teach your art — I'm giving you
+            <span class="text-brand-pink">100 of my best ideas</span> that you can take and build
+            your creative educator business with today!
+          </p>
+          <p class="text-brand-dark/65 text-sm sm:text-base leading-relaxed mb-10 max-w-xl hero-item">
+            Whether you've already created a course and you're seeking new ideas to invigorate your
+            business, or you're brand new to the creative educator industry... You're in for a
+            mind-expanding list of ideas that you can take to the bank!
+            <strong class="text-brand-dark"> And I'm giving them away for FREE!</strong>
+          </p>
+
+          <!-- Signup form -->
+          <div class="bg-white rounded-2xl shadow-xl px-6 py-7 sm:px-8 sm:py-8 max-w-lg mx-auto lg:mx-0 hero-item" id="signup-top">
+            <p class="font-display text-lg sm:text-xl uppercase text-brand-dark text-center mb-6 tracking-wide">
+              Easy Peasy — Sign Up &amp; Get the Instant Download
+            </p>
+            <form class="space-y-4" onsubmit="return false;">
+              <div>
+                <label for="first-name-top" class="block text-xs font-semibold tracking-widest uppercase text-brand-dark/50 mb-1.5">
+                  First Name
+                </label>
+                <input
+                  id="first-name-top"
+                  type="text"
+                  placeholder="Your first name"
+                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
+                />
+              </div>
+              <div>
+                <label for="email-top" class="block text-xs font-semibold tracking-widest uppercase text-brand-dark/50 mb-1.5">
+                  Email Address
+                </label>
+                <input
+                  id="email-top"
+                  type="email"
+                  placeholder="Your best email"
+                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-brand-gold text-brand-dark font-display text-base sm:text-lg uppercase tracking-widest py-4 rounded-lg hover:brightness-110 active:scale-[.98] transition-all duration-200 shadow-md mt-2"
+              >
+                YES! Send Me the 100 Ways PDF!
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       WHAT'S INSIDE — 3-column content breakdown
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-brand-warm py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+      <p class="text-xs font-semibold tracking-[0.2em] text-brand-orange uppercase mb-3">
+        Inside the PDF
+      </p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark uppercase leading-tight mb-4">
+        What You'll Find Inside the<br />
+        <span style="color: #fe3676;">'Steal My Ideas'</span> PDF
+      </h2>
+      <div class="w-20 h-1 bg-brand-gold mx-auto mb-14 rounded-full"></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-left">
+
+        <!-- Column 1 -->
+        <div class="bg-white rounded-xl p-7 shadow-sm border border-brand-dark/5 flex flex-col gap-4">
+          <div
+            class="w-12 h-12 rounded-full flex items-center justify-center text-white font-display text-xl flex-shrink-0"
+            style="background: linear-gradient(135deg, #fe3676 0%, #ff5031 100%);"
+          >
+            1
+          </div>
+          <h3 class="font-display text-base sm:text-lg uppercase text-brand-dark leading-snug tracking-wide">
+            Intro to the Niche and Picking Your Specialty
+          </h3>
+          <p class="text-brand-dark/60 text-sm leading-relaxed">
+            Creatives tend to resist niching down because they think they'll be limited.
+            I like to encourage you to pick a specialty that encompasses all of you!
+          </p>
+        </div>
+
+        <!-- Column 2 — featured / center -->
+        <div
+          class="rounded-xl p-7 shadow-md flex flex-col gap-4 relative overflow-hidden"
+          style="background: linear-gradient(145deg, #fe3676 0%, #ff5031 60%, #e6b81d 100%);"
+        >
+          <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white font-display text-xl flex-shrink-0">
+            100
+          </div>
+          <h3 class="font-display text-base sm:text-lg uppercase text-white leading-snug tracking-wide">
+            100 Real Ideas You Can Take to the Bank
+          </h3>
+          <p class="text-white/85 text-sm leading-relaxed">
+            Seriously real ideas that I came up with myself (without the help of ChatGPT!).
+            Many are taken from real businesses and any one of them has real potential.
+          </p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="bg-white rounded-xl p-7 shadow-sm border border-brand-dark/5 flex flex-col gap-4">
+          <div
+            class="w-12 h-12 rounded-full flex items-center justify-center text-white font-display text-xl flex-shrink-0"
+            style="background: linear-gradient(135deg, #e6b81d 0%, #ff5031 100%);"
+          >
+            +
+          </div>
+          <h3 class="font-display text-base sm:text-lg uppercase text-brand-dark leading-snug tracking-wide">
+            Educator Business Advice from an Expert
+          </h3>
+          <p class="text-brand-dark/60 text-sm leading-relaxed">
+            I've walked the walk and done exactly what you are looking to do. And I've taught
+            some of the industry's best known art educators. You could be next!
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       MID-PAGE CTA BAND
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative py-14 overflow-hidden">
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div class="absolute inset-0 bg-brand-dark/75"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <a
+        href="#signup-top"
+        class="inline-block bg-brand-gold text-brand-dark font-display text-lg sm:text-2xl uppercase tracking-widest px-12 py-5 rounded-lg hover:brightness-110 active:scale-[.98] transition-all duration-200 shadow-xl"
+      >
+        Grab 100 Ideas You Can Use Today!
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ABOUT KELLEE — Portrait + bio
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-white py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+
+        <!-- Splat portrait -->
+        <div class="flex-shrink-0">
+          <img
+            src="/images/kellee-splat-portrait.png"
+            alt="Kellee Wynne"
+            class="w-52 sm:w-64 drop-shadow-xl"
+          />
+        </div>
+
+        <!-- Bio text -->
+        <div>
+          <p class="text-xs font-semibold tracking-[0.2em] text-brand-pink uppercase mb-3">
+            Meet Your Guide
+          </p>
+          <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-5">
+            Hi! I'm Kellee Wynne,<br />
+            <span class="text-brand-pink">Artist, Writer &amp; Strategy Expert</span><br />
+            for Course Creators
+          </h2>
+          <p class="text-brand-dark/70 text-base leading-relaxed mb-4">
+            After more than a decade of online business experience and mentorship to some of the
+            best known course creators, I've distilled everything I know into a sensible approach
+            that helps Artists, Makers and Creatives finally reach their financial goals without
+            burning out — with my signature program
+            <strong class="text-brand-dark">Build it Remarkable&reg;</strong>.
+          </p>
+          <ul class="text-brand-dark/60 text-sm leading-relaxed space-y-2 mb-6">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-gold font-bold mt-0.5 flex-shrink-0">&#9654;</span>
+              I'm the host of the <strong class="text-brand-dark/80">Made Remarkable&reg; Podcast</strong>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-gold font-bold mt-0.5 flex-shrink-0">&#9654;</span>
+              I write a kickass newsletter called <strong class="text-brand-dark/80">Build it with Kellee Wynne</strong>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-gold font-bold mt-0.5 flex-shrink-0">&#9654;</span>
+              I'm the founder of <strong class="text-brand-dark/80">Color Crush Creative</strong>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-gold font-bold mt-0.5 flex-shrink-0">&#9654;</span>
+              And I wrote a book, <em class="not-italic font-semibold text-brand-dark/80">Mixed Media Color Workshop</em> published by Quarto Books
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       LIFESTYLE PHOTOS — Brand images strip
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-brand-warm py-10">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-3 gap-3 sm:gap-4">
+        <img
+          src="/images/kellee-brand-1.jpg"
+          alt="Kellee Wynne lifestyle"
+          class="w-full aspect-square object-cover rounded-xl shadow-sm"
+        />
+        <img
+          src="/images/kellee-brand-2.jpg"
+          alt="Kellee Wynne lifestyle"
+          class="w-full aspect-square object-cover rounded-xl shadow-sm"
+        />
+        <img
+          src="/images/kellee-brand-3.jpg"
+          alt="Kellee Wynne lifestyle"
+          class="w-full aspect-square object-cover rounded-xl shadow-sm"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       TESTIMONIALS — Social proof
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-white py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl text-brand-dark uppercase text-center mb-10 tracking-wide">
+        What Creative Educators Are Saying
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-sm border border-brand-dark/5">
+          <img
+            src="/images/testimonial-tish.png"
+            alt="Testimonial from Tish"
+            class="w-full"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-sm border border-brand-dark/5">
+          <img
+            src="/images/testimonial-brooke.png"
+            alt="Testimonial from Brooke"
+            class="w-full"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BOTTOM CTA SECTION — Repeat signup + bottom graphic
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden">
+    <!-- Art background texture -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div class="absolute inset-0 bg-brand-warm/85"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 py-20 sm:py-28">
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+        <!-- Bottom product graphic -->
+        <div class="flex-shrink-0 lg:w-48 xl:w-56">
+          <img
+            src="/images/steal-my-ideas-bottom.png"
+            alt="100 Ways PDF Guidebook"
+            class="w-40 sm:w-48 lg:w-full mx-auto drop-shadow-lg"
+          />
+        </div>
+
+        <!-- Text + form -->
+        <div class="flex-1 text-center lg:text-left">
+          <p class="font-accent italic text-brand-dark/70 text-lg sm:text-xl leading-relaxed mb-3">
+            Teaching your art is more than just throwing a course out into the world....
+          </p>
+          <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-8">
+            In This PDF Guidebook I'm Giving You<br />
+            <span style="color: #fe3676;">100 Ways to Build</span> a Profitable<br />
+            Creative Educator Business in 2026!
+          </h2>
+
+          <!-- Repeat signup form -->
+          <div class="bg-white rounded-2xl shadow-xl px-6 py-7 sm:px-8 sm:py-8 max-w-lg mx-auto lg:mx-0" id="signup-bottom">
+            <p class="font-display text-lg sm:text-xl uppercase text-brand-dark text-center mb-6 tracking-wide">
+              Easy Peasy — Sign Up &amp; Get the Instant Download
+            </p>
+            <form class="space-y-4" onsubmit="return false;">
+              <div>
+                <label for="first-name-bottom" class="block text-xs font-semibold tracking-widest uppercase text-brand-dark/50 mb-1.5">
+                  First Name
+                </label>
+                <input
+                  id="first-name-bottom"
+                  type="text"
+                  placeholder="Your first name"
+                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
+                />
+              </div>
+              <div>
+                <label for="email-bottom" class="block text-xs font-semibold tracking-widest uppercase text-brand-dark/50 mb-1.5">
+                  Email Address
+                </label>
+                <input
+                  id="email-bottom"
+                  type="email"
+                  placeholder="Your best email"
+                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-brand-gold text-brand-dark font-display text-base sm:text-lg uppercase tracking-widest py-4 rounded-lg hover:brightness-110 active:scale-[.98] transition-all duration-200 shadow-md mt-2"
+              >
+                YES! Send Me the 100 Ways PDF!
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero-item {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+  .hero-item:nth-child(1) { animation-delay: 0.0s; }
+  .hero-item:nth-child(2) { animation-delay: 0.05s; }
+  .hero-item:nth-child(3) { animation-delay: 0.15s; }
+  .hero-item:nth-child(4) { animation-delay: 0.25s; }
+  .hero-item:nth-child(5) { animation-delay: 0.35s; }
+  .hero-item:nth-child(6) { animation-delay: 0.45s; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth scroll for CTA anchor link */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
