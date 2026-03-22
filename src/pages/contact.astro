@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact" description="Get in touch with Kellee Wynne Studios">
+  <Nav currentPage="/contact" />
+
+  <!-- Header -->
+  <section class="bg-white py-16 sm:py-24 text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs sm:text-sm font-medium tracking-[0.15em] text-brand-pink uppercase mb-3">
+        Get In Touch
+      </p>
+      <h1 class="font-display text-3xl sm:text-5xl text-brand-dark uppercase leading-tight mb-4">
+        Send Us a Message
+      </h1>
+      <p class="text-brand-dark/60 leading-relaxed">
+        Do you have a question about a course or workshop, or have tech trouble?
+        Please contact <a href="mailto:admin@kelleewynnestudios.com" class="text-brand-pink hover:underline">admin@kelleewynnestudios.com</a>
+        or fill out the form below.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-brand-warm py-16 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ContactForm />
+    </div>
+  </section>
+
+  <!-- Our Promise -->
+  <section class="bg-brand-dark text-white py-16 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-2xl sm:text-3xl uppercase mb-4">Our Promise</h2>
+      <p class="text-white/70 leading-relaxed mb-4">
+        We take our art as wildly playful, but our customers seriously. All our courses are backed by a
+        14 day guarantee. If you don't love it you can request a refund.
+      </p>
+      <p class="text-white/60 text-sm">
+        Questions? Reach out to
+        <a href="mailto:admin@kelleewynnestudios.com" class="text-brand-gold hover:underline">
+          admin@kelleewynnestudios.com
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

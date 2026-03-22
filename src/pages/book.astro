@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="The Book" description="Mixed Media Color Studio by Kellee Wynne Conrad">
+  <Nav currentPage="/book" />
+
+  <!-- Hero -->
+  <section class="bg-white py-16 sm:py-24 text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs sm:text-sm font-medium tracking-[0.15em] text-brand-pink uppercase mb-3">
+        The Book
+      </p>
+      <h1 class="font-display text-3xl sm:text-5xl text-brand-dark uppercase leading-tight mb-8">
+        Mixed Media Color Studio
+      </h1>
+      <img
+        src="/images/book-cover.jpg"
+        alt="Mixed Media Color Studio by Kellee Wynne Conrad"
+        class="mx-auto max-w-xs sm:max-w-sm rounded-lg shadow-xl mb-8"
+      />
+    </div>
+  </section>
+
+  <!-- Purchase CTA -->
+  <section class="bg-brand-pink text-white py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-2xl sm:text-3xl uppercase mb-6">Get Your Copy</h2>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#"
+          class="inline-block bg-white text-brand-pink font-semibold text-sm px-8 py-3 rounded-full hover:bg-gray-50 transition-colors"
+        >
+          Amazon
+        </a>
+        <a
+          href="#"
+          class="inline-block bg-white/20 text-white font-semibold text-sm px-8 py-3 rounded-full hover:bg-white/30 transition-colors"
+        >
+          Bookshop.org
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Inside -->
+  <section class="bg-brand-warm py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl sm:text-3xl text-brand-dark text-center uppercase mb-10">
+        What's Inside
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-lg p-5 flex items-center gap-3">
+          <span class="text-2xl">🎨</span>
+          <span class="font-medium text-brand-dark">Color theory & mixing</span>
+        </div>
+        <div class="bg-white rounded-lg p-5 flex items-center gap-3">
+          <span class="text-2xl">🖌️</span>
+          <span class="font-medium text-brand-dark">Mixed media techniques</span>
+        </div>
+        <div class="bg-white rounded-lg p-5 flex items-center gap-3">
+          <span class="text-2xl">💡</span>
+          <span class="font-medium text-brand-dark">Creative exercises</span>
+        </div>
+        <div class="bg-white rounded-lg p-5 flex items-center gap-3">
+          <span class="text-2xl">📸</span>
+          <span class="font-medium text-brand-dark">Full-color examples</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thank You -->
+  <section class="bg-white py-16 sm:py-20">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-2xl sm:text-3xl text-brand-dark uppercase mb-6">
+        Thank You!
+      </h2>
+      <p class="text-brand-dark/70 leading-relaxed">
+        Every time you buy and share the book I do a happy dance! It brings me so much joy that you are
+        finding joy in what I have created for you. It makes it worth the effort and long days to create
+        something valuable for artists to enjoy for years to come. Thank you from the whole of my heart!!
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

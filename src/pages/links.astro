@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const links = [
+  { label: '✨ New Substack Newsletter', href: 'https://wynnewandering.substack.com', primary: true },
+  { label: '🎓 Teaching Artist Workshop', href: 'https://www.kelleewynne.com/100', primary: false },
+  { label: '📖 Mixed Media Color Studio', href: '/book', primary: false },
+  { label: '🎙️ Made Remarkable Podcast', href: 'https://www.maderemarkable.com/blog', primary: false },
+];
+
+const socialLinks = [
+  { href: 'https://www.instagram.com/kelleewynne', label: 'Instagram' },
+  { href: 'https://www.youtube.com/c/kelleewynne', label: 'YouTube' },
+  { href: 'https://www.pinterest.com/kelleewynne/', label: 'Pinterest' },
+];
+---
+
+<Layout title="Links">
+  <div class="min-h-screen bg-gradient-to-b from-brand-pink to-brand-orange flex flex-col items-center justify-center px-4 py-12">
+    <!-- Profile -->
+    <img
+      src="/images/kellee-portrait-standing.png"
+      alt="Kellee Wynne"
+      class="w-20 h-20 rounded-full object-cover border-2 border-white/30 mb-3"
+    />
+    <h1 class="text-white font-bold text-lg mb-1">Kellee Wynne</h1>
+    <p class="text-white/80 text-sm mb-8">Artist · Author · Mentor</p>
+
+    <!-- Links -->
+    <div class="w-full max-w-sm space-y-3">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          target={link.href.startsWith('http') ? '_blank' : undefined}
+          rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          class:list={[
+            'block w-full text-center py-3.5 rounded-full font-semibold text-sm transition-all',
+            link.primary
+              ? 'bg-white text-brand-dark hover:bg-gray-50 shadow-md'
+              : 'bg-white/15 text-white hover:bg-white/25',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Social -->
+    <div class="flex items-center gap-6 mt-10">
+      {socialLinks.map((link) => (
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-white/70 text-sm hover:text-white transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

@@ -2,16 +2,67 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Home">
   <Nav currentPage="/" />
+
+  <!-- Hero -->
   <Hero
     label="Kellee Wynne Studios"
     title="I'm so happy you're here!"
     subtitle="Where your wild, weird, and brilliant ideas turn into something remarkable."
     image={{ src: '/images/kellee-portrait-standing.png', alt: 'Kellee Wynne', rounded: true }}
   />
+
+  <!-- About Section -->
+  <section class="bg-brand-pink text-white py-16 sm:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
+      <div class="flex-shrink-0">
+        <img
+          src="/images/kellee-portrait-bg.webp"
+          alt="Kellee Wynne in her studio"
+          class="w-40 h-52 sm:w-48 sm:h-64 object-cover rounded-lg"
+        />
+      </div>
+      <div>
+        <h2 class="font-display text-2xl sm:text-3xl uppercase mb-4">Meet Kellee</h2>
+        <p class="text-white/90 leading-relaxed mb-4">
+          Hey, Artists and Makers! Welcome to the place where your wild, weird and brilliant ideas come to life!
+        </p>
+        <p class="text-white/80 leading-relaxed">
+          I want to help you turn your talent into a profitable course business. As an artist, author of
+          <em>Mixed Media Color Studio</em>, and business mentor, I've helped countless creatives build
+          something remarkable from their passion.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings -->
+  <section class="bg-brand-warm py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl sm:text-3xl text-brand-dark text-center uppercase mb-10">
+        Explore My World
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <Card icon="📖" title="The Book" subtitle="Mixed Media Color Studio" href="/book" />
+        <Card icon="🎙️" title="Podcast" subtitle="Made Remarkable" href="/podcast" />
+        <Card icon="✨" title="Newsletter" subtitle="Wynne Wandering" href="https://wynnewandering.substack.com" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    headline="Turn Your Creativity Into a Business"
+    subtitle="Join the community of artists building something remarkable."
+    buttonText="Start Here →"
+    buttonHref="/contact"
+  />
+
   <Footer />
 </Layout>
