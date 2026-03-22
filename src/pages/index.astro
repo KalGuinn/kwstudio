@@ -4,110 +4,89 @@ import Nav from '../components/Nav.astro';
 import Card from '../components/Card.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Home">
   <Nav currentPage="/" />
 
-  <!-- Hero: Full-bleed immersive section -->
-  <section class="relative min-h-[85vh] flex items-center overflow-hidden -mt-20 pt-20">
-    <!-- Painterly background using mesh gradients -->
-    <div class="absolute inset-0" style="background:
-      radial-gradient(ellipse at 70% 30%, rgba(230,184,29,0.35) 0%, transparent 50%),
-      radial-gradient(ellipse at 30% 70%, rgba(254,54,118,0.15) 0%, transparent 50%),
-      radial-gradient(ellipse at 85% 80%, rgba(255,80,49,0.2) 0%, transparent 45%),
-      radial-gradient(ellipse at 15% 20%, rgba(250,245,240,0.9) 0%, transparent 60%),
-      linear-gradient(135deg, #faf5f0 0%, #f5e6d8 30%, #f0d4c4 60%, #e8c4a0 100%);">
-    </div>
+  <!-- ═══════════════════════════════════════════════════
+       HERO — Immersive, painterly, artist's welcome
+       Uses real art-background.jpg texture + standing portrait
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden -mt-20">
+    <!-- Layer 1: Painterly art background texture -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
 
-    <!-- Portrait background image — large, atmospheric -->
-    <div class="absolute inset-0">
-      <img
-        src="/images/kellee-portrait-bg.webp"
-        alt=""
-        class="w-full h-full object-cover object-top opacity-40 mix-blend-multiply"
-        loading="eager"
-      />
+    <!-- Layer 2: Soft white wash overlay (matches original's rgba 0.34) -->
+    <div class="absolute inset-0 bg-white/[.34]"></div>
+
+    <!-- Layer 3: Subtle warm gradient for depth at edges -->
+    <div class="absolute inset-0" style="background:
+      radial-gradient(ellipse at 80% 20%, transparent 40%, rgba(255,255,255,0.3) 100%),
+      linear-gradient(to bottom, transparent 60%, rgba(250,245,240,0.5) 100%);">
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
-      <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-        <!-- Portrait -->
-        <div class="flex-shrink-0 lg:w-2/5">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-28 pb-12 lg:pt-32 lg:pb-16">
+      <div class="flex flex-col lg:flex-row items-end lg:items-center gap-6 lg:gap-8">
+
+        <!-- Portrait — large, grounded at bottom, natural feel -->
+        <div class="order-2 lg:order-1 flex-shrink-0 lg:w-[42%] self-end">
           <img
             src="/images/kellee-portrait-standing.png"
             alt="Kellee Wynne"
-            class="w-64 sm:w-80 lg:w-full max-w-md mx-auto drop-shadow-2xl"
+            class="w-72 sm:w-80 lg:w-full max-w-lg mx-auto lg:mx-0 drop-shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
             loading="eager"
+            style="margin-bottom: -2rem;"
           />
         </div>
 
-        <!-- Text content -->
-        <div class="lg:w-3/5 text-center lg:text-left">
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-brand-pink uppercase leading-none mb-6">
+        <!-- Text — right side, vertically centered -->
+        <div class="order-1 lg:order-2 lg:w-[58%] text-center lg:text-left pt-8 lg:pt-0">
+          <h1 class="font-display text-[2.5rem] sm:text-5xl lg:text-6xl xl:text-[4.5rem] text-brand-pink uppercase leading-[0.95] mb-6 tracking-tight">
             I'm so happy that you're here!
           </h1>
-          <p class="text-lg sm:text-xl lg:text-2xl font-semibold text-brand-dark leading-snug mb-4">
+          <p class="font-semibold text-lg sm:text-xl lg:text-2xl text-brand-dark leading-snug mb-4 max-w-xl lg:max-w-none">
             Hey, Artists and Makers, Welcome to the place where your wild, weird and brilliant ideas come to life!
           </p>
-          <p class="text-base sm:text-lg text-brand-dark/70 leading-relaxed mb-8">
+          <p class="text-brand-dark/60 text-base sm:text-lg leading-relaxed mb-8 max-w-lg lg:max-w-none">
             I want to help you turn your talent into a profitable course business.
           </p>
-          <a
-            href="/contact"
-            class="inline-block bg-brand-pink text-white font-bold text-sm sm:text-base uppercase tracking-wider px-10 py-4 border-2 border-brand-dark hover:brightness-110 transition-all shadow-lg"
-          >
-            Build It Remarkable
-          </a>
+
+          <!-- CTA — styled like original: outlined with pink accent -->
+          <div class="flex flex-col sm:flex-row items-center lg:items-start gap-3">
+            <a
+              href="/contact"
+              class="group relative inline-flex flex-col items-center bg-white/80 backdrop-blur-sm border-2 border-brand-dark px-10 py-4 hover:bg-brand-pink hover:border-brand-pink hover:text-white transition-all duration-300"
+            >
+              <span class="text-xs font-medium tracking-widest uppercase text-brand-dark/60 group-hover:text-white/80 transition-colors">
+                Click Here to Learn About My Signature Program
+              </span>
+              <span class="font-display text-xl sm:text-2xl uppercase text-brand-dark group-hover:text-white transition-colors tracking-wide">
+                Build It Remarkable
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="relative bg-brand-pink text-white py-20 sm:py-28 overflow-hidden">
-    <!-- Subtle texture overlay -->
-    <div class="absolute inset-0 opacity-10" style="background:
-      radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, transparent 40%),
-      radial-gradient(circle at 80% 20%, rgba(230,184,29,0.4) 0%, transparent 40%);">
-    </div>
-
-    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-        <div class="flex-shrink-0">
-          <img
-            src="/images/kellee-portrait-bg.webp"
-            alt="Kellee Wynne in her studio"
-            class="w-56 h-72 sm:w-64 sm:h-80 object-cover rounded-lg shadow-2xl rotate-[-2deg]"
-          />
-        </div>
-        <div>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl uppercase mb-6 leading-tight">Meet Kellee</h2>
-          <p class="text-white/90 text-lg leading-relaxed mb-4">
-            Hey, Artists and Makers! Welcome to the place where your wild, weird and brilliant ideas come to life!
-          </p>
-          <p class="text-white/80 text-base leading-relaxed">
-            I want to help you turn your talent into a profitable course business. As an artist, author of
-            <em class="text-brand-gold font-semibold">Mixed Media Color Studio</em>, and business mentor, I've helped countless creatives build
-            something remarkable from their passion.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Offerings -->
-  <section class="relative py-20 sm:py-28 overflow-hidden" style="background:
-    radial-gradient(ellipse at 50% 0%, rgba(254,54,118,0.06) 0%, transparent 50%),
-    linear-gradient(180deg, #faf5f0 0%, #fff 100%);">
+  <!-- ═══════════════════════════════════════════════════
+       CONNECT — "3 Ways We Can Connect Right Now"
+       Warm section with offerings cards
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative py-20 sm:py-28 overflow-hidden bg-white">
     <div class="max-w-5xl mx-auto px-6 lg:px-10">
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark text-center uppercase mb-4">
-        Explore My World
+        Here are 3 Ways We Can Connect Right Now
       </h2>
-      <p class="text-brand-dark/50 text-center text-lg mb-14 max-w-2xl mx-auto">
-        Three ways we can connect right now
-      </p>
+      <div class="w-24 h-1 bg-brand-pink mx-auto mb-14 rounded-full"></div>
+
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
         <Card icon="📖" title="The Book" subtitle="Mixed Media Color Studio" href="/book" />
         <Card icon="🎙️" title="Podcast" subtitle="Made Remarkable" href="/podcast" />
@@ -116,7 +95,56 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ═══════════════════════════════════════════════════
+       ABOUT — Meet Kellee, warm and personal
+       Art background texture with portrait
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative py-20 sm:py-28 overflow-hidden">
+    <!-- Art background with stronger presence -->
+    <div
+      class="absolute inset-0 bg-cover bg-center opacity-20"
+      style="background-image: url('/images/art-background.jpg');"
+    ></div>
+    <div class="absolute inset-0 bg-brand-warm/90"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        <!-- Splat portrait — the artistic circular one with paint splatters -->
+        <div class="flex-shrink-0">
+          <img
+            src="/images/kellee-splat-portrait.png"
+            alt="Kellee Wynne"
+            class="w-56 sm:w-72 drop-shadow-xl"
+          />
+        </div>
+        <div>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl uppercase mb-6 leading-tight text-brand-dark">
+            Meet Kellee
+          </h2>
+          <p class="text-brand-dark/80 text-lg leading-relaxed mb-4">
+            Artist, author of <em class="text-brand-pink font-semibold not-italic">Mixed Media Color Studio</em>,
+            and business mentor for creative entrepreneurs.
+          </p>
+          <p class="text-brand-dark/60 text-base leading-relaxed mb-6">
+            I've spent years helping artists and makers turn their wild, weird, and brilliant ideas
+            into thriving creative businesses. Whether you're just starting out or ready to scale,
+            I'm here to help you build something remarkable.
+          </p>
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 text-brand-pink font-semibold hover:gap-3 transition-all duration-300"
+          >
+            Get to know me
+            <span class="text-lg">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       CTA — Bold, warm, action-oriented
+       ═══════════════════════════════════════════════════ -->
   <CTA
     headline="Turn Your Creativity Into a Business"
     subtitle="Join the community of artists building something remarkable."
@@ -126,3 +154,30 @@ import Footer from '../components/Footer.astro';
 
   <Footer />
 </Layout>
+
+<style>
+  /* Fade-in animation for hero content */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section:first-of-type h1 {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+  section:first-of-type p {
+    animation: fadeInUp 0.8s ease-out 0.15s both;
+  }
+  section:first-of-type a {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+  }
+  section:first-of-type img {
+    animation: fadeInUp 1s ease-out 0.1s both;
+  }
+</style>

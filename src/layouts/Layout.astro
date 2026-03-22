@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
   title: string;
   description?: string;
@@ -8,12 +10,11 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <!-- TODO: Add favicon.ico to public/ when available -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,8 +22,9 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
       rel="stylesheet"
     />
     <title>{title} | Kellee Wynne Studios</title>
+    <ViewTransitions />
   </head>
-  <body class="font-body text-brand-dark bg-white antialiased">
+  <body class="font-body text-brand-dark bg-white antialiased scroll-pt-20">
     <slot />
   </body>
 </html>

@@ -4,28 +4,42 @@ interface Props {
   subtitle?: string;
   buttonText: string;
   buttonHref: string;
-  variant?: 'dark' | 'pink';
+  variant?: 'dark' | 'pink' | 'warm';
 }
 
 const { headline, subtitle, buttonText, buttonHref, variant = 'dark' } = Astro.props;
 
-const bgClass = variant === 'pink' ? 'bg-brand-pink' : 'bg-brand-dark';
-const btnClass = variant === 'pink'
-  ? 'bg-white text-brand-pink hover:bg-gray-50'
-  : 'bg-brand-gold text-brand-dark hover:bg-yellow-400';
+const styles = {
+  dark: {
+    bg: 'bg-brand-dark',
+    btn: 'bg-brand-gold text-brand-dark hover:brightness-110 font-bold',
+  },
+  pink: {
+    bg: 'bg-brand-pink',
+    btn: 'bg-white text-brand-pink hover:bg-gray-50 font-bold',
+  },
+  warm: {
+    bg: 'bg-brand-warm',
+    btn: 'bg-brand-gold text-brand-dark hover:brightness-110 font-bold',
+  },
+};
+
+const { bg, btn } = styles[variant];
+const textColor = variant === 'warm' ? 'text-brand-dark' : 'text-white';
+const subtitleColor = variant === 'warm' ? 'text-brand-dark/50' : 'text-white/60';
 ---
 
-<section class={`${bgClass} text-white py-16 sm:py-20`}>
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="font-display text-2xl sm:text-3xl uppercase mb-3">
+<section class={`${bg} ${textColor} py-20 sm:py-28`}>
+  <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+    <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase mb-4 leading-tight">
       {headline}
     </h2>
     {subtitle && (
-      <p class="text-sm sm:text-base text-white/70 mb-8">{subtitle}</p>
+      <p class={`text-base sm:text-lg ${subtitleColor} mb-10 max-w-xl mx-auto`}>{subtitle}</p>
     )}
     <a
       href={buttonHref}
-      class={`inline-block font-semibold text-sm px-8 py-3 rounded-full transition-colors ${btnClass}`}
+      class={`inline-block text-sm sm:text-base px-10 py-4 rounded-sm tracking-wider uppercase transition-all duration-300 ${btn}`}
     >
       {buttonText}
     </a>
