@@ -1,8 +1,10 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 const socialLinks = [
-  { href: 'https://www.instagram.com/kelleewynne', label: 'Instagram' },
-  { href: 'https://www.youtube.com/c/kelleewynne', label: 'YouTube' },
-  { href: 'https://www.pinterest.com/kelleewynne/', label: 'Pinterest' },
+  { href: 'https://www.instagram.com/kelleewynne', label: 'Instagram', icon: 'simple-icons:instagram' },
+  { href: 'https://www.youtube.com/c/kelleewynne', label: 'YouTube', icon: 'simple-icons:youtube' },
+  { href: 'https://www.pinterest.com/kelleewynne/', label: 'Pinterest', icon: 'simple-icons:pinterest' },
 ];
 
 const legalLinks = [
@@ -11,33 +13,34 @@ const legalLinks = [
 ];
 ---
 
-<footer class="bg-brand-dark text-white/60 py-12">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<footer class="bg-brand-dark text-white/60 py-16">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10 text-center">
     <!-- Social -->
-    <div class="flex items-center justify-center gap-6 mb-6">
+    <div class="flex items-center justify-center gap-6 mb-8">
       {socialLinks.map((link) => (
         <a
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm hover:text-brand-gold transition-colors"
+          class="text-white/50 hover:text-brand-gold transition-colors duration-200"
+          aria-label={link.label}
         >
-          {link.label}
+          <Icon name={link.icon} class="w-6 h-6" />
         </a>
       ))}
     </div>
 
     <!-- Legal -->
-    <div class="flex items-center justify-center gap-4 mb-6 text-xs">
+    <div class="flex items-center justify-center gap-6 mb-8 text-sm">
       {legalLinks.map((link) => (
-        <a href={link.href} class="hover:text-white transition-colors">
+        <a href={link.href} class="hover:text-white transition-colors duration-200">
           {link.label}
         </a>
       ))}
     </div>
 
     <!-- Copyright -->
-    <p class="text-xs text-white/40">
+    <p class="text-xs text-white/30">
       &copy; {new Date().getFullYear()} Kellee Wynne Studios. All rights reserved.
     </p>
   </div>

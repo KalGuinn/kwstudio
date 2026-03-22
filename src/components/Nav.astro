@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 interface Props {
   currentPage?: string;
 }
@@ -13,34 +15,34 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: 'https://www.instagram.com/kelleewynne', label: 'Instagram', icon: 'IG' },
-  { href: 'https://www.youtube.com/c/kelleewynne', label: 'YouTube', icon: 'YT' },
-  { href: 'https://www.pinterest.com/kelleewynne/', label: 'Pinterest', icon: 'PIN' },
+  { href: 'https://www.instagram.com/kelleewynne', label: 'Instagram', icon: 'simple-icons:instagram' },
+  { href: 'https://www.youtube.com/c/kelleewynne', label: 'YouTube', icon: 'simple-icons:youtube' },
+  { href: 'https://www.pinterest.com/kelleewynne/', label: 'Pinterest', icon: 'simple-icons:pinterest' },
 ];
 ---
 
-<nav class="sticky top-0 z-50 bg-transparent border-transparent transition-all">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-nav">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <a href="/" class="flex-shrink-0">
         <img
           src="/images/kellee-wynne-logo.png"
           alt="Kellee Wynne Studios"
-          class="h-8 w-auto"
+          class="h-10 w-auto"
         />
       </a>
 
       <!-- Nav Links (desktop) -->
-      <div class="hidden md:flex items-center gap-8">
+      <div class="hidden md:flex items-center gap-10">
         {navLinks.map((link) => (
           <a
             href={link.href}
             class:list={[
-              'text-sm font-medium tracking-wider uppercase transition-colors',
+              'text-sm font-semibold tracking-wider uppercase transition-colors duration-200',
               currentPage === link.href
                 ? 'text-brand-pink'
-                : 'text-brand-dark/60 hover:text-brand-pink',
+                : 'text-brand-dark/70 hover:text-brand-pink',
             ]}
           >
             {link.label}
@@ -49,16 +51,16 @@ const socialLinks = [
       </div>
 
       <!-- Social Links (desktop) -->
-      <div class="hidden md:flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-5">
         {socialLinks.map((link) => (
           <a
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-xs font-medium text-brand-dark/40 hover:text-brand-pink transition-colors"
+            class="text-brand-dark/50 hover:text-brand-pink transition-colors duration-200"
             aria-label={link.label}
           >
-            {link.icon}
+            <Icon name={link.icon} class="w-5 h-5" />
           </a>
         ))}
       </div>
@@ -77,13 +79,13 @@ const socialLinks = [
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden pb-4">
-      <div class="flex flex-col gap-2">
+    <div id="mobile-menu" class="hidden md:hidden pb-6 bg-white/95 backdrop-blur-sm rounded-b-2xl shadow-lg -mx-4 px-4">
+      <div class="flex flex-col gap-1 pt-2">
         {navLinks.map((link) => (
           <a
             href={link.href}
             class:list={[
-              'px-3 py-2 text-sm font-medium tracking-wider uppercase rounded-lg transition-colors',
+              'px-4 py-3 text-sm font-semibold tracking-wider uppercase rounded-lg transition-colors',
               currentPage === link.href
                 ? 'text-brand-pink bg-brand-pink/5'
                 : 'text-brand-dark/60 hover:text-brand-pink hover:bg-brand-pink/5',
@@ -93,16 +95,16 @@ const socialLinks = [
           </a>
         ))}
       </div>
-      <div class="flex items-center gap-4 mt-4 px-3">
+      <div class="flex items-center gap-5 mt-4 px-4 pt-4 border-t border-gray-100">
         {socialLinks.map((link) => (
           <a
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-xs font-medium text-brand-dark/40 hover:text-brand-pink transition-colors"
+            class="text-brand-dark/40 hover:text-brand-pink transition-colors"
             aria-label={link.label}
           >
-            {link.icon}
+            <Icon name={link.icon} class="w-5 h-5" />
           </a>
         ))}
       </div>
@@ -110,8 +112,10 @@ const socialLinks = [
   </div>
 </nav>
 
+<!-- Spacer for fixed nav -->
+<div class="h-20"></div>
+
 <script>
-  // Mobile menu toggle
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   btn?.addEventListener('click', () => {
@@ -119,17 +123,14 @@ const socialLinks = [
     btn?.setAttribute('aria-expanded', String(!isHidden));
   });
 
-  // Scroll-aware nav: transparent at top, solid on scroll
-  const nav = document.querySelector('nav');
+  const nav = document.getElementById('main-nav');
   const updateNav = () => {
-    if (window.scrollY > 50) {
-      nav?.classList.add('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-gray-100');
-      nav?.classList.remove('bg-transparent', 'border-transparent');
+    if (window.scrollY > 80) {
+      nav?.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
     } else {
-      nav?.classList.remove('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-gray-100');
-      nav?.classList.add('bg-transparent', 'border-transparent');
+      nav?.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
     }
   };
   updateNav();
-  window.addEventListener('scroll', updateNav);
+  window.addEventListener('scroll', updateNav, { passive: true });
 </script>

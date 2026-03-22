@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
 import Card from '../components/Card.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
@@ -10,45 +9,106 @@ import Footer from '../components/Footer.astro';
 <Layout title="Home">
   <Nav currentPage="/" />
 
-  <!-- Hero -->
-  <Hero
-    label="Kellee Wynne Studios"
-    title="I'm so happy you're here!"
-    subtitle="Where your wild, weird, and brilliant ideas turn into something remarkable."
-    image={{ src: '/images/kellee-portrait-standing.png', alt: 'Kellee Wynne', rounded: true }}
-  />
+  <!-- Hero: Full-bleed immersive section -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden -mt-20 pt-20">
+    <!-- Painterly background using mesh gradients -->
+    <div class="absolute inset-0" style="background:
+      radial-gradient(ellipse at 70% 30%, rgba(230,184,29,0.35) 0%, transparent 50%),
+      radial-gradient(ellipse at 30% 70%, rgba(254,54,118,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 80%, rgba(255,80,49,0.2) 0%, transparent 45%),
+      radial-gradient(ellipse at 15% 20%, rgba(250,245,240,0.9) 0%, transparent 60%),
+      linear-gradient(135deg, #faf5f0 0%, #f5e6d8 30%, #f0d4c4 60%, #e8c4a0 100%);">
+    </div>
+
+    <!-- Portrait background image — large, atmospheric -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/kellee-portrait-bg.webp"
+        alt=""
+        class="w-full h-full object-cover object-top opacity-40 mix-blend-multiply"
+        loading="eager"
+      />
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+      <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+        <!-- Portrait -->
+        <div class="flex-shrink-0 lg:w-2/5">
+          <img
+            src="/images/kellee-portrait-standing.png"
+            alt="Kellee Wynne"
+            class="w-64 sm:w-80 lg:w-full max-w-md mx-auto drop-shadow-2xl"
+            loading="eager"
+          />
+        </div>
+
+        <!-- Text content -->
+        <div class="lg:w-3/5 text-center lg:text-left">
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-brand-pink uppercase leading-none mb-6">
+            I'm so happy that you're here!
+          </h1>
+          <p class="text-lg sm:text-xl lg:text-2xl font-semibold text-brand-dark leading-snug mb-4">
+            Hey, Artists and Makers, Welcome to the place where your wild, weird and brilliant ideas come to life!
+          </p>
+          <p class="text-base sm:text-lg text-brand-dark/70 leading-relaxed mb-8">
+            I want to help you turn your talent into a profitable course business.
+          </p>
+          <a
+            href="/contact"
+            class="inline-block bg-brand-pink text-white font-bold text-sm sm:text-base uppercase tracking-wider px-10 py-4 border-2 border-brand-dark hover:brightness-110 transition-all shadow-lg"
+          >
+            Build It Remarkable
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- About Section -->
-  <section class="bg-brand-pink text-white py-16 sm:py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
-      <div class="flex-shrink-0">
-        <img
-          src="/images/kellee-portrait-bg.webp"
-          alt="Kellee Wynne in her studio"
-          class="w-40 h-52 sm:w-48 sm:h-64 object-cover rounded-lg"
-        />
-      </div>
-      <div>
-        <h2 class="font-display text-2xl sm:text-3xl uppercase mb-4">Meet Kellee</h2>
-        <p class="text-white/90 leading-relaxed mb-4">
-          Hey, Artists and Makers! Welcome to the place where your wild, weird and brilliant ideas come to life!
-        </p>
-        <p class="text-white/80 leading-relaxed">
-          I want to help you turn your talent into a profitable course business. As an artist, author of
-          <em>Mixed Media Color Studio</em>, and business mentor, I've helped countless creatives build
-          something remarkable from their passion.
-        </p>
+  <section class="relative bg-brand-pink text-white py-20 sm:py-28 overflow-hidden">
+    <!-- Subtle texture overlay -->
+    <div class="absolute inset-0 opacity-10" style="background:
+      radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, transparent 40%),
+      radial-gradient(circle at 80% 20%, rgba(230,184,29,0.4) 0%, transparent 40%);">
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        <div class="flex-shrink-0">
+          <img
+            src="/images/kellee-portrait-bg.webp"
+            alt="Kellee Wynne in her studio"
+            class="w-56 h-72 sm:w-64 sm:h-80 object-cover rounded-lg shadow-2xl rotate-[-2deg]"
+          />
+        </div>
+        <div>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl uppercase mb-6 leading-tight">Meet Kellee</h2>
+          <p class="text-white/90 text-lg leading-relaxed mb-4">
+            Hey, Artists and Makers! Welcome to the place where your wild, weird and brilliant ideas come to life!
+          </p>
+          <p class="text-white/80 text-base leading-relaxed">
+            I want to help you turn your talent into a profitable course business. As an artist, author of
+            <em class="text-brand-gold font-semibold">Mixed Media Color Studio</em>, and business mentor, I've helped countless creatives build
+            something remarkable from their passion.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Offerings -->
-  <section class="bg-brand-warm py-16 sm:py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl sm:text-3xl text-brand-dark text-center uppercase mb-10">
+  <section class="relative py-20 sm:py-28 overflow-hidden" style="background:
+    radial-gradient(ellipse at 50% 0%, rgba(254,54,118,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #faf5f0 0%, #fff 100%);">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark text-center uppercase mb-4">
         Explore My World
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <p class="text-brand-dark/50 text-center text-lg mb-14 max-w-2xl mx-auto">
+        Three ways we can connect right now
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
         <Card icon="📖" title="The Book" subtitle="Mixed Media Color Studio" href="/book" />
         <Card icon="🎙️" title="Podcast" subtitle="Made Remarkable" href="/podcast" />
         <Card icon="✨" title="Newsletter" subtitle="Wynne Wandering" href="https://wynnewandering.substack.com" />
