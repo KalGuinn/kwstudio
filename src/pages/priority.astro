@@ -14,25 +14,25 @@ import Footer from '../components/Footer.astro';
        HERO — Premium dark gradient — sales page energy, no art texture
        BIR logo + cohort portrait + headline
        ═══════════════════════════════════════════════════ -->
-  <section class="relative min-h-screen flex items-center overflow-hidden -mt-20">
-    <!-- Layer 1: Deep premium dark gradient — authoritative, focused -->
+  <section class="relative min-h-screen flex items-end overflow-hidden -mt-20">
+    <!-- Layer 1: Warm light gradient -->
     <div
       class="absolute inset-0"
-      style="background: linear-gradient(155deg, #0f0f1a 0%, #1c1218 50%, #1a0f0f 100%);"
+      style="background: linear-gradient(135deg, #fdf7f2 0%, #f5e0d0 40%, #eddcc8 70%, #e8d0b8 100%);"
     ></div>
 
-    <!-- Layer 2: Pink-to-gold gradient bloom — warm, aspirational -->
+    <!-- Layer 2: Subtle pink/gold radial accents -->
     <div
       class="absolute inset-0"
-      style="background: radial-gradient(ellipse at 10% 60%, rgba(254,54,118,0.28) 0%, transparent 55%), radial-gradient(ellipse at 90% 20%, rgba(230,184,29,0.18) 0%, transparent 50%);"
+      style="background: radial-gradient(ellipse at 10% 60%, rgba(254,54,118,0.08) 0%, transparent 55%), radial-gradient(ellipse at 90% 20%, rgba(230,184,29,0.10) 0%, transparent 50%);"
     ></div>
 
     <!-- Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-32 pb-16 lg:pt-36 lg:pb-20">
-      <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-14">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-24 pb-10 lg:pt-28 lg:pb-14">
+      <div class="flex flex-col lg:flex-row items-end gap-8 lg:gap-8">
 
         <!-- LEFT: BIR logo + cohort portrait stacked -->
-        <div class="hero-visual flex-shrink-0 flex flex-col items-center gap-0 lg:w-[44%]">
+        <div class="hero-visual self-end flex-shrink-0 flex flex-col items-center gap-0 lg:w-[44%]">
           <!-- BIR program logo -->
           <img
             src="/images/build-it-remarkable-logo.png"
@@ -46,6 +46,7 @@ import Footer from '../components/Footer.astro';
             alt="Kellee Wynne — Next Cohort Opens Soon"
             class="w-64 sm:w-80 lg:w-full max-w-sm drop-shadow-2xl"
             loading="eager"
+            style="margin-bottom: -1px;"
           />
         </div>
 
@@ -58,7 +59,7 @@ import Footer from '../components/Footer.astro';
           </p>
 
           <!-- Main headline -->
-          <h1 class="hero-headline font-display text-[2.8rem] sm:text-6xl lg:text-7xl uppercase leading-[0.92] text-white mb-6 tracking-tight">
+          <h1 class="hero-headline font-display text-[2.8rem] sm:text-6xl lg:text-7xl uppercase leading-[0.92] text-brand-dark mb-6 tracking-tight">
             Don't Let<br />
             <span class="text-brand-pink">Another Day</span><br />
             Pass Without<br />
@@ -66,17 +67,17 @@ import Footer from '../components/Footer.astro';
           </h1>
 
           <!-- Tagline -->
-          <p class="hero-sub font-accent text-xl sm:text-2xl text-white/80 leading-relaxed mb-4 max-w-lg lg:max-w-none">
+          <p class="hero-sub font-accent text-xl sm:text-2xl text-brand-dark/70 leading-relaxed mb-4 max-w-lg lg:max-w-none">
             Designed just for Artists, Makers and Creatives!
           </p>
 
           <!-- Description -->
-          <p class="hero-desc text-white/60 text-base sm:text-lg leading-relaxed mb-8 max-w-lg lg:max-w-none">
-            Structured for creative educators who have courses, memberships, workshops or coaching programs — with limited enrollment to make sure <em class="text-white/80 not-italic font-semibold">you actually master the skills</em> needed to build a profitable, sustainable business that fits your vision.
+          <p class="hero-desc text-brand-dark/60 text-base sm:text-lg leading-relaxed mb-6 max-w-lg lg:max-w-none">
+            Structured for creative educators who have courses, memberships, workshops or coaching programs — with limited enrollment to make sure <em class="text-brand-dark/80 not-italic font-semibold">you actually master the skills</em> needed to build a profitable, sustainable business that fits your vision.
           </p>
 
           <!-- Urgency badge -->
-          <div class="hero-urgency inline-flex items-center gap-3 bg-brand-pink/20 border border-brand-pink/40 rounded-xl px-6 py-3 mb-8">
+          <div class="hero-urgency inline-flex items-center gap-3 bg-brand-pink/15 border border-brand-pink/40 rounded-xl px-6 py-3 mb-6">
             <span class="w-2.5 h-2.5 rounded-full bg-brand-pink animate-pulse flex-shrink-0"></span>
             <span class="font-display text-sm sm:text-base tracking-widest text-brand-pink uppercase">We'll Be Back Early Spring 2026!</span>
           </div>
@@ -99,7 +100,7 @@ import Footer from '../components/Footer.astro';
     </div>
 
     <!-- Bottom fade to next section -->
-    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
+    <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
   </section>
 
 
