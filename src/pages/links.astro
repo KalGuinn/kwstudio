@@ -7,12 +7,13 @@ import kelleeSplatPortrait from '../assets/images/kellee-splat-portrait.png';
 import artBackgroundSrc from '../assets/images/art-background.jpg';
 
 const artBackground = await getImage({ src: artBackgroundSrc });
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const links = [
-  { label: 'Build It Remarkable', href: '/priority', primary: true },
-  { label: '100 Ways Free Guide', href: '/free-guide', primary: false },
-  { label: 'Mixed Media Color Studio', href: '/book', primary: false },
-  { label: 'Made Remarkable Podcast', href: '/podcast', primary: false },
+  { label: 'Build It Remarkable', href: `${base}/priority`, primary: true },
+  { label: '100 Ways Free Guide', href: `${base}/free-guide`, primary: false },
+  { label: 'Mixed Media Color Studio', href: `${base}/book`, primary: false },
+  { label: 'Made Remarkable Podcast', href: `${base}/podcast`, primary: false },
 ];
 
 const socialLinks = [

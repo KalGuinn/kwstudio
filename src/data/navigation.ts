@@ -4,13 +4,15 @@ export interface NavLink {
   cta?: boolean;
 }
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 export const navLinks: NavLink[] = [
-  { href: '/', label: 'Home' },
-  { href: '/book', label: 'Book' },
-  { href: '/podcast', label: 'Podcast' },
-  { href: '/priority', label: 'Build It Remarkable', cta: true },
-  { href: '/free-guide', label: 'Free Guide' },
-  { href: '/contact', label: 'Contact' },
+  { href: `${base}/`, label: 'Home' },
+  { href: `${base}/book`, label: 'Book' },
+  { href: `${base}/podcast`, label: 'Podcast' },
+  { href: `${base}/priority`, label: 'Build It Remarkable', cta: true },
+  { href: `${base}/free-guide`, label: 'Free Guide' },
+  { href: `${base}/contact`, label: 'Contact' },
 ];
 
 export interface SocialLink {

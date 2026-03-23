@@ -9,6 +9,8 @@ import { Icon } from 'astro-icon/components';
 import madeRemarkablePodcast from '../assets/images/made-remarkable-podcast.png';
 import kelleeSplatPortrait from '../assets/images/kellee-splat-portrait.png';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const platforms = [
   {
     name: 'Apple Podcasts',
@@ -244,7 +246,7 @@ const platforms = [
       headline="Ready to Build Your Creative Business?"
       subtitle="Join the artists and makers turning their passion into profit — one remarkable step at a time."
       buttonText="Work With Kellee →"
-      buttonHref="/contact"
+      buttonHref={`${base}/contact`}
       variant="dark"
     />
   </div>

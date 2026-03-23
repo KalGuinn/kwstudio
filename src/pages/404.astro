@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout
@@ -45,7 +47,7 @@ import Footer from '../components/Footer.astro';
 
       <!-- Gold CTA button -->
       <a
-        href="/"
+        href={`${base}/`}
         class="inline-flex items-center gap-2 bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
       >
         Back to Home
@@ -55,11 +57,11 @@ import Footer from '../components/Footer.astro';
       <!-- Secondary navigation nudge -->
       <p class="mt-8 text-sm text-brand-dark/60">
         Or explore:&nbsp;
-        <a href="/priority" class="text-brand-pink hover:underline font-medium">Build It Remarkable</a>
+        <a href={`${base}/priority`} class="text-brand-pink hover:underline font-medium">Build It Remarkable</a>
         &nbsp;&middot;&nbsp;
-        <a href="/podcast" class="text-brand-pink hover:underline font-medium">Podcast</a>
+        <a href={`${base}/podcast`} class="text-brand-pink hover:underline font-medium">Podcast</a>
         &nbsp;&middot;&nbsp;
-        <a href="/contact" class="text-brand-pink hover:underline font-medium">Contact</a>
+        <a href={`${base}/contact`} class="text-brand-pink hover:underline font-medium">Contact</a>
       </p>
 
     </div>
