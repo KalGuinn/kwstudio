@@ -42,6 +42,21 @@ const platforms = [
   title="Made Remarkable Podcast"
   description="Made Remarkable — a podcast by Kellee Wynne about creative entrepreneurship, artist interviews, and building a remarkable business."
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "PodcastSeries",
+      "name": "Made Remarkable",
+      "description": "Real conversations about building a creative business, the messy middle of being an artist-entrepreneur, and what it truly means to make something remarkable.",
+      "url": "https://www.maderemarkable.com",
+      "author": {
+        "@type": "Person",
+        "name": "Kellee Wynne"
+      },
+      "image": "https://www.kelleewynne.com/images/made-remarkable-podcast.png",
+      "webFeed": "https://www.maderemarkable.com/blog"
+    })} />
+  </Fragment>
   <Nav currentPage="/podcast" />
 
   <!-- ═══════════════════════════════════════════════════

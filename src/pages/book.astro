@@ -6,6 +6,25 @@ import BrushDivider from '../components/BrushDivider.astro';
 ---
 
 <Layout title="The Book" description="Mixed Media Color Studio by Kellee Wynne Conrad">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Mixed Media Color Studio",
+      "author": {
+        "@type": "Person",
+        "name": "Kellee Wynne Conrad"
+      },
+      "isbn": "9781631599965",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Quarry Books"
+      },
+      "description": "Explore color theory and mixed media techniques with colorful projects, creative exercises, and full-color examples.",
+      "image": "https://www.kelleewynne.com/images/book-cover.jpg",
+      "url": "https://www.kelleewynne.com/book"
+    })} />
+  </Fragment>
   <Nav currentPage="/book" />
 
   <!-- ═══════════════════════════════════════════════════

@@ -18,6 +18,8 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     <meta property="og:title" content={`${title} | Kellee Wynne Studios`} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kellee Wynne Studios" />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} | Kellee Wynne Studios`} />
     <meta name="twitter:description" content={description} />
@@ -30,6 +32,32 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     />
     <title>{title} | Kellee Wynne Studios</title>
     <ViewTransitions />
+    <!-- Dark mode init — runs before paint to prevent flash -->
+    <script is:inline>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+    <!-- Global Organization structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kellee Wynne Studios",
+      "url": "https://www.kelleewynne.com",
+      "logo": "https://www.kelleewynne.com/images/kellee-wynne-logo.png",
+      "sameAs": [
+        "https://www.instagram.com/kelleewynne",
+        "https://www.youtube.com/c/kelleewynne",
+        "https://www.pinterest.com/kelleewynne/"
+      ],
+      "description": "Kellee Wynne helps artists and makers turn their creative talent into profitable course businesses."
+    })} />
+    <!-- Page-specific head content (structured data, etc.) -->
+    <slot name="head" />
   </head>
   <body class="font-body text-brand-dark bg-white antialiased scroll-pt-20 text-[17px]">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-4 focus:left-4 focus:bg-white focus:text-brand-dark focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
@@ -41,6 +69,17 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     </main>
   </body>
 </html>
+
+<script>
+  // Dark mode toggle — re-registers after View Transitions
+  document.addEventListener('astro:page-load', () => {
+    (window as any).toggleDarkMode = () => {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    };
+  });
+</script>
 
 <script>
   // Scroll reveal observer — runs on initial load and after View Transition navigations
@@ -158,5 +197,82 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
       opacity: 1 !important;
       transform: none !important;
     }
+  }
+
+  /* Dark mode — warm artist studio feel */
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html.dark body {
+    background-color: #1a1815;
+    color: #e8e0d8;
+  }
+
+  /* Nav in dark mode */
+  html.dark #main-nav {
+    background-color: rgba(26, 24, 21, 0.95);
+    border-bottom: 1px solid rgba(201, 161, 24, 0.15);
+  }
+
+  /* Cards and form containers */
+  html.dark .bg-white {
+    background-color: #242120;
+  }
+
+  html.dark .bg-brand-warm {
+    background-color: #1e1c19;
+  }
+
+  /* Text adjustments */
+  html.dark .text-brand-dark {
+    color: #e8e0d8;
+  }
+
+  html.dark .text-brand-dark\/80 {
+    color: rgba(232, 224, 216, 0.8);
+  }
+
+  html.dark .text-brand-dark\/70 {
+    color: rgba(232, 224, 216, 0.7);
+  }
+
+  /* Borders */
+  html.dark .border-brand-dark\/5,
+  html.dark .border-brand-dark\/20,
+  html.dark .border-brand-gold\/20,
+  html.dark .border-brand-gold\/30 {
+    border-color: rgba(201, 161, 24, 0.15);
+  }
+
+  /* Form inputs */
+  html.dark input,
+  html.dark textarea {
+    background-color: #2a2724;
+    border-color: rgba(201, 161, 24, 0.2);
+    color: #e8e0d8;
+  }
+
+  html.dark input::placeholder,
+  html.dark textarea::placeholder {
+    color: rgba(232, 224, 216, 0.3);
+  }
+
+  /* Shadows */
+  html.dark .shadow-md,
+  html.dark .shadow-lg,
+  html.dark .shadow-xl,
+  html.dark .shadow-2xl {
+    --tw-shadow-color: rgba(0, 0, 0, 0.3);
+  }
+
+  /* Footer stays dark in both modes */
+  html.dark footer {
+    background-color: #111010;
+  }
+
+  /* Mobile menu in dark mode */
+  html.dark #mobile-menu {
+    background-color: rgba(26, 24, 21, 0.95);
   }
 </style>
