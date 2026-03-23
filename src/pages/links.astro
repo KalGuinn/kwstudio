@@ -3,10 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
 
 const links = [
-  { label: '🚀 Build It Remarkable', href: '/priority', primary: true },
-  { label: '📋 100 Ways Free Guide', href: '/free-guide', primary: false },
-  { label: '📖 Mixed Media Color Studio', href: '/book', primary: false },
-  { label: '🎙️ Made Remarkable Podcast', href: '/podcast', primary: false },
+  { label: 'Build It Remarkable', href: '/priority', primary: true },
+  { label: '100 Ways Free Guide', href: '/free-guide', primary: false },
+  { label: 'Mixed Media Color Studio', href: '/book', primary: false },
+  { label: 'Made Remarkable Podcast', href: '/podcast', primary: false },
 ];
 
 const socialLinks = [
@@ -16,7 +16,7 @@ const socialLinks = [
 ];
 ---
 
-<Layout title="Links">
+<Layout title="Links" description="Quick links to Kellee Wynne's programs, free guide, podcast, and book.">
   <div class="relative min-h-screen flex flex-col items-center justify-center px-4 py-12 overflow-hidden">
     <!-- Base gradient -->
     <div class="absolute inset-0 bg-gradient-to-b from-brand-pink via-[#d43060] to-brand-orange"></div>
@@ -35,6 +35,7 @@ const socialLinks = [
           src="/images/kellee-splat-portrait.png"
           alt="Kellee Wynne"
           class="w-28 h-28 object-cover rounded-full border-2 border-white/30"
+          loading="eager"
         />
       </div>
 

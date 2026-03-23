@@ -19,6 +19,11 @@ import ChecklistItem from '../components/ChecklistItem.astro';
        BIR logo + cohort portrait + headline
        ═══════════════════════════════════════════════════ -->
   <section class="relative flex items-end overflow-hidden -mt-20 bg-brand-warm pt-24 pb-12">
+    <!-- Painterly warmth overlays for visual texture -->
+    <div class="absolute inset-0 pointer-events-none" style="background:
+      radial-gradient(ellipse at 15% 35%, rgba(242,48,106,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 65%, rgba(201,161,24,0.07) 0%, transparent 45%);">
+    </div>
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
       <div class="flex flex-col lg:flex-row items-end gap-8 lg:gap-8">
@@ -50,7 +55,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
             Don't Let Another Day Pass Without Your Dreams
           </h1>
 
-          <p class="hero-sub font-accent text-xl sm:text-2xl text-brand-dark/70 leading-relaxed mb-4 max-w-lg lg:max-w-none">
+          <p class="hero-sub font-accent text-xl sm:text-2xl text-brand-dark/80 leading-relaxed mb-4 max-w-lg lg:max-w-none">
             Designed just for Artists, Makers and Creatives!
           </p>
 
@@ -80,7 +85,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
   <!-- ═══════════════════════════════════════════════════
        QUOTE — Howard Thurman
        ═══════════════════════════════════════════════════ -->
-  <section class="py-12 sm:py-16 bg-brand-warm">
+  <section class="py-12 sm:py-16 bg-white">
     <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
       <div class="text-brand-gold/30 font-display text-[9rem] leading-none select-none -mb-10 block" aria-hidden="true">&ldquo;</div>
       <blockquote class="font-accent text-2xl sm:text-3xl lg:text-4xl text-brand-dark leading-snug mb-8">
@@ -97,7 +102,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
   <!-- ═══════════════════════════════════════════════════
        TESTIMONIALS — Personal, trustworthy, card grid
        ═══════════════════════════════════════════════════ -->
-  <section class="py-12 sm:py-16 bg-white">
+  <section class="py-12 sm:py-16 bg-brand-warm">
     <div class="max-w-6xl mx-auto px-6 lg:px-10">
 
       <SectionHeading
@@ -160,19 +165,19 @@ import ChecklistItem from '../components/ChecklistItem.astro';
             title="Hi! I'm Kellee Wynne"
             centered={false}
           />
-          <p class="font-accent text-lg sm:text-xl text-brand-dark/70 leading-relaxed mb-4">
+          <p class="font-accent text-lg sm:text-xl text-brand-dark/80 leading-relaxed mb-4">
             Artist, Writer and Strategy Expert for Art Course Creators
           </p>
-          <p class="text-brand-dark/70 text-base leading-relaxed mb-4">
+          <p class="text-brand-dark/80 text-base leading-relaxed mb-4">
             After more than a decade of online business experience and mentoring some of the best known creative educators, I've carved out a simpler, more sustainable path to success rooted in purpose, creativity, and actually <em class="text-brand-dark not-italic font-semibold">enjoying the life you're building.</em>
           </p>
-          <p class="text-brand-dark/70 text-base leading-relaxed mb-4">
+          <p class="text-brand-dark/80 text-base leading-relaxed mb-4">
             I host the <span class="text-brand-gold font-semibold">Made Remarkable™ Podcast</span>, where we talk about what it really means to show up for your work and your calling. I write <span class="text-brand-gold font-semibold">Build it with Kellee Wynne</span>, a weekly newsletter for creatives ready to do business with more soul and strategy. My own art courses have reached over <span class="text-brand-dark font-semibold">20,000 students around the world.</span>
           </p>
-          <p class="text-brand-dark/70 text-base leading-relaxed mb-4">
+          <p class="text-brand-dark/80 text-base leading-relaxed mb-4">
             My book <em class="text-brand-dark/85 not-italic font-medium">Mixed Media Color Workshop</em> published by Quarto Books dives into modern color theory.
           </p>
-          <p class="text-brand-dark/70 text-base leading-relaxed">
+          <p class="text-brand-dark/80 text-base leading-relaxed">
             I'd love to connect with you on <a href="https://www.instagram.com/kelleewynne/" target="_blank" rel="noopener noreferrer" class="text-brand-pink hover:text-brand-gold transition-colors duration-200 font-semibold">Instagram</a>.
           </p>
         </div>
@@ -206,7 +211,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
 
       <!-- Mid-page CTA -->
       <div class="mt-10 text-center">
-        <p class="font-accent text-xl sm:text-2xl text-brand-dark/70 mb-6 leading-relaxed">
+        <p class="font-accent text-xl sm:text-2xl text-brand-dark/80 mb-6 leading-relaxed">
           If you're nodding along — you belong in Build It Remarkable.
         </p>
         <a
@@ -245,7 +250,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
         </span>
       </div>
 
-      <p class="text-white/55 text-base leading-relaxed mb-8">
+      <p class="text-white/70 text-base leading-relaxed mb-8">
         Be the first to know when enrollment opens — and get exclusive early-access details before anyone else.
       </p>
 

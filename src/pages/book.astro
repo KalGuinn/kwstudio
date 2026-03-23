@@ -11,6 +11,11 @@ import Footer from '../components/Footer.astro';
        HERO — Warm peach-to-cream gradient + dramatic book cover
        ═══════════════════════════════════════════════════ -->
   <section class="relative flex items-center overflow-hidden -mt-20 bg-brand-warm pt-24 sm:pt-28 pb-12">
+    <!-- Painterly warmth overlays for visual texture -->
+    <div class="absolute inset-0 pointer-events-none" style="background:
+      radial-gradient(ellipse at 20% 40%, rgba(242,48,106,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 60%, rgba(201,161,24,0.06) 0%, transparent 45%);">
+    </div>
     <!-- Content -->
     <div class="max-w-5xl mx-auto px-6 lg:px-12 w-full">
       <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
@@ -80,8 +85,13 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        WHAT'S INSIDE — Warm section with radial accent
        ═══════════════════════════════════════════════════ -->
-  <section class="py-12 sm:py-16 bg-brand-warm">
-    <div class="max-w-4xl mx-auto px-6 lg:px-10">
+  <section class="relative py-12 sm:py-16 bg-brand-warm overflow-hidden">
+    <!-- Subtle warmth overlay -->
+    <div class="absolute inset-0 pointer-events-none" style="background:
+      radial-gradient(ellipse at 75% 25%, rgba(201,161,24,0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 25% 75%, rgba(242,48,106,0.03) 0%, transparent 50%);">
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10">
       <p class="text-xs sm:text-sm font-medium tracking-[0.18em] text-brand-pink uppercase text-center mb-3">
         Inside the Pages
       </p>
@@ -148,7 +158,7 @@ import Footer from '../components/Footer.astro';
 
       <!-- Secondary purchase nudge inside section -->
       <div class="text-center mt-8">
-        <p class="text-brand-dark/50 text-sm mb-5 italic">Ready to dive in?</p>
+        <p class="text-brand-dark/80 text-sm mb-5 italic">Ready to dive in?</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="https://amazon.com/dp/1631599968"

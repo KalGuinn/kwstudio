@@ -15,9 +15,9 @@ import Footer from '../components/Footer.astro';
     <div class="absolute inset-0" style="background: linear-gradient(135deg, #fdf7f2 0%, #fef0e6 40%, #fdf0f5 70%, #fdf7f2 100%);"></div>
 
     <!-- Decorative paint-stroke blobs -->
-    <div class="absolute top-16 left-10 w-48 h-48 rounded-full opacity-20 blur-3xl" style="background: #f2306a;"></div>
-    <div class="absolute bottom-20 right-12 w-64 h-64 rounded-full opacity-15 blur-3xl" style="background: #c9a118;"></div>
-    <div class="absolute top-1/2 left-1/4 w-32 h-32 rounded-full opacity-10 blur-2xl" style="background: #f2306a;"></div>
+    <div class="absolute top-16 left-10 w-48 h-48 rounded-full opacity-20 blur-3xl bg-brand-pink"></div>
+    <div class="absolute bottom-20 right-12 w-64 h-64 rounded-full opacity-15 blur-3xl bg-brand-gold"></div>
+    <div class="absolute top-1/2 left-1/4 w-32 h-32 rounded-full opacity-10 blur-2xl bg-brand-pink"></div>
 
     <!-- Content -->
     <div class="relative z-10 max-w-2xl mx-auto px-6 text-center">
@@ -46,14 +46,14 @@ import Footer from '../components/Footer.astro';
       <!-- Gold CTA button -->
       <a
         href="/"
-        class="inline-flex items-center gap-2 bg-brand-gold text-brand-dark font-semibold px-8 py-4 rounded-lg hover:brightness-105 hover:-translate-y-0.5 transition-all duration-200 shadow-md hover:shadow-lg text-base tracking-wide"
+        class="inline-flex items-center gap-2 bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
       >
         Back to Home
         <span class="text-lg leading-none">&rarr;</span>
       </a>
 
       <!-- Secondary navigation nudge -->
-      <p class="mt-8 text-sm text-brand-dark/40">
+      <p class="mt-8 text-sm text-brand-dark/60">
         Or explore:&nbsp;
         <a href="/priority" class="text-brand-pink hover:underline font-medium">Build It Remarkable</a>
         &nbsp;&middot;&nbsp;

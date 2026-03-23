@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import ContactForm from '../components/ContactForm.astro';
+import GoldSeparator from '../components/GoldSeparator.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -14,7 +15,7 @@ import Footer from '../components/Footer.astro';
       <p class="font-accent text-brand-pink text-lg sm:text-xl mb-3">
         Get In Touch
       </p>
-      <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark uppercase leading-tight mb-5">
+      <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-pink uppercase leading-tight mb-5">
         Send Us a Message
       </h1>
       <p class="font-body text-brand-dark/80 leading-relaxed max-w-xl mx-auto">
@@ -33,7 +34,7 @@ import Footer from '../components/Footer.astro';
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Warm intro above form -->
       <div class="text-center mb-6">
-        <p class="font-accent text-brand-dark/70 text-lg sm:text-xl italic">
+        <p class="font-accent text-brand-dark/80 text-lg sm:text-xl italic">
           Every message is read personally — we'll get back to you soon.
         </p>
       </div>
@@ -45,6 +46,8 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <GoldSeparator />
+
   <!-- Our Promise -->
   <section class="relative bg-brand-dark text-white py-12 sm:py-16 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 50% 0%, rgba(242,48,106,0.06) 0%, transparent 60%);"></div>
@@ -55,7 +58,7 @@ import Footer from '../components/Footer.astro';
       <h2 class="font-display text-2xl sm:text-3xl text-white uppercase mb-5">
         Our Promise
       </h2>
-      <p class="font-body text-white/75 leading-relaxed mb-5 max-w-xl mx-auto">
+      <p class="font-body text-white/70 leading-relaxed mb-5 max-w-xl mx-auto">
         We take our art as wildly playful, but our customers seriously. All our courses are backed by a
         <span class="text-brand-gold font-semibold">14-day guarantee</span>.
         If you don't love it, you can request a refund — no hoops, no hassle.
