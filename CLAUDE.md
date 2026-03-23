@@ -88,6 +88,7 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 | `BackToTop` | `src/components/BackToTop.astro` | Floating gold "back to top" button (appears after 500px scroll) | none |
 | `StickyCTA` | `src/components/StickyCTA.astro` | Fixed bottom CTA bar with glass-morphism (sales pages) | `buttonText, buttonHref, label?` |
 | `BrushDivider` | `src/components/BrushDivider.astro` | SVG paint-stroke section divider | `color? (pink/gold/warm), flip?` |
+| `FaqItem` | `src/components/FaqItem.astro` | Collapsible Q&A accordion (zero-JS, details/summary) | `question` (slot for answer) |
 
 ## Data Files
 - `src/data/navigation.ts` — Centralized nav links and social links (edit here to add/remove nav items)
@@ -102,6 +103,10 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 | `/free-guide` | `free-guide.astro` | "100 Ways" PDF lead magnet: signup forms, features |
 | `/contact` | `contact.astro` | Contact form + 14-day promise |
 | `/links` | `links.astro` | Link-in-bio standalone page (no Nav/Footer) |
+| `/bir` | `bir.astro` | BUILD IT REMARKABLE enrollment: sales page, pricing, modules, testimonials, FAQ |
+| `/teaching` | `teaching.astro` | Teaching Artist Workshop: free strategy workshop, session registration |
+| `/privacy-policy` | `privacy-policy.astro` | Privacy policy |
+| `/faq` | `faq.astro` | Frequently asked questions (grouped by topic) |
 | `/terms` | `terms.astro` | Legal terms & conditions |
 | `/404` | `404.astro` | Custom error page |
 
@@ -170,10 +175,10 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 ```
 src/
 ├── assets/images/  # 19 images (auto-optimized to WebP by Astro Image pipeline)
-├── components/     # 12 reusable components
+├── components/     # 13 reusable components
 ├── data/           # navigation.ts (centralized nav/social data, uses BASE_URL)
 ├── layouts/        # Layout.astro (base HTML, global animations, dark mode, ViewTransitions, OG tags, JSON-LD)
-└── pages/          # 9 pages (index, book, podcast, priority, free-guide, contact, links, terms, 404)
+└── pages/          # 13 pages (index, book, podcast, priority, free-guide, contact, links, terms, 404, bir, teaching, privacy-policy, faq)
 public/
 ├── favicon.svg     # Pink asterisk favicon
 └── robots.txt      # SEO
