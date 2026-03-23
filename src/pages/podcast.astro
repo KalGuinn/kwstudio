@@ -45,76 +45,81 @@ const platforms = [
   <Nav currentPage="/podcast" />
 
   <!-- ═══════════════════════════════════════════════════
-       HERO — Bold dark base with pink/gold energy (podcast feel)
+       HERO — Warm, painterly, with podcast artwork
+       Matches site's warm theme while feeling distinct
        ═══════════════════════════════════════════════════ -->
-  <section class="relative min-h-[85vh] flex items-center overflow-hidden -mt-20">
-    <!-- Layer 1: Deep dark base -->
-    <div class="absolute inset-0 bg-brand-dark"></div>
-
-    <!-- Layer 2: Warm ambient glow — cozy studio feel -->
-    <div
-      class="absolute inset-0"
-      style="background:
-        radial-gradient(ellipse at 15% 60%, rgba(242,48,106,0.18) 0%, transparent 50%),
-        radial-gradient(ellipse at 85% 25%, rgba(201,161,24,0.20) 0%, transparent 45%),
-        radial-gradient(ellipse at 50% 80%, rgba(240,72,31,0.10) 0%, transparent 40%),
-        radial-gradient(ellipse at 50% 0%, rgba(253,247,242,0.06) 0%, transparent 60%);"
-    ></div>
+  <section class="relative overflow-hidden -mt-20 bg-brand-warm">
+    <!-- Painterly warmth overlays -->
+    <div class="absolute inset-0 pointer-events-none" style="background:
+      radial-gradient(ellipse at 20% 40%, rgba(242,48,106,0.07) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 60%, rgba(201,161,24,0.08) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 90%, rgba(240,72,31,0.05) 0%, transparent 40%);">
+    </div>
+    <!-- Bottom fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
 
     <!-- Content -->
-    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 w-full pt-28 pb-14 text-center">
-      <!-- Label -->
-      <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] text-brand-pink uppercase mb-4 hero-item">
-        The Podcast
-      </p>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 w-full pt-28 pb-14">
+      <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
-      <!-- Title -->
-      <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl text-white uppercase leading-[0.9] mb-6 tracking-tight hero-item">
-        Made<br />
-        <span class="text-brand-pink">Remarkable</span>
-      </h1>
+        <!-- Left: Text content -->
+        <div class="lg:w-[55%] text-center lg:text-left">
+          <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] text-brand-pink uppercase mb-4 hero-item">
+            The Podcast
+          </p>
 
-      <!-- Accent line -->
-      <p class="font-accent text-xl sm:text-2xl text-white/75 mb-6 italic hero-item">
-        with Kellee Wynne
-      </p>
+          <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-brand-pink uppercase leading-[0.9] mb-6 tracking-tight hero-item">
+            Made<br />
+            Remarkable
+          </h1>
 
-      <!-- Description -->
-      <p class="font-body text-base sm:text-lg text-white/70 max-w-xl mx-auto leading-relaxed mb-6 hero-item">
-        Real conversations about building a creative business, the messy middle of being an artist-entrepreneur,
-        and what it truly means to make something remarkable.
-      </p>
+          <p class="font-accent text-xl sm:text-2xl text-brand-dark/60 mb-4 italic hero-item">
+            with Kellee Wynne
+          </p>
 
-      <!-- CTA Button -->
-      <div class="hero-item">
-        <a
-          href="https://www.maderemarkable.com/blog"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
-        >
-          Listen Now
-        </a>
+          <p class="font-body text-base sm:text-lg text-brand-dark/80 max-w-xl leading-relaxed mb-8 hero-item">
+            Real conversations about building a creative business, the messy middle of being an artist-entrepreneur,
+            and what it truly means to make something remarkable.
+          </p>
+
+          <div class="hero-item">
+            <a
+              href="https://www.maderemarkable.com/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
+            >
+              Listen Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Podcast artwork -->
+        <div class="lg:w-[45%] hero-item">
+          <img
+            src="/images/made-remarkable-podcast.png"
+            alt="Made Remarkable Podcast"
+            class="w-64 sm:w-80 lg:w-full max-w-sm mx-auto rounded-2xl shadow-2xl"
+            loading="eager"
+          />
+        </div>
       </div>
     </div>
-
-    <!-- Decorative bottom fade into brand-warm section below -->
-    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-warm/30 to-transparent pointer-events-none"></div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════
        ABOUT THE SHOW — Warm, personal, editorial
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-brand-warm py-12 sm:py-16">
+  <section class="bg-white py-12 sm:py-16">
     <div class="max-w-5xl mx-auto px-6 lg:px-12">
       <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
-        <!-- Podcast card image -->
+        <!-- Kellee portrait -->
         <div class="flex-shrink-0 text-center lg:text-left">
           <img
-            src="/images/made-remarkable-podcast.png"
-            alt="Made Remarkable Podcast"
-            class="w-52 sm:w-64 rounded-lg shadow-xl mx-auto lg:mx-0"
+            src="/images/kellee-splat-portrait.png"
+            alt="Kellee Wynne"
+            class="w-52 sm:w-64 drop-shadow-xl mx-auto lg:mx-0"
             loading="lazy"
           />
         </div>
@@ -198,20 +203,14 @@ const platforms = [
   <!-- ═══════════════════════════════════════════════════
        QUOTE / PULL — Editorial moment before CTA
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-12 sm:py-16 bg-brand-dark text-white overflow-hidden">
-    <!-- Warm pink + gold radial glow for editorial energy -->
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 0% 50%, rgba(242,48,106,0.14) 0%, transparent 55%), radial-gradient(ellipse at 100% 50%, rgba(201,161,24,0.16) 0%, transparent 50%);"
-    ></div>
-
-    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-12 text-center">
+  <section class="py-12 sm:py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
       <blockquote class="border-l-4 border-brand-gold pl-6 text-left">
-        <p class="font-accent text-2xl sm:text-3xl lg:text-4xl italic text-white leading-relaxed mb-6">
+        <p class="font-accent text-2xl sm:text-3xl lg:text-4xl italic text-brand-dark leading-relaxed mb-6">
           "You were made for more than ordinary.<br />
           <span class="text-brand-gold">Go make something remarkable."</span>
         </p>
-        <p class="text-white/60 text-sm tracking-widest uppercase font-semibold">— Kellee Wynne</p>
+        <p class="text-brand-dark/50 text-sm tracking-widest uppercase font-semibold">— Kellee Wynne</p>
       </blockquote>
     </div>
   </section>
