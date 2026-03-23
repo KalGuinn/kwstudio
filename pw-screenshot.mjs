@@ -1,9 +1,11 @@
 import { chromium } from 'playwright';
 const url = process.argv[2] || 'https://www.kelleewynne.com';
 const output = process.argv[3] || '/private/tmp/claude/screenshots/screenshot.png';
+const width = parseInt(process.argv[4]) || 1440;
+const height = parseInt(process.argv[5]) || 900;
 const browser = await chromium.launch({ headless: true });
-const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+const page = await browser.newPage({ viewport: { width, height } });
 await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
 await page.screenshot({ path: output, fullPage: false });
 await browser.close();
-console.log(`Screenshot saved: ${output}`);
+console.log(`Screenshot saved: ${output} (${width}x${height})`);

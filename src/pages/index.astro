@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import CallToAction from '../components/CallToAction.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -67,27 +68,27 @@ import Footer from '../components/Footer.astro';
 
   <!-- ═══════════════════════════════════════════════════
        CONNECT — "3 Ways We Can Connect Right Now"
-       Warm section with offerings cards
+       Warm section with offerings cards — large image-dominant layout
        ═══════════════════════════════════════════════════ -->
   <section class="py-12 sm:py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-6 lg:px-10">
-      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4 text-center">
-        Here are 3 Ways We Can Connect Right Now
-      </h2>
-      <div class="w-24 h-1 bg-brand-pink mx-auto mb-8 rounded-full"></div>
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <SectionHeading
+        overline="Let's Connect"
+        title="Here Are 3 Ways We Can Connect Right Now"
+      />
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
 
         <!-- Card 1: Build It Remarkable -->
         <a
           href="/priority"
-          class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border-t-4 border-brand-gold bg-brand-warm"
+          class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-brand-warm"
         >
-          <div class="flex items-center justify-center bg-brand-dark px-6 pt-8 pb-6">
+          <div class="flex items-center justify-center bg-brand-dark px-6 aspect-video">
             <img
               src="/images/build-it-remarkable-logo.png"
               alt="Build It Remarkable"
-              class="h-20 w-auto object-contain drop-shadow-md hover:scale-[1.02] transition-transform duration-300"
+              class="h-24 sm:h-20 lg:h-28 w-auto object-contain drop-shadow-md group-hover:scale-[1.03] transition-transform duration-300"
               loading="lazy"
             />
           </div>
@@ -95,7 +96,7 @@ import Footer from '../components/Footer.astro';
             <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-200 mb-2">
               Build It Remarkable
             </h3>
-            <p class="text-sm text-brand-dark/50 font-medium mb-4 flex-1">Signature coaching program</p>
+            <p class="text-sm text-brand-dark/70 leading-relaxed mb-4 flex-1">Our signature coaching program to help you turn your creative talent into a thriving course business.</p>
             <span class="text-brand-gold text-sm font-semibold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               Learn More &rarr;
             </span>
@@ -105,22 +106,22 @@ import Footer from '../components/Footer.astro';
         <!-- Card 2: 100 Ways Free Guide -->
         <a
           href="/free-guide"
-          class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border-t-4 border-brand-pink bg-brand-warm"
+          class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-brand-warm"
         >
-          <div class="overflow-hidden">
+          <div class="overflow-hidden aspect-video">
             <img
               src="/images/steal-my-ideas-graphics.png"
               alt="100 Ways to Steal My Ideas"
-              class="w-full h-40 object-cover object-top hover:scale-[1.02] transition-transform duration-300"
+              class="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
               loading="lazy"
             />
           </div>
           <div class="flex flex-col flex-1 p-6 text-center">
-            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-pink transition-colors duration-200 mb-2">
+            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-200 mb-2">
               100 Ways Free Guide
             </h3>
-            <p class="text-sm text-brand-dark/50 font-medium mb-4 flex-1">Steal my best ideas</p>
-            <span class="text-brand-pink text-sm font-semibold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p class="text-sm text-brand-dark/70 leading-relaxed mb-4 flex-1">Download the free guide packed with creative business ideas you can start using today.</p>
+            <span class="text-brand-gold text-sm font-semibold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               Get It Free &rarr;
             </span>
           </div>
@@ -129,24 +130,24 @@ import Footer from '../components/Footer.astro';
         <!-- Card 3: Podcast -->
         <a
           href="/podcast"
-          class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border-t-4 border-brand-orange bg-brand-warm"
+          class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-brand-warm"
         >
-          <div class="flex items-center justify-center bg-brand-dark px-6 pt-8 pb-6 min-h-[9rem]">
+          <div class="flex items-center justify-center bg-brand-dark px-6 aspect-video">
             <div class="text-center">
-              <div class="w-16 h-16 mx-auto mb-2 rounded-full bg-brand-orange/20 border-2 border-brand-orange flex items-center justify-center">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8 text-brand-orange hover:scale-[1.02] transition-transform duration-300">
+              <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-brand-orange/20 border-2 border-brand-orange flex items-center justify-center">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-10 h-10 text-brand-orange">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
                 </svg>
               </div>
-              <p class="font-accent text-brand-orange/80 text-sm tracking-wider">Made Remarkable</p>
+              <p class="font-accent text-brand-orange/80 text-base tracking-wider">Made Remarkable</p>
             </div>
           </div>
           <div class="flex flex-col flex-1 p-6 text-center">
-            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-orange transition-colors duration-200 mb-2">
+            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-200 mb-2">
               Podcast
             </h3>
-            <p class="text-sm text-brand-dark/50 font-medium mb-4 flex-1">Made Remarkable</p>
-            <span class="text-brand-orange text-sm font-semibold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <p class="text-sm text-brand-dark/70 leading-relaxed mb-4 flex-1">Listen to the podcast for real conversations about creativity, business, and showing up boldly.</p>
+            <span class="text-brand-gold text-sm font-semibold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               Listen Now &rarr;
             </span>
           </div>
@@ -160,7 +161,7 @@ import Footer from '../components/Footer.astro';
        ABOUT — Meet Kellee, warm and personal
        Art background texture with portrait
        ═══════════════════════════════════════════════════ -->
-  <section class="py-12 sm:py-16 bg-brand-warm">
+  <section class="py-12 sm:py-16 bg-white">
     <div class="max-w-6xl mx-auto px-6 lg:px-10">
       <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
         <!-- Splat portrait — the artistic circular one with paint splatters -->
@@ -194,6 +195,61 @@ import Footer from '../components/Footer.astro';
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       NEWSLETTER — Email signup for weekly notes
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-brand-warm">
+    <div class="max-w-2xl mx-auto px-6 lg:px-10">
+      <SectionHeading
+        overline="Stay Connected"
+        title="Join the Newsletter"
+      />
+
+      <p class="text-brand-dark/80 text-base sm:text-lg leading-relaxed text-center mb-8">
+        Sign up for Kellee's real talk about purpose, profit, and showing up like you mean it.
+        Weekly(ish) notes to help artists grow their course creator business. Smart ideas,
+        honest insights, and strategy grounded in real-life experience.
+      </p>
+
+      <form onsubmit="return false;" class="font-body space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="newsletter-name" class="sr-only">First Name</label>
+            <input
+              type="text"
+              id="newsletter-name"
+              name="name"
+              placeholder="First Name"
+              required
+              class="w-full px-5 py-4 rounded-xl border border-brand-gold/30 bg-white text-brand-dark placeholder:text-brand-dark/35 focus:outline-none focus:ring-2 focus:ring-brand-gold/50 focus:border-brand-gold transition"
+            />
+          </div>
+          <div>
+            <label for="newsletter-email" class="sr-only">Email Address</label>
+            <input
+              type="email"
+              id="newsletter-email"
+              name="email"
+              placeholder="Email Address"
+              required
+              class="w-full px-5 py-4 rounded-xl border border-brand-gold/30 bg-white text-brand-dark placeholder:text-brand-dark/35 focus:outline-none focus:ring-2 focus:ring-brand-gold/50 focus:border-brand-gold transition"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
+        >
+          Sign Me Up!
+        </button>
+      </form>
+
+      <p class="font-accent italic text-sm text-brand-dark/70 text-center mt-6">
+        Join 13,000+ smart creatives who are building their art course business with Kellee Wynne.
+      </p>
     </div>
   </section>
 
