@@ -6,6 +6,8 @@ import SectionHeading from '../components/SectionHeading.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 import GoldSeparator from '../components/GoldSeparator.astro';
 import ChecklistItem from '../components/ChecklistItem.astro';
+import BackToTop from '../components/BackToTop.astro';
+import StickyCTA from '../components/StickyCTA.astro';
 ---
 
 <Layout
@@ -86,7 +88,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
        QUOTE — Howard Thurman
        ═══════════════════════════════════════════════════ -->
   <section class="py-12 sm:py-16 bg-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center" data-reveal>
       <div class="text-brand-gold/30 font-display text-[9rem] leading-none select-none -mb-10 block" aria-hidden="true">&ldquo;</div>
       <blockquote class="font-accent text-2xl sm:text-3xl lg:text-4xl text-brand-dark leading-snug mb-8">
         Don't ask what the world needs. Ask what makes you come alive, and go do it. Because what the world needs is people who have come alive.
@@ -109,12 +111,14 @@ import ChecklistItem from '../components/ChecklistItem.astro';
     <div class="absolute inset-0 bg-brand-warm/60 pointer-events-none"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
 
-      <SectionHeading
-        overline="Real Results. Real Builders."
-        title='Hear What the Builders Have to<br class="hidden sm:block" /> Say About Working with Kellee'
-      />
+      <div data-reveal>
+        <SectionHeading
+          overline="Real Results. Real Builders."
+          title='Hear What the Builders Have to<br class="hidden sm:block" /> Say About Working with Kellee'
+        />
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5" data-reveal-stagger>
         <TestimonialCard
           quote='I have had the privilege of working with Kellee for the past three years, and I can confidently say that partnering with her has been one of the best decisions for my business. Kellee&rsquo;s expertise and guidance have been instrumental in scaling my online art class business from a modest five-figure income to <strong class="text-brand-dark">a thriving operation generating multiple six figures annually.</strong>'
           name="Drew Steinbrecher"
@@ -154,7 +158,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
     <div class="max-w-5xl mx-auto px-6 lg:px-10">
       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
 
-        <div class="flex-shrink-0 about-portrait">
+        <div class="flex-shrink-0 about-portrait" data-reveal="left">
           <img
             src="/images/kellee-splat-portrait.png"
             alt="Kellee Wynne"
@@ -163,7 +167,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
           />
         </div>
 
-        <div class="text-center md:text-left">
+        <div class="text-center md:text-left" data-reveal="right">
           <SectionHeading
             overline="Your Guide"
             title="Hi! I'm Kellee Wynne"
@@ -197,7 +201,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
   <section class="bg-white py-12 sm:py-16">
     <div class="max-w-6xl mx-auto px-6 lg:px-10">
       <GoldSeparator />
-      <div class="mt-10 grid grid-cols-3 gap-3 sm:gap-4">
+      <div class="mt-10 grid grid-cols-3 gap-3 sm:gap-4" data-reveal-stagger>
         <img src="/images/kellee-brand-1.jpg" alt="Kellee Wynne in her creative space" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
         <img src="/images/kellee-brand-2.jpg" alt="Kellee Wynne teaching artists" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
         <img src="/images/kellee-brand-3.jpg" alt="Kellee Wynne's art studio" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
@@ -212,12 +216,14 @@ import ChecklistItem from '../components/ChecklistItem.astro';
   <section class="py-12 sm:py-16 bg-brand-warm">
     <div class="max-w-3xl mx-auto px-6 lg:px-10">
 
-      <SectionHeading
-        overline="Find Out If It's Your Time"
-        title='Is Build It Remarkable<br class="hidden sm:block" /> the Right Path for You?'
-      />
+      <div data-reveal>
+        <SectionHeading
+          overline="Find Out If It's Your Time"
+          title='Is Build It Remarkable<br class="hidden sm:block" /> the Right Path for You?'
+        />
+      </div>
 
-      <ul class="space-y-3">
+      <ul class="space-y-3" data-reveal-stagger>
         <ChecklistItem text='You have <strong class="text-brand-dark">Big Audacious Dreams</strong> of growing your course or membership business into a profitable, sustainable income that truly supports your creative life.' />
         <ChecklistItem text='You know you can make a bigger impact, but you struggle knowing how to <strong class="text-brand-dark">structure your business to make it grow</strong> &mdash; and you&rsquo;re wondering if you&rsquo;re even on the right path.' />
         <ChecklistItem text='You feel like you&rsquo;ve been <strong class="text-brand-dark">spinning your wheels</strong> for far too long and you just want real answers for current marketing strategies that are relevant to a creative business &mdash; not bro marketers or boss babes.' />
@@ -229,7 +235,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
       </ul>
 
       <!-- Mid-page CTA -->
-      <div class="mt-10 text-center">
+      <div class="mt-10 text-center" data-reveal>
         <p class="font-accent text-xl sm:text-2xl text-brand-dark/80 mb-6 leading-relaxed">
           If you're nodding along — you belong in Build It Remarkable.
         </p>
@@ -251,7 +257,7 @@ import ChecklistItem from '../components/ChecklistItem.astro';
        WAITLIST FORM — Bottom anchor, high-contrast, urgent
        ═══════════════════════════════════════════════════ -->
   <section id="waitlist-form" class="py-12 sm:py-16 bg-brand-dark text-white">
-    <div class="max-w-xl mx-auto px-6 lg:px-10 text-center">
+    <div class="max-w-xl mx-auto px-6 lg:px-10 text-center" data-reveal>
 
       <img
         src="/images/build-it-remarkable-logo.png"
@@ -321,6 +327,12 @@ import ChecklistItem from '../components/ChecklistItem.astro';
   </section>
 
 
+  <BackToTop />
+  <StickyCTA
+    buttonText="Join the Priority List"
+    buttonHref="#waitlist-form"
+    label="Build It Remarkable — Limited enrollment opens soon"
+  />
   <Footer />
 </Layout>
 

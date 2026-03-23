@@ -1,0 +1,26 @@
+---
+interface Props {
+  color?: 'pink' | 'gold' | 'warm';
+  flip?: boolean;
+}
+
+const { color = 'gold', flip = false } = Astro.props;
+
+const colors = {
+  pink: '#f2306a',
+  gold: '#c9a118',
+  warm: '#f0dcc0',
+};
+
+const fill = colors[color];
+---
+
+<div class:list={['w-full overflow-hidden', flip && 'scale-y-[-1]']} aria-hidden="true">
+  <svg viewBox="0 0 1440 40" preserveAspectRatio="none" class="w-full h-6 sm:h-8">
+    <path
+      d="M0,20 C120,35 240,8 360,22 C480,36 600,5 720,18 C840,31 960,10 1080,24 C1200,38 1320,12 1440,20 L1440,40 L0,40 Z"
+      fill={fill}
+      opacity="0.12"
+    />
+  </svg>
+</div>

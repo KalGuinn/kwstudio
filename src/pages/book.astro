@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import BrushDivider from '../components/BrushDivider.astro';
 ---
 
 <Layout title="The Book" description="Mixed Media Color Studio by Kellee Wynne Conrad">
@@ -67,10 +68,13 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <!-- Brush stroke divider between hero and book content -->
+  <BrushDivider color="pink" />
+
   <!-- ═══════════════════════════════════════════════════
        BOOK BANNER — Full-width immersive section break
        ═══════════════════════════════════════════════════ -->
-  <div class="relative h-56 sm:h-72 lg:h-80 overflow-hidden" aria-hidden="true">
+  <div class="relative h-56 sm:h-72 lg:h-80 overflow-hidden" data-reveal="scale" aria-hidden="true">
     <div
       class="absolute inset-0 bg-cover bg-center"
       style="background-image: url('/images/book-banner.jpg'); background-position: center 40%;"
@@ -92,15 +96,17 @@ import Footer from '../components/Footer.astro';
       radial-gradient(ellipse at 25% 75%, rgba(242,48,106,0.03) 0%, transparent 50%);">
     </div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10">
-      <p class="text-xs sm:text-sm font-medium tracking-[0.18em] text-brand-pink uppercase text-center mb-3">
-        Inside the Pages
-      </p>
-      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4 text-center">
-        What's Inside
-      </h2>
-      <div class="w-16 h-1 bg-brand-gold mx-auto mb-8 rounded-full"></div>
+      <div data-reveal>
+        <p class="text-xs sm:text-sm font-medium tracking-[0.18em] text-brand-pink uppercase text-center mb-3">
+          Inside the Pages
+        </p>
+        <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4 text-center">
+          What's Inside
+        </h2>
+        <div class="w-16 h-1 bg-brand-gold mx-auto mb-8 rounded-full"></div>
+      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5" data-reveal-stagger>
 
         <!-- Card 1 -->
         <div class="group bg-white/80 backdrop-blur-sm border border-brand-gold/20 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
@@ -157,7 +163,7 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <!-- Secondary purchase nudge inside section -->
-      <div class="text-center mt-8">
+      <div class="text-center mt-8" data-reveal>
         <p class="text-brand-dark/80 text-sm mb-5 italic">Ready to dive in?</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
@@ -180,8 +186,11 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        THANK YOU — Intimate, handwritten feel with font-accent
        ═══════════════════════════════════════════════════ -->
-  <section class="py-12 sm:py-16 bg-white">
-    <div class="max-w-2xl mx-auto px-6 lg:px-10 text-center">
+  <section class="relative py-12 sm:py-16 bg-white overflow-hidden">
+    <!-- Subtle paint splatter accent for the Thank You section -->
+    <div class="absolute -right-8 top-1/4 w-32 h-32 rounded-full bg-brand-pink/[0.07] blur-2xl pointer-events-none hidden sm:block" aria-hidden="true"></div>
+
+    <div class="relative max-w-2xl mx-auto px-6 lg:px-10 text-center" data-reveal>
       <!-- Gold decorative rule -->
       <div class="flex items-center justify-center gap-4 mb-8">
         <div class="h-px w-16 bg-brand-gold/50"></div>

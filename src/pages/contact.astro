@@ -4,6 +4,7 @@ import Nav from '../components/Nav.astro';
 import ContactForm from '../components/ContactForm.astro';
 import GoldSeparator from '../components/GoldSeparator.astro';
 import Footer from '../components/Footer.astro';
+import BrushDivider from '../components/BrushDivider.astro';
 ---
 
 <Layout title="Contact" description="Get in touch with Kellee Wynne Studios">
@@ -33,14 +34,14 @@ import Footer from '../components/Footer.astro';
   <section class="bg-white py-12 sm:py-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Warm intro above form -->
-      <div class="text-center mb-6">
+      <div class="text-center mb-6" data-reveal>
         <p class="font-accent text-brand-dark/80 text-lg sm:text-xl italic">
           Every message is read personally — we'll get back to you soon.
         </p>
       </div>
 
       <!-- Form card -->
-      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-gold/20 px-6 py-10 sm:px-10">
+      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-brand-gold/20 px-6 py-10 sm:px-10" data-reveal>
         <ContactForm />
       </div>
     </div>
@@ -48,10 +49,13 @@ import Footer from '../components/Footer.astro';
 
   <GoldSeparator />
 
+  <!-- Brush stroke divider before dark section -->
+  <BrushDivider color="warm" />
+
   <!-- Our Promise -->
   <section class="relative bg-brand-dark text-white py-12 sm:py-16 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 50% 0%, rgba(242,48,106,0.06) 0%, transparent 60%);"></div>
-    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-reveal>
       <p class="font-accent text-brand-gold text-lg sm:text-xl italic mb-2">
         you're in good hands
       </p>

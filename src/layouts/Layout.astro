@@ -42,6 +42,26 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
   </body>
 </html>
 
+<script>
+  // Scroll reveal observer — runs on initial load and after View Transition navigations
+  function initScrollReveal() {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('[data-reveal], [data-reveal-stagger]').forEach(el => {
+      revealObserver.observe(el);
+    });
+  }
+
+  // Use astro:page-load so it re-runs after View Transitions
+  document.addEventListener('astro:page-load', initScrollReveal);
+</script>
+
 <style is:global>
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(1.25rem); }
@@ -56,12 +76,87 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     to { opacity: 1; }
   }
 
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll reveal animations */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  [data-reveal="left"] {
+    transform: translateX(-2rem);
+  }
+
+  [data-reveal="right"] {
+    transform: translateX(2rem);
+  }
+
+  [data-reveal="scale"] {
+    transform: scale(0.95);
+  }
+
+  [data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+
+  /* Staggered children */
+  [data-reveal-stagger] > * {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  [data-reveal-stagger].revealed > *:nth-child(1) { transition-delay: 0.05s; }
+  [data-reveal-stagger].revealed > *:nth-child(2) { transition-delay: 0.12s; }
+  [data-reveal-stagger].revealed > *:nth-child(3) { transition-delay: 0.19s; }
+  [data-reveal-stagger].revealed > *:nth-child(4) { transition-delay: 0.26s; }
+  [data-reveal-stagger].revealed > *:nth-child(5) { transition-delay: 0.33s; }
+  [data-reveal-stagger].revealed > *:nth-child(6) { transition-delay: 0.40s; }
+  [data-reveal-stagger].revealed > *:nth-child(7) { transition-delay: 0.47s; }
+  [data-reveal-stagger].revealed > *:nth-child(8) { transition-delay: 0.54s; }
+
+  [data-reveal-stagger].revealed > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Page transitions */
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeSlideOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-8px); }
+  }
+
+  ::view-transition-old(root) {
+    animation: fadeSlideOut 0.2s ease-in forwards;
+  }
+
+  ::view-transition-new(root) {
+    animation: fadeSlideIn 0.3s ease-out forwards;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
+    }
+
+    [data-reveal],
+    [data-reveal-stagger] > * {
+      opacity: 1 !important;
+      transform: none !important;
     }
   }
 </style>

@@ -115,7 +115,7 @@ const platforms = [
       <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
         <!-- Kellee portrait -->
-        <div class="flex-shrink-0 text-center lg:text-left">
+        <div class="flex-shrink-0 text-center lg:text-left" data-reveal="left">
           <img
             src="/images/kellee-splat-portrait.png"
             alt="Kellee Wynne"
@@ -125,7 +125,7 @@ const platforms = [
         </div>
 
         <!-- Text -->
-        <div>
+        <div data-reveal="right">
           <p class="text-xs font-semibold tracking-[0.18em] text-brand-orange uppercase mb-3">
             About the Show
           </p>
@@ -163,9 +163,11 @@ const platforms = [
        ═══════════════════════════════════════════════════ -->
   <section class="py-12 sm:py-16 bg-white">
     <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-      <SectionHeading overline="Available Everywhere" title="Where to Listen" />
+      <div data-reveal>
+        <SectionHeading overline="Available Everywhere" title="Where to Listen" />
+      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5" data-reveal-stagger>
         {platforms.map((platform) => (
           <a
             href={platform.href}
@@ -204,7 +206,7 @@ const platforms = [
        QUOTE / PULL — Editorial moment before CTA
        ═══════════════════════════════════════════════════ -->
   <section class="py-12 sm:py-16 bg-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center" data-reveal>
       <blockquote class="border-l-4 border-brand-gold pl-6 text-left">
         <p class="font-accent text-2xl sm:text-3xl lg:text-4xl italic text-brand-dark leading-relaxed mb-6">
           "You were made for more than ordinary.<br />
@@ -218,13 +220,15 @@ const platforms = [
   <!-- ═══════════════════════════════════════════════════
        CTA — Drive to business mentorship
        ═══════════════════════════════════════════════════ -->
-  <CallToAction
-    headline="Ready to Build Your Creative Business?"
-    subtitle="Join the artists and makers turning their passion into profit — one remarkable step at a time."
-    buttonText="Work With Kellee →"
-    buttonHref="/contact"
-    variant="dark"
-  />
+  <div data-reveal>
+    <CallToAction
+      headline="Ready to Build Your Creative Business?"
+      subtitle="Join the artists and makers turning their passion into profit — one remarkable step at a time."
+      buttonText="Work With Kellee →"
+      buttonHref="/contact"
+      variant="dark"
+    />
+  </div>
 
   <Footer />
 </Layout>
