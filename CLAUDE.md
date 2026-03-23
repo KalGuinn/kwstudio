@@ -9,6 +9,7 @@ Original site: https://www.kelleewynne.com/
 - **Astro Image** (`astro:assets`) — automatic WebP optimization, responsive sizing
 - **astro-icon** + `@iconify-json/simple-icons` for SVG social icons (Instagram, YouTube, Pinterest)
 - **@tailwindcss/typography** for prose styling (used on terms page)
+- **@astrojs/sitemap** for XML sitemap generation (pre-built for production)
 - **Playwright** for visual QA — 3 scripts in project root:
   - `pw-screenshot.mjs` — viewport screenshot (1440x900)
   - `pw-screenshot-full.mjs` — full-page screenshot
@@ -75,11 +76,9 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 
 | Component | File | Purpose | Props |
 |-----------|------|---------|-------|
-| `Layout` | `src/layouts/Layout.astro` | Base HTML shell, scroll animations, ViewTransitions, dark mode, OG tags, JSON-LD | `title, description?` |
+| `Layout` | `src/layouts/Layout.astro` | Base HTML shell, scroll animations, ViewTransitions, dark mode, OG tags, JSON-LD | `title, description?, ogImage?` |
 | `Nav` | `src/components/Nav.astro` | Fixed nav, 6 links + gold BIR pill, mobile menu, dark mode toggle | `currentPage?` |
 | `Footer` | `src/components/Footer.astro` | Warm (light) / dark (dark mode) footer, gradient accent bar, social icons | none |
-| `Hero` | `src/components/Hero.astro` | Page hero with variant system | `variant (warm/dark/art), title, overline?, subtitle?, image?, cta?` |
-| `Card` | `src/components/Card.astro` | Flexible card (image/icon/dark variants) | `title, subtitle?, href, icon?, image?, dark?` |
 | `CallToAction` | `src/components/CallToAction.astro` | Full-width CTA section (warm in light, dark in dark mode) | `headline, subtitle?, buttonText, buttonHref, variant (dark/warm)` |
 | `SectionHeading` | `src/components/SectionHeading.astro` | Overline + title + gold bar | `title, overline?, centered?` |
 | `TestimonialCard` | `src/components/TestimonialCard.astro` | Quote card with avatar | `quote, name, title, initial` |
@@ -105,6 +104,8 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 | `/links` | `links.astro` | Link-in-bio standalone page (no Nav/Footer) |
 | `/terms` | `terms.astro` | Legal terms & conditions |
 | `/404` | `404.astro` | Custom error page |
+
+> **Note:** All forms on the site are non-functional placeholders (demo site). Forms use `onsubmit="return false;"` or a Formspree placeholder ID.
 
 ## Adding a New Page
 1. Create `src/pages/new-page.astro`
@@ -169,7 +170,7 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 ```
 src/
 ├── assets/images/  # 19 images (auto-optimized to WebP by Astro Image pipeline)
-├── components/     # 14 reusable components
+├── components/     # 12 reusable components
 ├── data/           # navigation.ts (centralized nav/social data, uses BASE_URL)
 ├── layouts/        # Layout.astro (base HTML, global animations, dark mode, ViewTransitions, OG tags, JSON-LD)
 └── pages/          # 9 pages (index, book, podcast, priority, free-guide, contact, links, terms, 404)
