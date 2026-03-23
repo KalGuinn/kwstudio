@@ -42,7 +42,7 @@ See `QUICKSTART.md` for fast onboarding, commands, and component reference.
 ## Design System (STRICT)
 
 ### Buttons (3 styles only)
-- **Primary**: gold solid — `bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300`
+- **Primary**: gold solid with shine — `cta-shine bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg` (wrap text in `<span class="relative z-10">`)
 - **Secondary**: gold outline — `border-2 border-brand-gold text-brand-gold font-display uppercase tracking-widest px-10 py-4 rounded-lg hover:bg-brand-gold hover:text-brand-dark transition-all duration-300`
 - **Tertiary**: text link — `text-brand-pink font-semibold hover:text-brand-gold transition-colors duration-200`
 
@@ -67,8 +67,9 @@ See `QUICKSTART.md` for fast onboarding, commands, and component reference.
 - Use `text-white/70` for text on dark backgrounds (not /60)
 
 ### Cards
-All cards use `group-hover:text-brand-gold` — no per-card color variation.
-Use `shadow-md` base with `hover:shadow-lg hover:-translate-y-1 transition-all duration-300`.
+All cards use `.polished-card` class for border-glow hover with refined easing.
+Use `.card-arrow` + `.arrow-icon` for hover-reveal "Learn More →" links.
+Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 
 ## Reusable Components
 
@@ -109,8 +110,12 @@ Use `shadow-md` base with `hover:shadow-lg hover:-translate-y-1 transition-all d
 1. Create `src/pages/new-page.astro`
 2. Import `Layout`, `Nav`, `Footer` (+ any components needed)
 3. Pass `currentPage="/new-page"` to `Nav`
-4. Add entry to `src/data/navigation.ts` `navLinks` array
-5. Use `SectionHeading`, `CallToAction`, `Card` etc. for consistent design
+4. Add entry to `src/data/navigation.ts` `navLinks` array (uses `BASE_URL` automatically)
+5. For any hardcoded internal links: `const base = import.meta.env.BASE_URL.replace(/\/$/, '');` then `href={\`${base}/page\`}`
+6. Import images from `../assets/images/` and use `<Image />` from `astro:assets`
+7. Use `SectionHeading`, `CallToAction`, `Card` etc. for consistent design
+8. Add `.word` spans on hero headline for word-by-word animation
+9. Add `data-reveal` attributes to below-the-fold sections for scroll animations
 
 ## Design Rules
 - Gold = ACTION color (buttons, CTAs). Pink = BRAND/heading color.
