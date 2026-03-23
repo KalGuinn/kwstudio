@@ -16,14 +16,11 @@ const legalLinks = [
 <!-- Warm top accent border -->
 <div class="h-1 bg-gradient-to-r from-brand-pink via-brand-gold to-brand-orange"></div>
 
-<footer class="bg-brand-dark text-white/70 py-16 relative overflow-hidden">
-  <!-- Subtle warm overlay -->
-  <div class="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent pointer-events-none"></div>
-
+<footer class="bg-brand-warm dark:bg-[#111010] text-brand-dark/70 dark:text-white/70 py-16 relative overflow-hidden">
   <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 text-center">
 
     <!-- Tagline -->
-    <p class="font-display text-xl uppercase tracking-widest text-white/50 mb-8">
+    <p class="font-display text-xl uppercase tracking-widest text-brand-dark/40 dark:text-white/50 mb-8">
       Where creativity meets business
     </p>
 
@@ -42,7 +39,7 @@ const legalLinks = [
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-white/40 hover:text-brand-gold transition-all duration-200 hover:scale-110 inline-block"
+            class="text-brand-dark/30 dark:text-white/40 hover:text-brand-gold transition-all duration-200 hover:scale-110 inline-block"
             aria-label={link.label}
           >
             <Icon name={link.icon} class="w-7 h-7" />
@@ -61,14 +58,14 @@ const legalLinks = [
     <!-- Legal -->
     <div class="flex items-center justify-center gap-6 mb-8 text-sm">
       {legalLinks.map((link) => (
-        <a href={link.href} class="hover:text-white transition-colors duration-200">
+        <a href={link.href} class="hover:text-brand-dark dark:hover:text-white transition-colors duration-200">
           {link.label}
         </a>
       ))}
     </div>
 
     <!-- Copyright -->
-    <p class="text-xs text-white/50">
+    <p class="text-xs text-brand-dark/40 dark:text-white/50">
       &copy; {new Date().getFullYear()} Kellee Wynne Studios. All rights reserved.
     </p>
   </div>

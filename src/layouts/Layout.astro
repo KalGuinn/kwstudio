@@ -34,6 +34,7 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     <ViewTransitions />
     <!-- Dark mode init — runs before paint to prevent flash -->
     <script is:inline>
+      // Apply on initial load
       (function() {
         const saved = localStorage.getItem('theme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -41,6 +42,16 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
           document.documentElement.classList.add('dark');
         }
       })();
+      // Re-apply after View Transitions swap the DOM
+      document.addEventListener('astro:after-swap', function() {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      });
     </script>
     <!-- Global Organization structured data -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -224,7 +235,7 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     background-color: #1e1c19;
   }
 
-  /* Text adjustments */
+  /* Text adjustments — all opacity variants */
   html.dark .text-brand-dark {
     color: #e8e0d8;
   }
@@ -233,8 +244,34 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     color: rgba(232, 224, 216, 0.8);
   }
 
+  html.dark .text-brand-dark\/75 {
+    color: rgba(232, 224, 216, 0.75);
+  }
+
   html.dark .text-brand-dark\/70 {
     color: rgba(232, 224, 216, 0.7);
+  }
+
+  html.dark .text-brand-dark\/60 {
+    color: rgba(232, 224, 216, 0.6);
+  }
+
+  html.dark .text-brand-dark\/50 {
+    color: rgba(232, 224, 216, 0.5);
+  }
+
+  html.dark .text-brand-dark\/40 {
+    color: rgba(232, 224, 216, 0.4);
+  }
+
+  html.dark .text-brand-dark\/35 {
+    color: rgba(232, 224, 216, 0.35);
+  }
+
+  /* Placeholder text in dark mode */
+  html.dark .placeholder\:text-brand-dark\/35::placeholder,
+  html.dark .placeholder\:text-brand-dark\/30::placeholder {
+    color: rgba(232, 224, 216, 0.3);
   }
 
   /* Borders */
@@ -266,18 +303,15 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     --tw-shadow-color: rgba(0, 0, 0, 0.3);
   }
 
-  /* Footer stays dark in both modes */
-  html.dark footer {
-    background-color: #111010;
-  }
+  /* Footer — dark mode handled by inline dark: classes in Footer.astro */
 
   /* Mobile menu in dark mode */
   html.dark #mobile-menu {
     background-color: rgba(26, 24, 21, 0.95);
   }
 
-  /* Hero sections with light background images — add dark overlay in dark mode */
-  html.dark section[class*="-mt-20"]::before {
+  /* Homepage hero only — darken the light art-background.jpg in dark mode */
+  html.dark section[data-dark-overlay]::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -305,6 +339,30 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
   /* Testimonial card accent corner — tone down in dark mode */
   html.dark .testimonial-card .absolute {
     opacity: 0.3;
+  }
+
+  /* Gradient fades — swap light colors to dark in dark mode */
+  html.dark .from-white {
+    --tw-gradient-from: #1a1815;
+  }
+
+  html.dark .from-brand-warm\/30 {
+    --tw-gradient-from: rgba(26, 24, 21, 0.3);
+  }
+
+  html.dark .bg-gradient-to-t.from-white,
+  html.dark .bg-gradient-to-t.from-brand-warm {
+    --tw-gradient-from: #1a1815;
+  }
+
+  /* Painterly gradient overlays — hide in dark mode (they use light rgba) */
+  html.dark section > [style*="radial-gradient"] {
+    opacity: 0 !important;
+  }
+
+  /* White overlay on homepage hero — hide in dark mode */
+  html.dark .bg-white\/\[\.34\] {
+    background-color: transparent;
   }
 
   /* StickyCTA bar dark mode */

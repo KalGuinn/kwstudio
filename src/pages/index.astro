@@ -14,7 +14,7 @@ import BrushDivider from '../components/BrushDivider.astro';
        HERO — Immersive, painterly, artist's welcome
        Uses real art-background.jpg texture + standing portrait
        ═══════════════════════════════════════════════════ -->
-  <section class="relative min-h-[65vh] flex items-end -mt-20 pt-20">
+  <section class="relative min-h-[65vh] flex items-end -mt-20 pt-20" data-dark-overlay>
     <!-- Layer 1: Painterly art background texture -->
     <div
       class="absolute inset-0 bg-cover bg-center"
@@ -159,9 +159,6 @@ import BrushDivider from '../components/BrushDivider.astro';
       </div>
     </div>
   </section>
-
-  <!-- Brush stroke divider between 3 Ways and Meet Kellee -->
-  <BrushDivider color="gold" />
 
   <!-- ═══════════════════════════════════════════════════
        ABOUT — Meet Kellee, warm and personal
