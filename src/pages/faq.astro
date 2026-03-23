@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import CallToAction from '../components/CallToAction.astro';
+import FaqItem from '../components/FaqItem.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="FAQ — Kellee Wynne Studios" description="Everything you need to know about Kellee Wynne Studios, Build It Remarkable, courses, and how to get in touch.">
+  <Nav currentPage="/faq" />
+
+  <!-- Hero (bg-brand-warm) -->
+  <section class="bg-brand-warm py-16 sm:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs sm:text-sm font-medium tracking-[0.15em] text-brand-pink uppercase mb-3">
+        Support
+      </p>
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl uppercase text-brand-pink leading-tight tracking-tight mb-6">
+        Frequently Asked Questions
+      </h1>
+      <!-- Pink accent divider -->
+      <div class="w-24 h-1 bg-brand-pink mx-auto mb-6 rounded-full"></div>
+      <p class="text-lg text-brand-dark/80 max-w-xl mx-auto">
+        Everything you need to know about Kellee Wynne Studios
+      </p>
+    </div>
+  </section>
+
+  <!-- Group 1: General (bg-white) -->
+  <section class="bg-white py-12 sm:py-16" data-reveal>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading overline="About Us" title="GENERAL" />
+      <div class="flex flex-col gap-4 mt-8" data-reveal-stagger>
+        <FaqItem question="What is Kellee Wynne Studios?">
+          Kellee Wynne Studios is an education and mentorship platform for creative entrepreneurs. Founded by artist and business strategist Kellee Wynne Conrad, we help artists, makers, and creative educators build profitable businesses around their creative expertise.
+        </FaqItem>
+        <FaqItem question="What does Kellee teach?">
+          Kellee specializes in teaching creative entrepreneurs how to market, sell, and scale their course-based businesses. Through programs like Build It Remarkable, she covers branding, audience growth, content strategy, offer creation, and launch strategies — all tailored specifically for artists and makers.
+        </FaqItem>
+        <FaqItem question="Who are Kellee's programs for?">
+          Our programs are designed for artists, makers, and creative educators who want to turn their expertise into a profitable online business. Whether you teach art courses, run creative workshops, or sell digital products, our frameworks help you build a sustainable business.
+        </FaqItem>
+        <FaqItem question="How is this different from other business coaching?">
+          Unlike generic business coaches, Kellee is an artist who built her own million-dollar creative education business. The strategies and frameworks are designed specifically for the creative industry — not repurposed corporate marketing tactics.
+        </FaqItem>
+      </div>
+    </div>
+  </section>
+
+  <!-- Group 2: Build It Remarkable (bg-brand-warm) -->
+  <section class="bg-brand-warm py-12 sm:py-16" data-reveal>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading overline="Flagship Program" title="BUILD IT REMARKABLE" />
+      <div class="flex flex-col gap-4 mt-8" data-reveal-stagger>
+        <FaqItem question="Will I learn to make art in this program?">
+          Build it Remarkable is intended for artists who are already proficient and know their style and have already started a creative business. We do NOT learn how to make art in the program, we learn how to leverage our talent to build a Creative Educator Business.
+        </FaqItem>
+        <FaqItem question="Will I learn how to sell my art?">
+          This Program does not teach methods to sell art or get into galleries. We learn how to build and market an educator business using your expertise to create courses, a membership, workshops and collaborations.
+        </FaqItem>
+        <FaqItem question="Will I learn how to create a digital course?">
+          You will learn the foundation to building a business, including how to design the perfect offer. This program does NOT specifically go into tech — like how to record, edit or make your digital course. We do provide a tech bundle course as a bonus.
+        </FaqItem>
+        <FaqItem question="I'm not a visual artist, will this work for me?">
+          Build it Remarkable is a one-of-a-kind creative business accelerator that will give ANY creative expert the foundation they need. It doesn't matter your medium — if you are ready to think outside the box and build something truly remarkable, then this is the program for you!
+        </FaqItem>
+        <FaqItem question="What if I can't make the calls or workshops?">
+          We record all masterclasses and coaching calls and will keep all trainings indefinitely. We create a variety of times and days for calls and meetups in hopes that you'll find an event that matches your schedule.
+        </FaqItem>
+        <FaqItem question="How long do I get to keep the content?">
+          You get lifetime access to all the CORE content, such as the modules and bonuses and any updates we make to the program. Coaching or meetup calls are kept for a minimum of 3 months for you to refer back to.
+        </FaqItem>
+        <FaqItem question="How many people will be accepted into the program?">
+          This program has limited enrollment. We will cut off the first cohort of 2026 at a maximum of 80 new Builders. This fosters a close community and allows us to get to know each student.
+        </FaqItem>
+        <FaqItem question="What if I don't know what kind of business I want yet?">
+          Do you have an expertise in something creative? Are you proficient in your passion? Then there's no doubt we can extract your genius and put together a great business plan. You don't have to have it all figured out, you just have to start!
+        </FaqItem>
+        <FaqItem question="Do I get access to all the content as soon as I join?">
+          We are teaching Build it Remarkable LIVE this year! Most content is dripped out over time. But you will get instant access to Jumpstart lessons, the Tech Bundle, and the community.
+        </FaqItem>
+        <FaqItem question="How much is the investment?">
+          Build it Remarkable is a 12 month program and the investment is $2,400 USD for a whole year of training and support. Payment plans are available starting at $220/month.
+        </FaqItem>
+        <FaqItem question="Is this really a good time to be running a business?">
+          There's no time like right now. Taking control of your future and helping others find art is a big way you can make a difference, not only for you but for your community.
+        </FaqItem>
+        <FaqItem question="What if I want a refund?">
+          We have a case-by-case refund policy. If you decide within the first 14 days from program start that this is not your ideal fit, please show you have watched the lessons and done the homework. There is a $100 refund service fee.
+        </FaqItem>
+      </div>
+    </div>
+  </section>
+
+  <!-- Group 3: Courses & Workshops (bg-white) -->
+  <section class="bg-white py-12 sm:py-16" data-reveal>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading overline="Learning" title="COURSES & WORKSHOPS" />
+      <div class="flex flex-col gap-4 mt-8" data-reveal-stagger>
+        <FaqItem question="What is the Teaching Artist Workshop?">
+          The Teaching Artist Workshop is a free strategy workshop where Kellee walks you through the 5 blocks quietly holding you back and introduces the Rule of One framework. It's designed for artists and makers who want clarity on their next steps.
+        </FaqItem>
+        <FaqItem question="Do I need any special software or tech skills?">
+          No special software is required. Our programs are accessible through any modern web browser. For courses that involve tech setup, we provide a comprehensive Tech Bundle bonus with tutorials and guides.
+        </FaqItem>
+        <FaqItem question="How long do I have access to course materials?">
+          For one-time purchase courses and programs like Build It Remarkable, you get lifetime access to core content. Free workshops and live events are available via replay for registered participants.
+        </FaqItem>
+        <FaqItem question="Can I take courses at my own pace?">
+          Yes! While our live components follow a schedule, all masterclasses, trainings, and workshops are recorded and available for you to watch at your convenience.
+        </FaqItem>
+      </div>
+    </div>
+  </section>
+
+  <!-- Group 4: Contact & Support (bg-brand-warm) -->
+  <section class="bg-brand-warm py-12 sm:py-16" data-reveal>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading overline="Help" title="CONTACT & SUPPORT" />
+      <div class="flex flex-col gap-4 mt-8" data-reveal-stagger>
+        <FaqItem question="How can I reach Kellee or her team?">
+          You can reach us through the contact form on our website or by emailing admin@kelleewynnestudios.com. We're also active on Instagram @kelleewynne.
+        </FaqItem>
+        <FaqItem question="What is the typical response time?">
+          We aim to respond to all inquiries within 1-2 business days. During launch periods, response times may be slightly longer, but we'll always get back to you.
+        </FaqItem>
+        <FaqItem question="Can I schedule a call before enrolling?">
+          Absolutely! If you have questions about whether Build It Remarkable is right for you, we're happy to chat. Use the scheduling link on the BIR page to book a 15-minute call.
+        </FaqItem>
+        <FaqItem question="What is the refund policy?">
+          Refund policies vary by program. For Build It Remarkable, we offer a case-by-case refund within the first 14 days with a $100 service fee. Free courses and workshops have no refund policy as they are complimentary.
+        </FaqItem>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CallToAction
+    headline="Still Have Questions?"
+    subtitle="We're here to help you find the right path for your creative business."
+    buttonText="Get in Touch"
+    buttonHref={`${base}/contact`}
+    variant="warm"
+  />
+
+  <Footer />
+</Layout>
