@@ -188,3 +188,14 @@ docs/
 - `AGENTS.md` — Guidelines for AI agents working on this project.
 - `docs/superpowers/specs/` — HISTORICAL: original design spec from initial planning.
 - `docs/superpowers/plans/` — HISTORICAL: original implementation plan (completed).
+
+## Safety
+
+### Deny Rules
+- `rm -rf /`, `rm -rf ~`
+- `git push --force`, `git reset --hard`
+- `sudo`
+
+### Sensitive Paths
+Do not read or modify:
+- `~/.ssh/`, `~/.aws/`, `~/.gnupg/`, `~/.netrc`

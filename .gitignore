@@ -22,3 +22,15 @@ npm-debug.log*
 
 # worktrees
 .worktrees/
+
+# security — private keys and certificates
+*.key
+*.pem
+.env.*
+
+# editor temp files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
