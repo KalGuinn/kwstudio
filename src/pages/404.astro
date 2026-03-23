@@ -14,7 +14,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
     <!-- Warm gradient background -->
-    <div class="absolute inset-0" style="background: linear-gradient(135deg, #fdf7f2 0%, #fef0e6 40%, #fdf0f5 70%, #fdf7f2 100%);"></div>
+    <div class="absolute inset-0 bg-404-gradient"></div>
 
     <!-- Decorative paint-stroke blobs -->
     <div class="absolute top-16 left-10 w-48 h-48 rounded-full opacity-20 blur-3xl bg-brand-pink"></div>
@@ -27,8 +27,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <!-- Big 404 display -->
       <div class="mb-4">
         <span
-          class="font-display uppercase leading-none select-none"
-          style="font-size: clamp(6rem, 20vw, 12rem); color: transparent; -webkit-text-stroke: 3px #f2306a; letter-spacing: -0.02em;"
+          class="font-display uppercase leading-none select-none text-stroke-pink text-[clamp(6rem,20vw,12rem)] tracking-[-0.02em]"
         >
           404
         </span>

@@ -379,6 +379,29 @@ const resolvedOgImage = ogImage || defaultOgImage;
     50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
   }
 
+  /* 404 page — warm gradient background */
+  .bg-404-gradient {
+    background: linear-gradient(135deg, #fdf7f2 0%, #fef0e6 40%, #fdf0f5 70%, #fdf7f2 100%);
+  }
+
+  /* 404 page — text-stroke "404" display */
+  .text-stroke-pink {
+    color: transparent;
+    -webkit-text-stroke: 3px #f2306a;
+    paint-order: stroke fill;
+  }
+
+  @supports not (-webkit-text-stroke: 1px black) {
+    .text-stroke-pink {
+      color: #f2306a;
+      text-shadow:
+        -1px -1px 0 #f2306a,
+         1px -1px 0 #f2306a,
+        -1px  1px 0 #f2306a,
+         1px  1px 0 #f2306a;
+    }
+  }
+
   /* Animated gold bar for SectionHeading */
   .gold-bar-animated {
     width: 0;
