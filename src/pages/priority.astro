@@ -20,6 +20,7 @@ import kelleeBrand3Src from '../assets/images/kellee-brand-3.jpg';
 import fadedPhotoBgSrc from '../assets/images/faded-photo-background.jpg';
 
 const fadedPhotoBg = await getImage({ src: fadedPhotoBgSrc });
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout
@@ -93,6 +94,11 @@ const fadedPhotoBg = await getImage({ src: fadedPhotoBgSrc });
             >
               <span class="relative z-10">Please Add Me to the List!</span>
             </a>
+            <div class="mt-4">
+              <a href={`${base}/bir`} class="text-brand-pink font-semibold hover:text-brand-gold transition-colors duration-200">
+                Learn more about the full program &rarr;
+              </a>
+            </div>
           </div>
         </div>
       </div>
