@@ -296,11 +296,10 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     border-top: 1px solid rgba(201, 161, 24, 0.12);
   }
 
-  /* BIR logo and other images with dark text on transparency — add light backing */
+  /* BIR logo already has light backing via inline classes;
+     ensure it stays visible in dark mode too */
   html.dark img[src*="build-it-remarkable-logo"] {
-    background: rgba(253, 247, 242, 0.9);
-    border-radius: 0.75rem;
-    padding: 0.5rem 1rem;
+    background: rgba(253, 247, 242, 0.9) !important;
   }
 
   /* Testimonial card accent corner — tone down in dark mode */
