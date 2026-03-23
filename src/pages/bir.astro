@@ -1,0 +1,897 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import ChecklistItem from '../components/ChecklistItem.astro';
+import CallToAction from '../components/CallToAction.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import GoldSeparator from '../components/GoldSeparator.astro';
+import FaqItem from '../components/FaqItem.astro';
+
+import birLogoSrc from '../assets/images/bir-logo.png';
+import kelleePortraitSrc from '../assets/images/kellee-portrait-standing.png';
+import kelleeStudio1Src from '../assets/images/kellee-studio-1.jpg';
+import kelleeStudio2Src from '../assets/images/kellee-studio-2.jpg';
+import kelleeStudio3Src from '../assets/images/kellee-studio-3.jpg';
+import testimonialDiannaSrc from '../assets/images/testimonial-dianna.jpg';
+import testimonialCatRainsSrc from '../assets/images/testimonial-cat-rains.jpg';
+import testimonialMargareteSrc from '../assets/images/testimonial-margarete.png';
+import testimonialDelightSrc from '../assets/images/testimonial-delight.jpg';
+import birBonusAudienceSrc from '../assets/images/bir-bonus-audience.png';
+import birBonusPlanningSrc from '../assets/images/bir-bonus-planning.png';
+import birBonusTechSrc from '../assets/images/bir-bonus-tech.png';
+import birBonusSalespageSrc from '../assets/images/bir-bonus-salespage.png';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout
+  title="Build It Remarkable — Join the 2026 Cohort"
+  description="The only comprehensive program designed specifically for artists and makers. Learn the marketing and sales strategies you need to build a profitable course creator business."
+>
+  <Nav currentPage="/bir" />
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 1: HERO — BIR logo, headline, urgency CTA
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative bg-brand-warm overflow-hidden -mt-20 pt-28 sm:pt-32 pb-12">
+    <!-- Painterly warmth overlays -->
+    <div class="absolute inset-0 pointer-events-none" style="background:
+      radial-gradient(ellipse at 15% 35%, rgba(242,48,106,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 65%, rgba(201,161,24,0.07) 0%, transparent 45%);">
+    </div>
+    <div class="ambient-blob" style="width: 280px; height: 280px; background: rgba(242,48,106,0.06); top: 15%; left: -5%; animation: blobDrift1 18s ease-in-out infinite; z-index: 1;" aria-hidden="true"></div>
+    <div class="ambient-blob" style="width: 220px; height: 220px; background: rgba(201,161,24,0.08); top: 35%; right: -3%; animation: blobDrift2 22s ease-in-out infinite; z-index: 1;" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-10 text-center">
+      <!-- BIR Logo -->
+      <div class="hero-item mb-8">
+        <Image
+          src={birLogoSrc}
+          alt="Build It Remarkable"
+          class="w-56 sm:w-72 lg:w-80 mx-auto drop-shadow-xl"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+
+      <!-- Headline -->
+      <h1 class="hero-item font-display text-3xl sm:text-4xl lg:text-5xl uppercase text-brand-pink leading-tight tracking-tight mb-6">
+        <span class="word" style="animation-delay: 0s;">Join</span>{" "}
+        <span class="word" style="animation-delay: 0.08s;">Kellee</span>{" "}
+        <span class="word" style="animation-delay: 0.16s;">and</span>{" "}
+        <span class="word" style="animation-delay: 0.24s;">be</span>{" "}
+        <span class="word" style="animation-delay: 0.32s;">part</span>{" "}
+        <span class="word" style="animation-delay: 0.4s;">of</span>{" "}
+        <span class="word" style="animation-delay: 0.48s;">the</span><br class="hidden sm:block" />
+        <span class="word" style="animation-delay: 0.56s;">2026</span>{" "}
+        <span class="word" style="animation-delay: 0.64s;">Cohort</span>{" "}
+        <span class="word" style="animation-delay: 0.72s;">of</span>{" "}
+        <span class="word" style="animation-delay: 0.8s;">Builders!</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-item text-brand-dark/80 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl mx-auto dark:text-white/70">
+        The only comprehensive program designed specifically for artists and makers that teaches the marketing and sales strategies you need to build a profitable course creator business that stands the test of time.
+      </p>
+
+      <!-- Urgency badge -->
+      <div class="hero-item inline-flex items-center gap-3 bg-brand-pink/15 border border-brand-pink/40 rounded-xl px-6 py-3 mb-8">
+        <span class="w-2.5 h-2.5 rounded-full bg-brand-pink animate-pulse flex-shrink-0"></span>
+        <span class="font-display text-sm sm:text-base tracking-widest text-brand-pink uppercase">First Cohort of 2026 &mdash; Last chance to enroll at the 2025 value and save $400!</span>
+      </div>
+
+      <!-- CTA -->
+      <div class="hero-item">
+        <a
+          href="#"
+          class="cta-shine inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+        >
+          <span class="relative z-10">Yes! I'm Ready to Join Now!</span>
+        </a>
+        <p class="text-brand-dark/50 text-sm mt-3 dark:text-white/50">(payment plan now available!)</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 2: PAIN POINT — Stop spinning your wheels
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-white dark:bg-brand-dark">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center" data-reveal>
+      <SectionHeading
+        overline="The Problem"
+        title="STOP SPINNING YOUR WHEELS!"
+      />
+      <p class="text-brand-dark/80 text-base sm:text-lg leading-relaxed mb-6 dark:text-white/70">
+        Gone are the good ol' days of just announcing your art course and selling out. But for some reason we just keep doing the same things and expecting the same results. Instead of trying to figure this out on your own and ending in total frustration, I propose we do it <strong class="text-brand-dark dark:text-white">TOGETHER</strong>. Because there's no reward for doing this by yourself. I believe you can go after your Big Audacious Dreams and succeed! And I've got a proven framework to show you how...
+      </p>
+      <a href="#pricing" class="text-brand-pink font-semibold hover:text-brand-gold transition-colors duration-200">
+        Just Jump Me to the Details Please!
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 3: ORIGIN STORY — How it all started
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-brand-warm dark:bg-[#1a1918]">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+      <div data-reveal>
+        <SectionHeading
+          overline="My Story"
+          title="HOW IT ALL STARTED"
+        />
+      </div>
+
+      <!-- Part 1: Origin -->
+      <div class="max-w-3xl mx-auto mb-10" data-reveal>
+        <p class="text-brand-dark/80 text-base leading-relaxed mb-4 dark:text-white/70">
+          In 2017 I launched my first art course company, Color Crush Creative, and grew it to six figures in revenue in the first year. Within five years we had crossed a million dollars in total revenue &mdash; all while staying true to what I believe about creativity, connection, and building something that actually matters.
+        </p>
+        <p class="text-brand-dark/80 text-base leading-relaxed mb-4 dark:text-white/70">
+          Along the way, fellow artists started asking how I did it. And that's when everything shifted.
+        </p>
+      </div>
+
+      <!-- Part 2: How it's going -->
+      <div class="max-w-3xl mx-auto mb-10" data-reveal>
+        <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-4 dark:text-white">How It's Going Now:</h3>
+        <p class="text-brand-dark/80 text-base leading-relaxed mb-4 dark:text-white/70">
+          For more than 4 years I've been mentoring artists and creative educators, helping them build businesses that are profitable, sustainable, and aligned with their values. Some of my incredible Builders include:
+        </p>
+        <p class="text-brand-dark/80 text-base leading-relaxed font-medium dark:text-white/70">
+          Cat Rains, Drew Steinbrecher, Susan McCreevy, Tania Ahmed, Wendy Brightbill, Brooke Henry, Sam Boughton, Susan Yeates, Roben-Marie Smith, Margarete Miller, Delight Rogers, Francisca Nunes, Deni Rayneau, Diana Garrison, Gabriella Buckingham, Sue Bulmer, Sarah Short...
+        </p>
+      </div>
+
+      <!-- Portrait + Photo Grid -->
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12" data-reveal>
+        <!-- Portrait -->
+        <div class="flex-shrink-0 md:w-1/3">
+          <Image
+            src={kelleePortraitSrc}
+            alt="Kellee Wynne standing portrait"
+            class="w-52 sm:w-64 md:w-full max-w-xs mx-auto drop-shadow-xl"
+            loading="lazy"
+          />
+        </div>
+        <!-- Photo Grid -->
+        <div class="flex-1 grid grid-cols-3 gap-3 sm:gap-4">
+          <Image
+            src={kelleeStudio1Src}
+            alt="Kellee in her art studio"
+            class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300"
+            loading="lazy"
+          />
+          <Image
+            src={kelleeStudio2Src}
+            alt="Kellee teaching artists"
+            class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300"
+            loading="lazy"
+          />
+          <Image
+            src={kelleeStudio3Src}
+            alt="Kellee Wynne's creative workspace"
+            class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 4: DIFFERENTIATOR — Why BIR is different
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-brand-dark">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center" data-reveal>
+      <SectionHeading
+        title="WHY BUILD IT REMARKABLE IS DIFFERENT"
+      />
+      <p class="text-white/70 text-base sm:text-lg leading-relaxed mb-6">
+        Build It Remarkable wasn't designed by marketing "gurus" who've never picked up a paintbrush. It was built by an artist, for artists. I understand what it's like to pour your heart into your creative work and wonder how to turn that into a real business.
+      </p>
+      <p class="text-white/70 text-base sm:text-lg leading-relaxed mb-6">
+        This program is designed specifically for the creative educator &mdash; artists, makers, and creatives who want to teach what they know. The Builder's Framework gives you a step-by-step path that actually makes sense for how creative minds work. No bro-marketing tactics. No cookie-cutter funnels. Just a proven, heart-led approach that works.
+      </p>
+      <div class="mt-8">
+        <a
+          href="#"
+          class="cta-shine inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+        >
+          <span class="relative z-10">OK, I'm Ready to Join!</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 5: FEATURES — 6 cards
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-white dark:bg-brand-dark">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div data-reveal>
+        <SectionHeading
+          overline="What's Inside"
+          title="6 WAYS BUILD IT REMARKABLE IS MORE THAN JUST A COURSE"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" data-reveal-stagger>
+        <!-- Card 1: Masterclasses -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 p-7 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Masterclasses</h3>
+          <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">Live training workshops covering the complete Builder's 6 Part Framework, plus the latest marketing advice tailored for creative educators.</p>
+        </div>
+
+        <!-- Card 2: Q&A Coaching -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 p-7 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Q&A Coaching Calls</h3>
+          <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">Group insight sessions where you can get your goals reviewed, submit hotseat questions, and get direct guidance on your specific business challenges.</p>
+        </div>
+
+        <!-- Card 3: Community -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 p-7 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Community</h3>
+          <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">A private community platform (not on Facebook!) where you connect with fellow Builders, share wins, ask questions, and find accountability partners.</p>
+        </div>
+
+        <!-- Card 4: Behind the Scenes -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 p-7 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          </div>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Behind the Scenes Look</h3>
+          <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">See exactly how a million dollar course business operates day-to-day. No gatekeeping &mdash; I share the real strategies, numbers, and decisions behind the scenes.</p>
+        </div>
+
+        <!-- Card 5: Ongoing Support -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 p-7 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Ongoing Support</h3>
+          <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">Four extra months of support beyond the core program means a full year of coaching, community, and training. Plus guest experts to expand your toolkit.</p>
+        </div>
+
+        <!-- Card 6: Bonuses -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 p-7 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 rounded-full bg-brand-gold/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+          </div>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Bonuses That Matter</h3>
+          <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">A complete social media course, a sales page course, additional coaching calls, and more &mdash; bonuses designed to fill the gaps and accelerate your progress.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 6: TESTIMONIAL SPOTLIGHT — Dianna + Cat
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-brand-warm dark:bg-[#1a1918]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10">
+      <div data-reveal>
+        <SectionHeading
+          overline="Real Results"
+          title="HEAR FROM THE BUILDERS"
+        />
+      </div>
+
+      <!-- Dianna Garrison -->
+      <div class="mb-8" data-reveal>
+        <div class="flex flex-col md:flex-row items-start gap-6">
+          <div class="flex-shrink-0">
+            <Image
+              src={testimonialDiannaSrc}
+              alt="Dianna Garrison"
+              class="w-24 h-24 rounded-full object-cover shadow-md border-2 border-brand-gold/20"
+              loading="lazy"
+            />
+          </div>
+          <div class="polished-card bg-white dark:bg-[#242120] border border-brand-gold/20 rounded-2xl p-8">
+            <div class="text-brand-gold/40 font-display text-5xl leading-none select-none mb-4 dark:text-brand-gold/30" aria-hidden="true">&ldquo;</div>
+            <blockquote class="text-brand-dark/80 text-base leading-relaxed mb-4 dark:text-white/80">
+              I had about 1600 followers on Instagram in mid December 2023. And today I have over <strong class="text-brand-dark dark:text-white">38,000 followers on Instagram!</strong> It was really great being in Build it Remarkable. I needed Kellee's experience and little nuggets of wisdom.
+            </blockquote>
+            <p class="font-semibold text-sm text-brand-dark dark:text-white">Dianna Garrison</p>
+            <p class="text-xs text-brand-dark/40 tracking-wide dark:text-white/40">@crookedlittlestudio</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cat Rains Video Placeholder -->
+      <div class="mb-8" data-reveal>
+        <div class="polished-card bg-white dark:bg-[#242120] border border-brand-gold/20 rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-6">
+          <div class="flex-shrink-0">
+            <Image
+              src={testimonialCatRainsSrc}
+              alt="Cat Rains"
+              class="w-20 h-20 rounded-full object-cover shadow-md border-2 border-brand-gold/20"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <p class="text-brand-dark/80 text-base leading-relaxed mb-2 dark:text-white/70">
+              Click to hear what <strong class="text-brand-dark dark:text-white">Cat Rains</strong> has to say about working with me:
+            </p>
+            <div class="bg-brand-warm dark:bg-white/[0.06] rounded-xl p-6 text-center border border-brand-gold/15">
+              <p class="text-brand-dark/50 text-sm font-display uppercase tracking-widest dark:text-white/50">Video Testimonial</p>
+              <p class="text-brand-dark/40 text-xs mt-1 dark:text-white/40">Coming soon</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional copy -->
+      <div class="max-w-3xl mx-auto text-center mb-8" data-reveal>
+        <p class="text-brand-dark/80 text-base leading-relaxed mb-4 dark:text-white/70">
+          Build It Remarkable is different from other business courses because it was created by someone who has walked the same path you're on. This isn't theory &mdash; it's a tested, proven framework built from years of real experience in the creative educator space.
+        </p>
+        <p class="text-brand-dark/80 text-sm dark:text-white/70">
+          Questions? Reach out anytime: <a href="mailto:admin@kelleewynnestudios.com" class="text-brand-pink font-semibold hover:text-brand-gold transition-colors duration-200">admin@kelleewynnestudios.com</a>
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center" data-reveal>
+        <a
+          href="#"
+          class="cta-shine inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+        >
+          <span class="relative z-10">You Had Me at Hello &mdash; I'm In!</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 7: CURRICULUM — 6 Modules
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-white dark:bg-brand-dark">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10">
+      <div data-reveal>
+        <SectionHeading
+          overline="The Program"
+          title="6 BUSINESS BUILDING ESSENTIAL MODULES"
+        />
+        <p class="text-brand-dark/80 text-base sm:text-lg leading-relaxed text-center max-w-2xl mx-auto mb-10 dark:text-white/70">
+          Each module is specifically designed to move you forward in your business journey, not just teach you tactics and trends. Zero fluff guaranteed!
+        </p>
+      </div>
+
+      <div class="space-y-8" data-reveal-stagger>
+        <!-- Module 1 -->
+        <div class="border-l-4 border-brand-gold pl-6">
+          <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">Module 1</p>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 dark:text-white">Do the Groundwork</h3>
+          <p class="font-display text-sm uppercase text-brand-pink tracking-wide mb-3">Begin with a Rock-Solid Start for Your Creative Business</p>
+          <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+            Start with a thorough business audit, learn the Prism Marketing Method, and gain the clarity you need to build your creative business on a foundation that actually holds.
+          </p>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="border-l-4 border-brand-gold pl-6">
+          <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">Module 2</p>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 dark:text-white">Lay the Foundation</h3>
+          <p class="font-display text-sm uppercase text-brand-pink tracking-wide mb-3">Build Your Foundation to Solidify Your Brand's Identity</p>
+          <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+            Discover your Creative Core Mapping, define your niche, and use the Keystone framework to create a brand identity that resonates with your ideal audience.
+          </p>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="border-l-4 border-brand-gold pl-6">
+          <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">Module 3</p>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 dark:text-white">Build Your Framework</h3>
+          <p class="font-display text-sm uppercase text-brand-pink tracking-wide mb-3">Create Your Unique Business Model</p>
+          <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+            Develop your own unique frameworks and intellectual property, beta test your ideas, and use the Offer Building Blocks to create irresistible products your audience is hungry for.
+          </p>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="border-l-4 border-brand-gold pl-6">
+          <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">Module 4</p>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 dark:text-white">Construct a Simple System</h3>
+          <p class="font-display text-sm uppercase text-brand-pink tracking-wide mb-3">The Most Effective Marketing Plan</p>
+          <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+            Build your Primary Content Machine, create a Juicy Lead Magnet that actually converts, and establish a newsletter strategy that nurtures your audience and drives sales.
+          </p>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="border-l-4 border-brand-gold pl-6">
+          <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">Module 5</p>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 dark:text-white">Wired for Growth</h3>
+          <p class="font-display text-sm uppercase text-brand-pink tracking-wide mb-3">Expand Your Reach</p>
+          <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+            Optimize your content for maximum impact, build strategic collaborations, and learn PR strategies that put your creative business in front of new audiences.
+          </p>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="border-l-4 border-brand-gold pl-6">
+          <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">Module 6</p>
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 dark:text-white">Cement Your Success</h3>
+          <p class="font-display text-sm uppercase text-brand-pink tracking-wide mb-3">Learn to Ask for the Sale Confidently</p>
+          <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+            Master pricing strategies, launch with confidence, and build lasting momentum so your creative business keeps growing long after the program ends.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 8: PRICING — Investment details
+       ═══════════════════════════════════════════════════ -->
+  <section id="pricing" class="py-12 sm:py-16 bg-brand-dark scroll-mt-20">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center" data-reveal>
+      <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-pink mb-3">Your Investment</p>
+      <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl uppercase text-white leading-tight mb-4">
+        $2400
+      </h2>
+      <p class="font-display text-xl sm:text-2xl uppercase text-brand-gold tracking-wide mb-2">12 Month Program</p>
+      <p class="text-white/70 text-lg mb-2">Valued at over $6,000</p>
+      <p class="text-white/70 text-base mb-6">Payment plan available: <strong class="text-white">$220/mo</strong></p>
+
+      <div class="inline-flex items-center gap-3 bg-brand-pink/15 border border-brand-pink/40 rounded-xl px-6 py-3 mb-8">
+        <span class="w-2.5 h-2.5 rounded-full bg-brand-pink animate-pulse flex-shrink-0"></span>
+        <span class="font-display text-sm sm:text-base tracking-widest text-brand-pink uppercase">Last Chance to get 2025 rates! Price increases next cohort</span>
+      </div>
+
+      <div>
+        <a
+          href="#"
+          class="cta-shine inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+        >
+          <span class="relative z-10">Join Build It Remarkable</span>
+        </a>
+        <p class="text-white/50 text-sm mt-3">(Payment Plans Available!)</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 9: BONUS BUNDLES — 4 cards with images
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-white dark:bg-brand-dark">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div data-reveal>
+        <SectionHeading
+          overline="Included Extras"
+          title="4 BONUS BUNDLES"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10" data-reveal-stagger>
+        <!-- Bonus 1: Audience Breakthrough -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 overflow-hidden">
+          <Image
+            src={birBonusAudienceSrc}
+            alt="Audience Breakthrough bonus bundle"
+            class="w-full aspect-video object-cover"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">$390 Value</p>
+            <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Audience Breakthrough</h3>
+            <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">A deep dive into audience growth, social media strategy, and content creation that actually moves the needle for creative educators.</p>
+          </div>
+        </div>
+
+        <!-- Bonus 2: Complete Profit Planning -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 overflow-hidden">
+          <Image
+            src={birBonusPlanningSrc}
+            alt="Complete Profit Planning bonus bundle"
+            class="w-full aspect-video object-cover"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">$390 Value</p>
+            <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Complete Profit Planning</h3>
+            <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">The course creator's guide to profitable launches, complete with a guidebook to map out your revenue strategy step by step.</p>
+          </div>
+        </div>
+
+        <!-- Bonus 3: Maker's Tech U -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 overflow-hidden">
+          <Image
+            src={birBonusTechSrc}
+            alt="Maker's Tech U bonus bundle"
+            class="w-full aspect-video object-cover"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">$390 Value</p>
+            <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Maker's Tech U Bundle</h3>
+            <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">The tech support bundle every creator needs &mdash; covering editing, graphics, software setup, and all the tools to run your business smoothly.</p>
+          </div>
+        </div>
+
+        <!-- Bonus 4: Sales Page Breakthrough -->
+        <div class="polished-card group rounded-2xl bg-brand-warm dark:bg-[#242120] border border-brand-gold/15 overflow-hidden">
+          <Image
+            src={birBonusSalespageSrc}
+            alt="Sales Page Breakthrough bonus bundle"
+            class="w-full aspect-video object-cover"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <p class="text-xs font-semibold tracking-[0.2em] text-brand-gold uppercase mb-1">$390 Value</p>
+            <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-200 dark:text-white">Sales Page Breakthrough</h3>
+            <p class="text-brand-dark/80 text-sm leading-relaxed dark:text-white/70">Plug-and-play guides, buyer psychology insights, and templates that make writing your sales page feel effortless.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tania Ahmed Quote -->
+      <div class="max-w-3xl mx-auto" data-reveal>
+        <GoldSeparator />
+        <blockquote class="text-center mt-8">
+          <div class="text-brand-gold/30 font-display text-5xl leading-none select-none mb-2" aria-hidden="true">&ldquo;</div>
+          <p class="text-brand-dark/80 text-base sm:text-lg leading-relaxed italic mb-4 dark:text-white/80">
+            Kellee shares this sales page format, which is just absolute gold. Like that alone is just worth it. I did the launch like you told us just to with the live webinars... And it worked. <strong class="text-brand-dark dark:text-white">I have never made that much money off a single product.</strong>
+          </p>
+          <cite class="not-italic font-semibold text-sm text-brand-dark dark:text-white">&mdash; Tania Ahmed</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 10: MORE TESTIMONIALS — Margarete + Delight
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-brand-warm dark:bg-[#1a1918]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10">
+      <div data-reveal>
+        <SectionHeading
+          overline="Success Stories"
+          title="RAVING REVIEWS"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-reveal-stagger>
+        <div class="testimonial-card flex flex-col">
+          <div class="group relative bg-white dark:bg-[#242120] border border-brand-gold/20 rounded-2xl p-8 polished-card h-full dark:border-brand-gold/15">
+            <div class="text-brand-gold/40 font-display text-5xl leading-none select-none mb-4 dark:text-brand-gold/30" aria-hidden="true">&ldquo;</div>
+            <blockquote class="text-brand-dark/80 text-base leading-relaxed mb-6 dark:text-white/80">
+              For so long I've felt like I'm just spinning my wheels... Now I have a membership with over <strong class="text-brand-dark dark:text-white">300 new members!</strong> I heartily recommend working with Kellee.
+            </blockquote>
+            <div class="flex items-center gap-3 mt-auto">
+              <Image
+                src={testimonialMargareteSrc}
+                alt="Margarete Miller"
+                class="w-10 h-10 rounded-full object-cover"
+                loading="lazy"
+              />
+              <div>
+                <p class="font-semibold text-sm text-brand-dark dark:text-white">Margarete Miller</p>
+                <p class="text-xs text-brand-dark/40 tracking-wide dark:text-white/40">@margarete.miller</p>
+              </div>
+            </div>
+            <div class="absolute top-0 right-0 w-12 h-12 rounded-tr-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-bl from-brand-gold/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card flex flex-col">
+          <div class="group relative bg-white dark:bg-[#242120] border border-brand-gold/20 rounded-2xl p-8 polished-card h-full dark:border-brand-gold/15">
+            <div class="text-brand-gold/40 font-display text-5xl leading-none select-none mb-4 dark:text-brand-gold/30" aria-hidden="true">&ldquo;</div>
+            <blockquote class="text-brand-dark/80 text-base leading-relaxed mb-6 dark:text-white/80">
+              Not only has my art business grown exponentially, I now have a clear understanding of marketing, launching a course and creating a brand. I would never have gotten to where I am on my own... <strong class="text-brand-dark dark:text-white">I will be forever grateful for this opportunity to truly realize my big audacious dreams!</strong>
+            </blockquote>
+            <div class="flex items-center gap-3 mt-auto">
+              <Image
+                src={testimonialDelightSrc}
+                alt="Delight Rogers"
+                class="w-10 h-10 rounded-full object-cover"
+                loading="lazy"
+              />
+              <div>
+                <p class="font-semibold text-sm text-brand-dark dark:text-white">Delight Rogers</p>
+                <p class="text-xs text-brand-dark/40 tracking-wide dark:text-white/40">@delightrogers_art</p>
+              </div>
+            </div>
+            <div class="absolute top-0 right-0 w-12 h-12 rounded-tr-2xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-bl from-brand-gold/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 11: QUALIFICATION — Right for you / Not for you
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-white dark:bg-brand-dark">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+      <div data-reveal>
+        <SectionHeading
+          overline="Is This for You?"
+          title="FIND YOUR FIT"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal>
+        <!-- LEFT: Right for you -->
+        <div class="border-l-4 border-brand-gold pl-6">
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-4 dark:text-white">Build It Remarkable Is Right for You If...</h3>
+          <ul class="space-y-3">
+            <ChecklistItem text='You have <strong class="text-brand-dark dark:text-white">Big Audacious Dreams</strong> of growing your course creator business.' />
+            <ChecklistItem text='You know you can make a bigger impact but <strong class="text-brand-dark dark:text-white">struggle structuring your business</strong> to make it grow.' />
+            <ChecklistItem text='You&rsquo;ve been <strong class="text-brand-dark dark:text-white">spinning your wheels</strong> wanting real marketing answers relevant to artists.' />
+            <ChecklistItem text='Your <strong class="text-brand-dark dark:text-white">social media isn&rsquo;t attracting the right people</strong> and your list isn&rsquo;t growing.' />
+            <ChecklistItem text='<strong class="text-brand-dark dark:text-white">Committed to growing</strong> and ready to invest physically, emotionally, and financially.' />
+            <ChecklistItem text='Someone who thrives in a <strong class="text-brand-dark dark:text-white">Diverse, Equitable and Inclusive</strong> environment.' />
+            <ChecklistItem text='Looking for <strong class="text-brand-dark dark:text-white">support, community, accountability</strong> with creators who get you.' />
+          </ul>
+        </div>
+
+        <!-- RIGHT: Not for you -->
+        <div class="border-l-4 border-gray-300 dark:border-gray-600 pl-6">
+          <h3 class="font-display text-xl uppercase text-brand-dark tracking-wide mb-4 dark:text-white">BIR Might Not Be Right If...</h3>
+          <div class="space-y-4">
+            <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+              You don't want to turn your creative passion into a profitable educator business.
+            </p>
+            <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+              You're opposed to narrowing your scope and picking a Niche.
+            </p>
+            <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+              You're unwilling to show up publicly and use social media as part of your strategy.
+            </p>
+            <p class="text-brand-dark/80 text-base leading-relaxed dark:text-white/70">
+              You're only looking to sell physical products &mdash; this program is designed for course and membership creators.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 12: FAQ — 12 questions
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-brand-warm dark:bg-[#1a1918]">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10">
+      <div data-reveal>
+        <SectionHeading
+          overline="Questions"
+          title="MORE DETAILS ABOUT THE PROGRAM"
+        />
+      </div>
+
+      <div class="space-y-3" data-reveal-stagger>
+        <FaqItem question="Will I learn to make art in this program?">
+          <p>Build it Remarkable is intended for artists who are already proficient and know their style and have already started a creative business. We do NOT learn how to make art in the program, we learn how to leverage our talent to build a Creative Educator Business.</p>
+        </FaqItem>
+
+        <FaqItem question="Will I learn how to sell my art?">
+          <p>This Program does not teach methods to sell art or get into galleries. We learn how to build and market an educator business using your expertise to create courses, a membership, workshops and collaborations, and we will reinforce the skills needed to sell better than ever before through your own uniquely designed offers.</p>
+        </FaqItem>
+
+        <FaqItem question="Will I learn how to create a digital course?">
+          <p>You will learn the foundation to building a business, including how to design the perfect offer. While we might discuss what is possible for tech and course hosting, this program does NOT specifically go into tech. We do provide a tech bundle course as a bonus.</p>
+        </FaqItem>
+
+        <FaqItem question="I'm not a visual artist, will this work for me?">
+          <p>Build it Remarkable is a one-of-a-kind creative business accelerator that will give ANY creative expert the foundation they need. It doesn't matter your medium &mdash; if you are ready to think outside the box and build something truly remarkable, then this is the program for you!</p>
+        </FaqItem>
+
+        <FaqItem question="What if I can't make the calls or workshops?">
+          <p>We record all masterclasses and coaching calls and will keep all trainings indefinitely. We create a variety of times and days for calls in hopes that you'll find an event that matches your schedule.</p>
+        </FaqItem>
+
+        <FaqItem question="How long do I get to keep the content?">
+          <p>You get lifetime access to all the CORE content, such as the modules and bonuses and any updates we make. Coaching or meetup calls kept for a minimum of 3 months.</p>
+        </FaqItem>
+
+        <FaqItem question="How many people will be accepted into the program?">
+          <p>This program has limited enrollment. We will cut off the first cohort of 2026 at a maximum of 80 new Builders.</p>
+        </FaqItem>
+
+        <FaqItem question="What if I don't know what kind of business I want yet?">
+          <p>Do you have an expertise in something creative? Are you proficient in your passion? Then there's no doubt we can extract your genius and put together a great business plan. You don't have to have it all figured out, you just have to start!</p>
+        </FaqItem>
+
+        <FaqItem question="Do I get access to all the content as soon as I join?">
+          <p>We are teaching Build it Remarkable LIVE again this year! Most content is dripped out over time. You get instant access to Jumpstart lessons, the Tech Bundle, and the community.</p>
+        </FaqItem>
+
+        <FaqItem question="How much is the investment?">
+          <p>Currently Build it Remarkable is a 12 month program and the investment is only $2400 USD for a whole year of training and support!</p>
+        </FaqItem>
+
+        <FaqItem question="Is this really a good time to be running a business?">
+          <p>There's no time like right now. Taking control of your future and helping others find art is a big way you can make a difference.</p>
+        </FaqItem>
+
+        <FaqItem question="What if I want a refund?">
+          <p>We have a case by case refund policy. If you decide within the first 14 days that this is not your ideal fit, please show you have watched lessons and done homework. We have a $100 refund service fee.</p>
+        </FaqItem>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 13: FINAL CTA — Value stack + enrollment
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-brand-dark">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10" data-reveal>
+      <div class="text-center mb-10">
+        <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-pink mb-3">Everything You Get</p>
+        <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-white leading-tight mb-6">
+          Your Complete <span class="text-brand-gold">Value Stack</span>
+        </h2>
+      </div>
+
+      <!-- Value list -->
+      <ul class="space-y-3 mb-10">
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">6-week Accelerated Program <span class="text-brand-gold font-semibold">($2,400 Value)</span></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">6 modules for the Complete Builder's Framework</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">A WHOLE YEAR of coaching, community, and training <span class="text-brand-gold font-semibold">($1,600)</span></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">Weekly Live Masterclasses plus Q&A sessions</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">Private Community Group <span class="text-brand-gold font-semibold">($1,000)</span></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">Lifetime Access to all training material</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">Bonus 1: Audience Breakthrough <span class="text-brand-gold font-semibold">($390)</span></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">Bonus 2: Complete Profit Planning <span class="text-brand-gold font-semibold">($390)</span></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">Bonus 3: Maker's Tech U Bundle <span class="text-brand-gold font-semibold">($390)</span></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">Bonus 4: Sales Page Breakthrough <span class="text-brand-gold font-semibold">($390)</span></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          <span class="text-white/80 text-base">Bonus 5: How to Teach Your Art <span class="text-brand-gold font-semibold">($190)</span></span>
+        </li>
+      </ul>
+
+      <GoldSeparator />
+
+      <!-- Enrollment details -->
+      <div class="text-center mt-10">
+        <p class="font-display text-lg sm:text-xl uppercase text-white tracking-wide mb-2">We Officially Begin Build It Remarkable on April 7th</p>
+        <p class="text-white/70 text-lg mb-2">
+          A 12 month coaching program Valued at over <strong class="text-white">$6,000</strong> for only <strong class="text-brand-gold text-2xl">$2,400!</strong>
+        </p>
+        <p class="text-white/70 text-base mb-2">or start for only <strong class="text-white">$220</strong> with our payment plan</p>
+
+        <div class="inline-flex items-center gap-3 bg-brand-pink/15 border border-brand-pink/40 rounded-xl px-6 py-3 mb-8 mt-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-pink animate-pulse flex-shrink-0"></span>
+          <span class="font-display text-sm tracking-widest text-brand-pink uppercase">Last Chance to get 2025 rates!</span>
+        </div>
+
+        <div>
+          <a
+            href="#"
+            class="cta-shine inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+          >
+            <span class="relative z-10">OK! Let's Do This!</span>
+          </a>
+        </div>
+        <p class="mt-4">
+          <a href="#" class="text-brand-pink font-semibold hover:text-brand-gold transition-colors duration-200 text-sm">
+            Schedule a call
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 14: DISCLAIMER
+       ═══════════════════════════════════════════════════ -->
+  <section class="py-12 sm:py-16 bg-brand-warm dark:bg-[#1a1918]">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10">
+      <div class="text-brand-dark/50 text-xs leading-relaxed space-y-3 dark:text-white/40">
+        <p class="font-semibold uppercase tracking-widest text-brand-dark/60 dark:text-white/50 mb-2">Earnings Disclaimer</p>
+        <p>
+          The results shared on this page are real testimonials from Build It Remarkable members. However, individual results will vary and are not guaranteed. Your results depend on many factors including but not limited to your background, experience, work ethic, and market conditions. All business involves risk and requires consistent effort and action. This program provides education and strategies, not a guarantee of income or success.
+        </p>
+        <p>
+          Kellee Wynne Studios LLC makes no guarantees regarding the level of success you may experience. The testimonials and examples used are exceptional results, which do not apply to the average purchaser, and are not intended to represent or guarantee that anyone will achieve the same or similar results.
+        </p>
+      </div>
+
+      <GoldSeparator />
+
+      <div class="text-center text-brand-dark/40 text-xs dark:text-white/30">
+        <p>&copy; {new Date().getFullYear()} Kellee Wynne Studios LLC. All rights reserved.</p>
+        <p class="mt-1">
+          <a href={`${base}/privacy-policy`} class="hover:text-brand-pink transition-colors duration-200">Privacy Policy</a>
+          <span class="mx-2">|</span>
+          <a href={`${base}/terms`} class="hover:text-brand-pink transition-colors duration-200">Terms & Conditions</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <StickyCTA buttonText="Join Build It Remarkable" buttonHref="#" label="$2400 — 12 Month Program" />
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero entrance animations */
+  .hero-item {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .hero-item:nth-child(1) { animation-delay: 0.0s; }
+  .hero-item:nth-child(2) { animation-delay: 0.1s; }
+  .hero-item:nth-child(3) { animation-delay: 0.2s; }
+  .hero-item:nth-child(4) { animation-delay: 0.3s; }
+  .hero-item:nth-child(5) { animation-delay: 0.4s; }
+  .hero-item:nth-child(6) { animation-delay: 0.5s; }
+
+  /* Testimonial card stagger */
+  .testimonial-card {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+  .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+
+  /* Smooth scroll anchor offset for fixed nav */
+  #pricing {
+    scroll-margin-top: 5rem;
+  }
+</style>
