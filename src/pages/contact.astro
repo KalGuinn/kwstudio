@@ -9,21 +9,8 @@ import Footer from '../components/Footer.astro';
   <Nav currentPage="/contact" />
 
   <!-- Header -->
-  <section class="relative py-12 sm:py-16 text-center overflow-hidden">
-    <!-- Soft warm cream-to-white gradient — no art texture -->
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(160deg, #fdf5ee 0%, #fffaf6 55%, #ffffff 100%);"
-    ></div>
-    <!-- Peach background image layer -->
-    <div class="absolute inset-0 opacity-30" style="background-image: url('/images/peach-background.webp'); background-size: cover;"></div>
-    <!-- Faint pink accent bloom top-left -->
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 15% 30%, rgba(254,54,118,0.07) 0%, transparent 50%);"
-    ></div>
-
-    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="bg-brand-warm py-12 sm:py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <p class="font-accent text-brand-pink text-lg sm:text-xl mb-3">
         Get In Touch
       </p>
@@ -42,16 +29,8 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Form -->
-  <section class="relative py-12 sm:py-14 overflow-hidden">
-    <!-- Clean warm background — no art texture -->
-    <div class="absolute inset-0 bg-brand-warm"></div>
-    <!-- Gentle gold radial accent bottom-right -->
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 85% 90%, rgba(230,184,29,0.09) 0%, transparent 50%);"
-    ></div>
-
-    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="bg-white py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Warm intro above form -->
       <div class="text-center mb-6">
         <p class="font-accent text-brand-dark/60 text-lg sm:text-xl italic">
@@ -67,15 +46,8 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Our Promise -->
-  <section class="relative py-12 sm:py-14 overflow-hidden">
-    <!-- Dark solid with warm radial accents — no art texture -->
-    <div class="absolute inset-0 bg-brand-dark"></div>
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 20% 50%, rgba(254,54,118,0.12) 0%, transparent 50%), radial-gradient(ellipse at 85% 20%, rgba(230,184,29,0.10) 0%, transparent 45%);"
-    ></div>
-
-    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="bg-brand-dark text-white py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <p class="font-accent text-brand-gold text-lg sm:text-xl italic mb-2">
         you're in good hands
       </p>

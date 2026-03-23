@@ -4,32 +4,17 @@ interface Props {
   subtitle?: string;
   buttonText: string;
   buttonHref: string;
-  variant?: 'dark' | 'pink' | 'warm';
+  variant?: 'dark' | 'warm';
 }
 
 const { headline, subtitle, buttonText, buttonHref, variant = 'dark' } = Astro.props;
 
-const styles = {
-  dark: {
-    bg: 'bg-brand-dark',
-    btn: 'bg-brand-gold text-brand-dark hover:brightness-110 font-bold',
-  },
-  pink: {
-    bg: 'bg-brand-pink',
-    btn: 'bg-white text-brand-pink hover:bg-gray-50 font-bold',
-  },
-  warm: {
-    bg: 'bg-brand-warm',
-    btn: 'bg-brand-gold text-brand-dark hover:brightness-110 font-bold',
-  },
-};
-
-const { bg, btn } = styles[variant];
+const bgClass = variant === 'warm' ? 'bg-brand-warm' : 'bg-brand-dark';
 const textColor = variant === 'warm' ? 'text-brand-dark' : 'text-white';
 const subtitleColor = variant === 'warm' ? 'text-brand-dark/50' : 'text-white/60';
 ---
 
-<section class={`${bg} ${textColor} py-20 sm:py-28`}>
+<section class={`${bgClass} ${textColor} py-20 sm:py-28`}>
   <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
     <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase mb-4 leading-tight">
       {headline}
@@ -39,7 +24,7 @@ const subtitleColor = variant === 'warm' ? 'text-brand-dark/50' : 'text-white/60
     )}
     <a
       href={buttonHref}
-      class={`inline-block text-sm sm:text-base px-10 py-4 rounded-lg tracking-wider uppercase transition-all duration-300 hover:scale-[1.02] ${btn}`}
+      class="inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
     >
       {buttonText}
     </a>

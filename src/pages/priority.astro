@@ -14,21 +14,9 @@ import Footer from '../components/Footer.astro';
        HERO — Premium dark gradient — sales page energy, no art texture
        BIR logo + cohort portrait + headline
        ═══════════════════════════════════════════════════ -->
-  <section class="relative min-h-[70vh] flex items-end overflow-hidden -mt-20">
-    <!-- Layer 1: Warm light gradient -->
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(135deg, #fdf7f2 0%, #f5e0d0 40%, #eddcc8 70%, #e8d0b8 100%);"
-    ></div>
-
-    <!-- Layer 2: Subtle pink/gold radial accents -->
-    <div
-      class="absolute inset-0"
-      style="background: radial-gradient(ellipse at 10% 60%, rgba(254,54,118,0.08) 0%, transparent 55%), radial-gradient(ellipse at 90% 20%, rgba(230,184,29,0.10) 0%, transparent 50%);"
-    ></div>
-
+  <section class="relative flex items-end overflow-hidden -mt-20 bg-brand-warm pt-24 pb-12">
     <!-- Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-24 pb-10 lg:pt-28 lg:pb-14">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
       <div class="flex flex-col lg:flex-row items-end gap-8 lg:gap-8">
 
         <!-- LEFT: BIR logo + cohort portrait stacked -->
@@ -53,27 +41,14 @@ import Footer from '../components/Footer.astro';
         <!-- RIGHT: Headline + tagline + CTA -->
         <div class="text-center lg:text-left lg:w-[56%]">
 
-          <!-- Dream Catalyst branding banner -->
-          <div class="flex justify-center lg:justify-start mb-5">
-            <img
-              src="/images/dream-catalyst-branding.jpg"
-              alt="Dream Catalyst"
-              class="w-4/5 h-auto rounded"
-              loading="eager"
-            />
-          </div>
-
           <!-- Eyebrow label -->
           <p class="hero-eyebrow inline-block text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-brand-gold mb-5 px-4 py-1.5 border border-brand-gold/40 rounded-full bg-brand-gold/10">
             A Heart-Led Program for Creative Educators
           </p>
 
           <!-- Main headline -->
-          <h1 class="hero-headline font-display text-[2.8rem] sm:text-6xl lg:text-7xl uppercase leading-[0.92] mb-6 tracking-tight">
-            <span class="text-brand-dark">Don't Let</span><br />
-            <span class="text-brand-pink">Another Day</span><br />
-            <span class="text-brand-dark">Pass Without</span><br />
-            <span class="text-brand-gold">Your Dreams</span>
+          <h1 class="hero-headline font-display text-4xl sm:text-5xl lg:text-6xl uppercase text-brand-pink leading-tight mb-6">
+            Don't Let Another Day Pass Without Your Dreams
           </h1>
 
           <!-- Tagline -->
@@ -96,41 +71,23 @@ import Footer from '../components/Footer.astro';
           <div class="hero-cta">
             <a
               href="#waitlist-form"
-              class="group inline-flex items-center gap-3 bg-brand-gold text-brand-dark font-display text-base sm:text-lg tracking-[0.1em] uppercase px-10 py-4 rounded-lg shadow-xl hover:brightness-105 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+              class="bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
-              <span>Please Add Me to the List!</span>
-              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
+              Please Add Me to the List!
             </a>
           </div>
 
         </div>
       </div>
     </div>
-
-    <!-- Bottom fade to next section -->
-    <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
   </section>
 
-
-  <img src="/images/wave-divider.svg" alt="" class="w-full h-auto -mt-1" aria-hidden="true" />
 
   <!-- ═══════════════════════════════════════════════════
        QUOTE — Howard Thurman. Big, atmospheric, serif.
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-16 overflow-hidden bg-brand-warm">
-    <!-- Subtle CSS radial accents in corners — no art texture -->
-    <div
-      class="absolute top-0 left-0 w-80 h-80 rounded-br-full pointer-events-none"
-      style="background: radial-gradient(ellipse at top left, rgba(230,184,29,0.10) 0%, transparent 70%);"
-    ></div>
-    <div
-      class="absolute bottom-0 right-0 w-64 h-64 rounded-tl-full pointer-events-none"
-      style="background: radial-gradient(ellipse at bottom right, rgba(254,54,118,0.07) 0%, transparent 70%);"
-    ></div>
-
-    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-10 text-center">
+  <section class="py-12 sm:py-16 bg-brand-warm">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
       <!-- Decorative opening mark -->
       <div class="text-brand-gold/30 font-display text-[9rem] leading-none select-none -mb-10 block" aria-hidden="true">&ldquo;</div>
 
@@ -154,17 +111,14 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        TESTIMONIALS — Personal, trustworthy, card grid
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-16 overflow-hidden bg-white">
-    <!-- Subtle pink bloom top-right -->
-    <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-brand-pink/5 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-
-    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
+  <section class="py-12 sm:py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
 
       <!-- Section header -->
       <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-pink text-center mb-3">
         Real Results. Real Builders.
       </p>
-      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark text-center uppercase leading-tight mb-4">
+      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4 text-center">
         Hear What the Builders Have to<br class="hidden sm:block" /> Say About Working with Kellee
       </h2>
       <div class="w-20 h-1 bg-brand-gold mx-auto mb-10 rounded-full"></div>
@@ -262,14 +216,8 @@ import Footer from '../components/Footer.astro';
        ABOUT KELLEE — Meet your guide section
        Dark with warm radial accents
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-16 overflow-hidden bg-white">
-    <!-- Subtle warm accents — light background for readability -->
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 0% 50%, rgba(254,54,118,0.05) 0%, transparent 50%), radial-gradient(ellipse at 100% 0%, rgba(230,184,29,0.06) 0%, transparent 45%);"
-    ></div>
-
-    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
+  <section class="py-12 sm:py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
 
         <!-- Splat portrait -->
@@ -287,7 +235,7 @@ import Footer from '../components/Footer.astro';
           <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-pink mb-3">
             Your Guide
           </p>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl uppercase text-brand-dark leading-tight mb-4">
+          <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4">
             Hi! I'm Kellee Wynne
           </h2>
           <p class="font-accent text-lg sm:text-xl text-brand-dark/70 leading-relaxed mb-4">
@@ -316,24 +264,14 @@ import Footer from '../components/Footer.astro';
        IS THIS RIGHT FOR YOU? — Qualifying checklist
        Warm background, generous spacing, checkmarks
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-16 overflow-hidden bg-brand-warm">
-    <!-- CSS radial corner accents — no art texture -->
-    <div
-      class="absolute top-0 right-0 w-72 h-72 rounded-bl-full pointer-events-none"
-      style="background: radial-gradient(ellipse at top right, rgba(254,54,118,0.08) 0%, transparent 70%);"
-    ></div>
-    <div
-      class="absolute bottom-0 left-0 w-72 h-72 rounded-tr-full pointer-events-none"
-      style="background: radial-gradient(ellipse at bottom left, rgba(230,184,29,0.09) 0%, transparent 70%);"
-    ></div>
-
-    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-10">
+  <section class="py-12 sm:py-16 bg-brand-warm">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10">
 
       <!-- Section header -->
       <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-pink text-center mb-3">
         Find Out If It's Your Time
       </p>
-      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark text-center uppercase leading-tight mb-4">
+      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4 text-center">
         Is Build It Remarkable<br class="hidden sm:block" /> the Right Path for You?
       </h2>
       <div class="w-20 h-1 bg-brand-pink mx-auto mb-10 rounded-full"></div>
@@ -438,12 +376,9 @@ import Footer from '../components/Footer.astro';
         </p>
         <a
           href="#waitlist-form"
-          class="inline-flex items-center gap-3 bg-brand-pink text-white font-display text-sm sm:text-base tracking-[0.1em] uppercase px-10 py-4 rounded-lg shadow-lg hover:brightness-105 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+          class="bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
         >
           Save My Spot on the List
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
-          </svg>
         </a>
       </div>
 
@@ -455,19 +390,8 @@ import Footer from '../components/Footer.astro';
        WAITLIST FORM — Bottom anchor, high-contrast, urgent
        Premium dark gradient + BIR logo + form
        ═══════════════════════════════════════════════════ -->
-  <section id="waitlist-form" class="relative py-16 overflow-hidden">
-    <!-- Deep premium dark — matches hero, bookends the page — no art texture -->
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(155deg, #0f0f1a 0%, #1c1218 60%, #1a0f0f 100%);"
-    ></div>
-    <!-- Pink bloom top-center + gold bloom bottom-right -->
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 50% 0%, rgba(254,54,118,0.20) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(230,184,29,0.12) 0%, transparent 50%);"
-    ></div>
-
-    <div class="relative z-10 max-w-xl mx-auto px-6 lg:px-10 text-center">
+  <section id="waitlist-form" class="py-12 sm:py-16 bg-brand-dark text-white">
+    <div class="max-w-xl mx-auto px-6 lg:px-10 text-center">
 
       <!-- BIR Logo above form -->
       <img
@@ -532,12 +456,9 @@ import Footer from '../components/Footer.astro';
           <div class="pt-2">
             <button
               type="submit"
-              class="group w-full bg-brand-gold text-brand-dark font-display text-base tracking-[0.12em] uppercase px-10 py-4 rounded-lg shadow-xl hover:brightness-105 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3"
+              class="w-full bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
-              <span>Yes, Put Me on the List!</span>
-              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
+              Yes, Put Me on the List!
             </button>
           </div>
 

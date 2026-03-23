@@ -12,20 +12,10 @@ import Footer from '../components/Footer.astro';
 
   <!-- ═══════════════════════════════════════════════════
        HERO — "Would Somebody Please Steal My Ideas?"
-       Bright warm gradient — fun, energetic, lead magnet focus
+       Warm background — fun, energetic, lead magnet focus
        ═══════════════════════════════════════════════════ -->
-  <section class="relative overflow-hidden -mt-20">
-    <!-- Layer 1: Bright cream-to-gold-tinted warm gradient — fun and energetic -->
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(135deg, #fff8ee 0%, #fdf0d5 40%, #fce8c8 75%, #fdf5ee 100%);"
-    ></div>
-    <!-- Layer 2: Bold pink radial left + gold radial right — playful energy -->
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 5% 40%, rgba(254,54,118,0.14) 0%, transparent 50%), radial-gradient(ellipse at 95% 20%, rgba(230,184,29,0.16) 0%, transparent 45%);"
-    ></div>
-    <!-- Layer 3: Bottom fade into next section -->
+  <section class="relative bg-brand-warm overflow-hidden -mt-20">
+    <!-- Bottom fade into next section -->
     <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 w-full pt-28 pb-12 lg:pb-16">
@@ -51,7 +41,7 @@ import Footer from '../components/Footer.astro';
           <!-- Big punchy headline -->
           <h1 class="font-display text-[2.8rem] sm:text-6xl lg:text-[5rem] text-brand-dark uppercase leading-[0.9] mb-6 tracking-tight hero-item">
             Would Somebody<br />
-            <span style="color: #fe3676;">Please Steal</span><br />
+            <span class="text-brand-pink">Please Steal</span><br />
             My Ideas?
           </h1>
 
@@ -114,14 +104,14 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        WHAT'S INSIDE — 3-column content breakdown
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-brand-warm py-10 sm:py-12">
+  <section class="bg-brand-warm py-12 sm:py-16">
     <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
       <p class="text-xs font-semibold tracking-[0.2em] text-brand-orange uppercase mb-3">
         Inside the PDF
       </p>
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark uppercase leading-tight mb-4">
         What You'll Find Inside the<br />
-        <span style="color: #fe3676;">'Steal My Ideas'</span> PDF
+        <span class="text-brand-pink">'Steal My Ideas'</span> PDF
       </h2>
       <div class="w-20 h-1 bg-brand-gold mx-auto mb-8 rounded-full"></div>
 
@@ -129,10 +119,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Column 1 -->
         <div class="bg-white rounded-xl p-7 shadow-sm border border-brand-dark/5 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-          <div
-            class="w-12 h-12 rounded-full flex items-center justify-center text-white font-display text-xl flex-shrink-0"
-            style="background: linear-gradient(135deg, #fe3676 0%, #ff5031 100%);"
-          >
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-display text-xl flex-shrink-0 bg-brand-pink">
             1
           </div>
           <h3 class="font-display text-base sm:text-lg uppercase text-brand-dark leading-snug tracking-wide">
@@ -145,10 +132,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- Column 2 — featured / center -->
-        <div
-          class="rounded-xl p-7 shadow-md flex flex-col gap-4 relative overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-          style="background: linear-gradient(145deg, #fe3676 0%, #ff5031 60%, #e6b81d 100%);"
-        >
+        <div class="rounded-xl p-7 shadow-md flex flex-col gap-4 relative overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 bg-brand-dark text-white">
           <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white font-display text-xl flex-shrink-0">
             100
           </div>
@@ -163,10 +147,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Column 3 -->
         <div class="bg-white rounded-xl p-7 shadow-sm border border-brand-dark/5 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-          <div
-            class="w-12 h-12 rounded-full flex items-center justify-center text-white font-display text-xl flex-shrink-0"
-            style="background: linear-gradient(135deg, #e6b81d 0%, #ff5031 100%);"
-          >
+          <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-display text-xl flex-shrink-0 bg-brand-gold">
             +
           </div>
           <h3 class="font-display text-base sm:text-lg uppercase text-brand-dark leading-snug tracking-wide">
@@ -185,7 +166,7 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        TESTIMONIALS — Social proof
        ═══════════════════════════════════════════════════ -->
-  <section class="relative bg-white py-10 sm:py-12 overflow-hidden">
+  <section class="relative bg-white py-12 sm:py-16 overflow-hidden">
     <!-- Faded photo background at low opacity for warmth -->
     <div class="absolute inset-0 opacity-[0.12]" style="background-image: url('/images/faded-photo-background.webp'); background-size: cover;"></div>
     <!-- Warm overlay to blend photo into section -->
@@ -218,19 +199,8 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        MID-PAGE CTA BAND
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-14 overflow-hidden">
-    <!-- Bold pink-to-dark color block — energetic, no art texture -->
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(120deg, #fe3676 0%, #ff5031 50%, #2b1a1a 100%);"
-    ></div>
-    <!-- Subtle gold highlight -->
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 80% 50%, rgba(230,184,29,0.18) 0%, transparent 50%);"
-    ></div>
-
-    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+  <section class="bg-brand-dark text-white py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto px-6 text-center">
       <a
         href="#signup-top"
         class="inline-block bg-brand-gold text-brand-dark font-display text-lg sm:text-2xl uppercase tracking-widest px-12 py-5 rounded-lg hover:brightness-110 active:scale-[.98] transition-all duration-200 shadow-xl"
@@ -243,7 +213,7 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        ABOUT KELLEE — Portrait + bio
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-white py-10 sm:py-12">
+  <section class="bg-white py-12 sm:py-16">
     <div class="max-w-5xl mx-auto px-6 lg:px-12">
       <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
 
@@ -300,7 +270,7 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        LIFESTYLE PHOTOS — Brand images strip
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-brand-warm py-10">
+  <section class="bg-brand-warm py-12 sm:py-16">
     <div class="max-w-6xl mx-auto px-6 lg:px-12">
       <div class="grid grid-cols-3 gap-3 sm:gap-4">
         <img
@@ -328,19 +298,8 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        BOTTOM CTA SECTION — Repeat signup + bottom graphic
        ═══════════════════════════════════════════════════ -->
-  <section class="relative overflow-hidden">
-    <!-- Warm cream-to-gold gradient — echoes hero, bookends the page — no art texture -->
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(150deg, #fdf0d5 0%, #fdf5ee 50%, #fff8ee 100%);"
-    ></div>
-    <!-- Pink accent bottom-left, gold top-right -->
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 0% 100%, rgba(254,54,118,0.10) 0%, transparent 50%), radial-gradient(ellipse at 100% 0%, rgba(230,184,29,0.12) 0%, transparent 45%);"
-    ></div>
-
-    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 py-10 sm:py-12">
+  <section class="bg-brand-warm">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12 py-12 sm:py-16">
       <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
 
         <!-- Bottom product graphic -->
@@ -360,7 +319,7 @@ import Footer from '../components/Footer.astro';
           </p>
           <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-8">
             In This PDF Guidebook I'm Giving You<br />
-            <span style="color: #fe3676;">100 Ways to Build</span> a Profitable<br />
+            <span class="text-brand-pink">100 Ways to Build</span> a Profitable<br />
             Creative Educator Business in 2026!
           </h2>
 

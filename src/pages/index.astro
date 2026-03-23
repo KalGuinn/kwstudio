@@ -34,14 +34,6 @@ import Footer from '../components/Footer.astro';
 
         <!-- Portrait — large, grounded at bottom, flush to hero edge -->
         <div class="order-2 lg:order-1 flex-shrink-0 lg:w-[42%] self-end relative">
-          <!-- Subtle scatter dots accent near portrait -->
-          <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div class="absolute w-2 h-2 rounded-full bg-black opacity-50" style="top: 18%; left: 6%;"></div>
-            <div class="absolute w-1.5 h-1.5 rounded-full bg-black opacity-40" style="top: 32%; left: 2%;"></div>
-            <div class="absolute w-2.5 h-2.5 rounded-full bg-black opacity-45" style="top: 12%; right: 8%;"></div>
-            <div class="absolute w-1.5 h-1.5 rounded-full bg-black opacity-55" style="top: 45%; right: 4%;"></div>
-            <div class="absolute w-2 h-2 rounded-full bg-black opacity-40" style="top: 25%; right: 14%;"></div>
-          </div>
           <img
             src="/images/kellee-portrait-standing.png"
             alt="Kellee Wynne"
@@ -53,7 +45,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Text — right side, vertically centered -->
         <div class="order-1 lg:order-2 lg:w-[58%] text-center lg:text-left pt-8 pb-6 lg:pb-8 lg:pt-0 self-center">
-          <h1 class="font-display text-[2.5rem] sm:text-5xl lg:text-6xl xl:text-[4.5rem] text-brand-pink uppercase leading-[0.95] mb-6 tracking-tight">
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl uppercase text-brand-pink leading-tight mb-6">
             I'm so happy that you're here!
           </h1>
           <p class="font-semibold text-lg sm:text-xl lg:text-2xl text-brand-dark leading-snug mb-4 max-w-xl lg:max-w-none">
@@ -63,18 +55,9 @@ import Footer from '../components/Footer.astro';
             I want to help you turn your talent into a profitable course business.
           </p>
 
-          <!-- CTA — styled like original: outlined with pink accent -->
           <div class="flex flex-col sm:flex-row items-center lg:items-start gap-3">
-            <a
-              href="/priority"
-              class="group relative inline-flex flex-col items-center bg-white/80 backdrop-blur-sm border-2 border-brand-dark px-10 py-4 rounded-lg hover:bg-brand-pink hover:border-brand-pink hover:text-white transition-all duration-300"
-            >
-              <span class="text-xs font-medium tracking-widest uppercase text-brand-dark/60 group-hover:text-white/80 transition-colors">
-                Click Here to Learn About My Signature Program
-              </span>
-              <span class="font-display text-xl sm:text-2xl uppercase text-brand-dark group-hover:text-white transition-colors tracking-wide">
-                Build It Remarkable
-              </span>
+            <a href="/priority" class="bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+              Build It Remarkable
             </a>
           </div>
         </div>
@@ -82,17 +65,13 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- Wave divider between hero and 3 Ways section -->
-  <img src="/images/wave-divider.svg" alt="" class="w-full h-auto -mt-1" aria-hidden="true" />
-
   <!-- ═══════════════════════════════════════════════════
        CONNECT — "3 Ways We Can Connect Right Now"
        Warm section with offerings cards
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-12 sm:py-16 overflow-hidden bg-white">
-    <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: url('/images/squiggle-background.webp'); background-size: cover; background-position: center;"></div>
+  <section class="py-12 sm:py-16 bg-white">
     <div class="max-w-5xl mx-auto px-6 lg:px-10">
-      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark text-center uppercase mb-4">
+      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4 text-center">
         Here are 3 Ways We Can Connect Right Now
       </h2>
       <div class="w-24 h-1 bg-brand-pink mx-auto mb-8 rounded-full"></div>
@@ -152,7 +131,7 @@ import Footer from '../components/Footer.astro';
           href="/podcast"
           class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border-t-4 border-brand-orange bg-brand-warm"
         >
-          <div class="flex items-center justify-center bg-gradient-to-br from-brand-dark to-[#3d2b1f] px-6 pt-8 pb-6 min-h-[9rem]">
+          <div class="flex items-center justify-center bg-brand-dark px-6 pt-8 pb-6 min-h-[9rem]">
             <div class="text-center">
               <div class="w-16 h-16 mx-auto mb-2 rounded-full bg-brand-orange/20 border-2 border-brand-orange flex items-center justify-center">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8 text-brand-orange">
@@ -181,15 +160,8 @@ import Footer from '../components/Footer.astro';
        ABOUT — Meet Kellee, warm and personal
        Art background texture with portrait
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-12 sm:py-16 overflow-hidden">
-    <!-- Art background with stronger presence -->
-    <div
-      class="absolute inset-0 bg-cover bg-center opacity-20"
-      style="background-image: url('/images/art-background.jpg');"
-    ></div>
-    <div class="absolute inset-0 bg-brand-warm/90"></div>
-
-    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
+  <section class="py-12 sm:py-16 bg-brand-warm">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
       <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
         <!-- Splat portrait — the artistic circular one with paint splatters -->
         <div class="flex-shrink-0">
@@ -201,7 +173,7 @@ import Footer from '../components/Footer.astro';
           />
         </div>
         <div>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl uppercase mb-6 leading-tight text-brand-dark">
+          <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4">
             Meet Kellee
           </h2>
           <p class="text-brand-dark/80 text-lg leading-relaxed mb-4">
@@ -215,10 +187,10 @@ import Footer from '../components/Footer.astro';
           </p>
           <a
             href="/contact"
-            class="inline-flex items-center gap-2 text-brand-pink font-semibold hover:gap-3 transition-all duration-300"
+            class="text-brand-pink font-semibold hover:text-brand-gold transition-colors duration-200 inline-flex items-center gap-1"
           >
             Get to know me
-            <span class="text-lg">→</span>
+            <span>→</span>
           </a>
         </div>
       </div>

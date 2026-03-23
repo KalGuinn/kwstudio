@@ -10,27 +10,9 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        HERO — Warm peach-to-cream gradient + dramatic book cover
        ═══════════════════════════════════════════════════ -->
-  <section class="relative min-h-[85vh] flex items-center overflow-hidden -mt-20">
-    <!-- Layer 1: Warm peach-to-cream gradient (no art texture) -->
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(135deg, #f9e8da 0%, #fdf5ee 45%, #fff8f2 100%);"
-    ></div>
-
-    <!-- Layer 2: Soft radial bloom — golden warmth from behind the book -->
-    <div
-      class="absolute inset-0"
-      style="background: radial-gradient(ellipse at 30% 55%, rgba(230,184,29,0.12) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(254,54,118,0.07) 0%, transparent 50%);"
-    ></div>
-
-    <!-- Layer 3: Subtle bottom fade into next section -->
-    <div
-      class="absolute inset-x-0 bottom-0 h-20"
-      style="background: linear-gradient(to bottom, transparent, rgba(253,245,238,0.7));"
-    ></div>
-
+  <section class="relative flex items-center overflow-hidden -mt-20 bg-brand-warm pt-24 pb-12">
     <!-- Content -->
-    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 w-full pt-24 pb-10 lg:pt-28 lg:pb-14">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12 w-full">
       <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
 
         <!-- Book cover — large, rotated, dramatic shadow -->
@@ -48,7 +30,7 @@ import Footer from '../components/Footer.astro';
           <p class="text-xs sm:text-sm font-medium tracking-[0.18em] text-brand-pink uppercase mb-4">
             The Book
           </p>
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark uppercase leading-tight mb-6">
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl uppercase text-brand-pink leading-tight mb-6">
             Mixed Media<br />Color Studio
           </h1>
           <p class="text-brand-dark/70 text-base sm:text-lg leading-relaxed mb-3 font-medium">
@@ -59,17 +41,17 @@ import Footer from '../components/Footer.astro';
             creative exercises, and full-color inspiration to unlock your artistic voice.
           </p>
 
-          <!-- Purchase buttons — gold, premium feel -->
+          <!-- Purchase buttons -->
           <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
             <a
               href="https://amazon.com/dp/1631599968"
-              class="inline-block bg-brand-gold text-white font-display text-sm tracking-[0.1em] uppercase px-9 py-3.5 rounded-full shadow-lg hover:brightness-105 hover:shadow-xl transition-all duration-300"
+              class="bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
               Buy on Amazon
             </a>
             <a
               href="#"
-              class="inline-block bg-white/70 backdrop-blur-sm border-2 border-brand-gold text-brand-dark font-display text-sm tracking-[0.1em] uppercase px-9 py-3.5 rounded-full hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all duration-300"
+              class="border-2 border-brand-gold text-brand-gold font-display uppercase tracking-widest px-10 py-4 rounded-lg hover:bg-brand-gold hover:text-brand-dark transition-all duration-300"
             >
               Bookshop.org
             </a>
@@ -79,21 +61,6 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </section>
-
-  <!-- Wave divider: hero → book banner -->
-  <div class="relative -mt-1 overflow-hidden leading-none" aria-hidden="true">
-    <svg
-      viewBox="0 0 1440 60"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="none"
-      class="w-full h-12 sm:h-16"
-    >
-      <path
-        d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z"
-        fill="rgba(43,26,26,0.18)"
-      />
-    </svg>
-  </div>
 
   <!-- ═══════════════════════════════════════════════════
        BOOK BANNER — Full-width immersive section break
@@ -113,19 +80,12 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        WHAT'S INSIDE — Warm section with radial accent
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-12 sm:py-16 overflow-hidden">
-    <!-- Solid warm with subtle radial gold accent — no art texture -->
-    <div class="absolute inset-0 bg-brand-warm"></div>
-    <div
-      class="absolute inset-0 pointer-events-none"
-      style="background: radial-gradient(ellipse at 90% 10%, rgba(230,184,29,0.10) 0%, transparent 50%), radial-gradient(ellipse at 5% 90%, rgba(254,54,118,0.06) 0%, transparent 45%);"
-    ></div>
-
-    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10">
+  <section class="py-12 sm:py-16 bg-brand-warm">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10">
       <p class="text-xs sm:text-sm font-medium tracking-[0.18em] text-brand-pink uppercase text-center mb-3">
         Inside the Pages
       </p>
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark text-center uppercase mb-3">
+      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4 text-center">
         What's Inside
       </h2>
       <div class="w-16 h-1 bg-brand-gold mx-auto mb-8 rounded-full"></div>
@@ -192,13 +152,13 @@ import Footer from '../components/Footer.astro';
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="https://amazon.com/dp/1631599968"
-            class="inline-block bg-brand-gold text-white font-display text-sm tracking-[0.1em] uppercase px-9 py-3.5 rounded-full shadow-md hover:brightness-105 hover:shadow-lg transition-all duration-300"
+            class="bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
           >
             Buy on Amazon
           </a>
           <a
             href="#"
-            class="inline-block border-2 border-brand-gold text-brand-dark font-display text-sm tracking-[0.1em] uppercase px-9 py-3.5 rounded-full hover:bg-brand-gold hover:text-white transition-all duration-300"
+            class="border-2 border-brand-gold text-brand-gold font-display uppercase tracking-widest px-10 py-4 rounded-lg hover:bg-brand-gold hover:text-brand-dark transition-all duration-300"
           >
             Bookshop.org
           </a>
@@ -210,18 +170,8 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        THANK YOU — Intimate, handwritten feel with font-accent
        ═══════════════════════════════════════════════════ -->
-  <section class="relative py-12 sm:py-16 overflow-hidden bg-white">
-    <!-- Soft radial pink bloom in corners — no art texture -->
-    <div
-      class="absolute top-0 right-0 w-96 h-96 rounded-bl-full pointer-events-none"
-      style="background: radial-gradient(ellipse at top right, rgba(254,54,118,0.06) 0%, transparent 70%);"
-    ></div>
-    <div
-      class="absolute bottom-0 left-0 w-64 h-64 rounded-tr-full pointer-events-none"
-      style="background: radial-gradient(ellipse at bottom left, rgba(230,184,29,0.07) 0%, transparent 70%);"
-    ></div>
-
-    <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-10 text-center">
+  <section class="py-12 sm:py-16 bg-white">
+    <div class="max-w-2xl mx-auto px-6 lg:px-10 text-center">
       <!-- Gold decorative rule -->
       <div class="flex items-center justify-center gap-4 mb-8">
         <div class="h-px w-16 bg-brand-gold/50"></div>
@@ -229,7 +179,7 @@ import Footer from '../components/Footer.astro';
         <div class="h-px w-16 bg-brand-gold/50"></div>
       </div>
 
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark uppercase mb-6 tracking-wide">
+      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4">
         Thank You
       </h2>
 
