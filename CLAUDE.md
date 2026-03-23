@@ -65,17 +65,20 @@ Use `shadow-md` base with `hover:shadow-lg hover:-translate-y-1 transition-all d
 
 | Component | File | Purpose | Props |
 |-----------|------|---------|-------|
-| `Layout` | `src/layouts/Layout.astro` | Base HTML shell, global animations, ViewTransitions, OG tags | `title, description?` |
-| `Nav` | `src/components/Nav.astro` | Fixed nav, 6 links + gold BIR pill, mobile menu | `currentPage?` |
-| `Footer` | `src/components/Footer.astro` | Dark footer, gradient accent bar, social icons | none |
+| `Layout` | `src/layouts/Layout.astro` | Base HTML shell, scroll animations, ViewTransitions, dark mode, OG tags, JSON-LD | `title, description?` |
+| `Nav` | `src/components/Nav.astro` | Fixed nav, 6 links + gold BIR pill, mobile menu, dark mode toggle | `currentPage?` |
+| `Footer` | `src/components/Footer.astro` | Warm (light) / dark (dark mode) footer, gradient accent bar, social icons | none |
 | `Hero` | `src/components/Hero.astro` | Page hero with variant system | `variant (warm/dark/art), title, overline?, subtitle?, image?, cta?` |
 | `Card` | `src/components/Card.astro` | Flexible card (image/icon/dark variants) | `title, subtitle?, href, icon?, image?, dark?` |
-| `CallToAction` | `src/components/CallToAction.astro` | Full-width CTA section | `headline, subtitle?, buttonText, buttonHref, variant (dark/warm)` |
+| `CallToAction` | `src/components/CallToAction.astro` | Full-width CTA section (warm in light, dark in dark mode) | `headline, subtitle?, buttonText, buttonHref, variant (dark/warm)` |
 | `SectionHeading` | `src/components/SectionHeading.astro` | Overline + title + gold bar | `title, overline?, centered?` |
 | `TestimonialCard` | `src/components/TestimonialCard.astro` | Quote card with avatar | `quote, name, title, initial` |
 | `GoldSeparator` | `src/components/GoldSeparator.astro` | Decorative gold dot-lines | none |
 | `ChecklistItem` | `src/components/ChecklistItem.astro` | Gold checkmark list item | `text` |
 | `ContactForm` | `src/components/ContactForm.astro` | Contact form (Formspree) | none |
+| `BackToTop` | `src/components/BackToTop.astro` | Floating gold "back to top" button (appears after 500px scroll) | none |
+| `StickyCTA` | `src/components/StickyCTA.astro` | Fixed bottom CTA bar with glass-morphism (sales pages) | `buttonText, buttonHref, label?` |
+| `BrushDivider` | `src/components/BrushDivider.astro` | SVG paint-stroke section divider | `color? (pink/gold/warm), flip?` |
 
 ## Data Files
 - `src/data/navigation.ts` — Centralized nav links and social links (edit here to add/remove nav items)
@@ -112,11 +115,29 @@ Use `shadow-md` base with `hover:shadow-lg hover:-translate-y-1 transition-all d
 - No hardcoded hex colors in markup
 - Commit before presenting changes (enables easy revert)
 
+## Interactive Features (Round 9)
+- **Dark mode**: Class-based toggle (Tailwind `darkMode: 'class'`), warm studio palette, sun/moon toggle in Nav, persists via localStorage + `astro:after-swap`
+- **Scroll reveal**: `data-reveal` / `data-reveal="left|right|scale"` / `data-reveal-stagger` attributes, IntersectionObserver in Layout.astro
+- **Page transitions**: Custom fadeSlide animations via Astro View Transitions
+- **BackToTop**: Floating gold button on priority + free-guide pages
+- **StickyCTA**: Fixed bottom bar on priority ("Join the Priority List") + free-guide ("Get the Free PDF")
+- **BrushDivider**: SVG paint-stroke dividers between sections (book, contact)
+- **SEO**: JSON-LD structured data (Organization global, Book on /book, PodcastSeries on /podcast), `<slot name="head" />` for page-specific head content
+
+### Dark Mode Notes
+- CSS overrides in Layout.astro handle broad changes (body bg, nav, inputs)
+- Inline `dark:` Tailwind classes preferred for element-specific colors
+- Hero sections with light bg images use `data-dark-overlay` for dark mode dimming (homepage only)
+- `build-it-remarkable-logo.png` needs `bg-white/90 rounded-lg px-4 py-2` wherever on dark backgrounds
+- Gradient fades (from-white, from-brand-warm) are overridden in dark mode CSS
+- Footer uses inline `dark:` classes (bg-brand-warm light, bg-[#111010] dark)
+
 ## Development Workflow
 - Build: `npx astro build`
 - Dev: `npx astro dev`
-- Screenshots: `node pw-screenshot.mjs URL OUTPUT`
-- Full-page: `node pw-screenshot-full.mjs URL OUTPUT`
+- Screenshots: `node pw-screenshot.mjs URL OUTPUT [WIDTH] [HEIGHT]`
+- Full-page: `node pw-screenshot-full.mjs URL OUTPUT [WIDTH] [HEIGHT]`
+- Mobile screenshots: `node pw-screenshot.mjs URL OUTPUT 390 844`
 - Scraping: `node pw-scrape.mjs URL TEXT_OUTPUT SCREENSHOT_OUTPUT`
 - Never use Edge browser (user's work browser)
 - Use parallel agents for independent tasks
@@ -126,12 +147,12 @@ Use `shadow-md` base with `hover:shadow-lg hover:-translate-y-1 transition-all d
 ## Key Directories
 ```
 src/
-├── components/     # 11 reusable components
+├── components/     # 14 reusable components
 ├── data/           # navigation.ts (centralized nav/social data)
-├── layouts/        # Layout.astro (base HTML, global animations, ViewTransitions, OG tags)
+├── layouts/        # Layout.astro (base HTML, scroll animations, dark mode, ViewTransitions, OG tags, JSON-LD)
 └── pages/          # 9 pages (index, book, podcast, priority, free-guide, contact, links, terms, 404)
 public/
-├── images/         # 17 media assets (scraped from original site + downloaded)
+├── images/         # 19 media assets (scraped + downloaded from kelleewynne.com and maderemarkable.com)
 ├── favicon.svg     # Pink asterisk favicon
 └── robots.txt      # SEO
 scraped-content/    # Raw HTML from original site (7 files, reference only)
