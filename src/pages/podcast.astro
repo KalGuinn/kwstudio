@@ -1,10 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import CallToAction from '../components/CallToAction.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Footer from '../components/Footer.astro';
 import { Icon } from 'astro-icon/components';
+import madeRemarkablePodcast from '../assets/images/made-remarkable-podcast.png';
+import kelleeSplatPortrait from '../assets/images/kellee-splat-portrait.png';
 
 const platforms = [
   {
@@ -53,7 +56,7 @@ const platforms = [
         "@type": "Person",
         "name": "Kellee Wynne"
       },
-      "image": "https://www.kelleewynne.com/images/made-remarkable-podcast.png",
+      "image": new URL(madeRemarkablePodcast.src, 'https://www.kelleewynne.com').href,
       "webFeed": "https://www.maderemarkable.com/blog"
     })} />
   </Fragment>
@@ -84,11 +87,11 @@ const platforms = [
           </p>
 
           <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-brand-pink uppercase leading-[0.9] mb-6 tracking-tight hero-item">
-            Made<br />
-            Remarkable
+            <span class="word" style="animation-delay: 0s;">Made</span><br />
+            <span class="word" style="animation-delay: 0.15s;">Remarkable</span>
           </h1>
 
-          <p class="font-accent text-xl sm:text-2xl text-brand-dark/60 mb-4 italic hero-item">
+          <p class="font-accent text-xl sm:text-2xl text-brand-dark/70 mb-4 italic hero-item">
             with Kellee Wynne
           </p>
 
@@ -102,20 +105,21 @@ const platforms = [
               href="https://www.maderemarkable.com/blog"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
+              class="cta-shine inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
             >
-              Listen Now
+              <span class="relative z-10">Listen Now</span>
             </a>
           </div>
         </div>
 
         <!-- Right: Podcast artwork -->
         <div class="lg:w-[45%] hero-item">
-          <img
-            src="/images/made-remarkable-podcast.png"
+          <Image
+            src={madeRemarkablePodcast}
             alt="Made Remarkable Podcast"
-            class="w-64 sm:w-80 lg:w-full max-w-sm mx-auto rounded-2xl shadow-2xl"
+            class="portrait-entrance w-64 sm:w-80 lg:w-full max-w-sm mx-auto rounded-2xl shadow-2xl"
             loading="eager"
+            fetchpriority="high"
           />
         </div>
       </div>
@@ -131,8 +135,8 @@ const platforms = [
 
         <!-- Kellee portrait -->
         <div class="flex-shrink-0 text-center lg:text-left" data-reveal="left">
-          <img
-            src="/images/kellee-splat-portrait.png"
+          <Image
+            src={kelleeSplatPortrait}
             alt="Kellee Wynne"
             class="w-52 sm:w-64 drop-shadow-xl mx-auto lg:mx-0"
             loading="lazy"
@@ -188,7 +192,7 @@ const platforms = [
             href={platform.href}
             target="_blank"
             rel="noopener noreferrer"
-            class="group flex items-center gap-5 bg-white rounded-xl border border-brand-dark/10 px-7 py-6 shadow-sm hover:border-brand-dark/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-left"
+            class="group flex items-center gap-5 bg-white rounded-xl border border-brand-dark/10 px-7 py-6 polished-card text-left"
           >
             <div
               class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110"
@@ -250,7 +254,7 @@ const platforms = [
 
 <style>
   .hero-item {
-    animation: fadeInUp 0.8s ease-out both;
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .hero-item:nth-child(1) { animation-delay: 0.0s; }
   .hero-item:nth-child(2) { animation-delay: 0.1s; }

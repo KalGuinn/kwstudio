@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -8,6 +10,16 @@ import GoldSeparator from '../components/GoldSeparator.astro';
 import ChecklistItem from '../components/ChecklistItem.astro';
 import BackToTop from '../components/BackToTop.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+
+import birLogoSrc from '../assets/images/build-it-remarkable-logo.png';
+import birCohortSrc from '../assets/images/bir-cohort-opens-soon.png';
+import kelleeSplatSrc from '../assets/images/kellee-splat-portrait.png';
+import kelleeBrand1Src from '../assets/images/kellee-brand-1.jpg';
+import kelleeBrand2Src from '../assets/images/kellee-brand-2.jpg';
+import kelleeBrand3Src from '../assets/images/kellee-brand-3.jpg';
+import fadedPhotoBgSrc from '../assets/images/faded-photo-background.jpg';
+
+const fadedPhotoBg = await getImage({ src: fadedPhotoBgSrc });
 ---
 
 <Layout
@@ -26,23 +38,27 @@ import StickyCTA from '../components/StickyCTA.astro';
       radial-gradient(ellipse at 15% 35%, rgba(242,48,106,0.05) 0%, transparent 50%),
       radial-gradient(ellipse at 85% 65%, rgba(201,161,24,0.07) 0%, transparent 45%);">
     </div>
+    <div class="ambient-blob" style="width: 280px; height: 280px; background: rgba(242,48,106,0.06); top: 15%; left: -5%; animation: blobDrift1 18s ease-in-out infinite; z-index: 1;" aria-hidden="true"></div>
+    <div class="ambient-blob" style="width: 220px; height: 220px; background: rgba(201,161,24,0.08); top: 35%; right: -3%; animation: blobDrift2 22s ease-in-out infinite; z-index: 1;" aria-hidden="true"></div>
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
       <div class="flex flex-col lg:flex-row items-end gap-8 lg:gap-8">
 
         <!-- LEFT: BIR logo + cohort portrait stacked -->
         <div class="hero-visual self-end flex-shrink-0 flex flex-col items-center gap-0 lg:w-[44%]">
-          <img
-            src="/images/build-it-remarkable-logo.png"
+          <Image
+            src={birLogoSrc}
             alt="Build It Remarkable"
             class="w-52 sm:w-64 lg:w-72 drop-shadow-xl mb-[-1.5rem] relative z-10"
             loading="eager"
           />
-          <img
-            src="/images/bir-cohort-opens-soon.png"
+          <div class="portrait-glow"></div>
+          <Image
+            src={birCohortSrc}
             alt="Kellee Wynne — Next Cohort Opens Soon"
-            class="w-64 sm:w-80 lg:w-full max-w-sm drop-shadow-2xl"
+            class="portrait-entrance w-64 sm:w-80 lg:w-full max-w-sm drop-shadow-2xl"
             loading="eager"
+            fetchpriority="high"
             style="margin-bottom: -1px;"
           />
         </div>
@@ -73,9 +89,9 @@ import StickyCTA from '../components/StickyCTA.astro';
           <div class="hero-cta">
             <a
               href="#waitlist-form"
-              class="bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              class="cta-shine bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
-              Please Add Me to the List!
+              <span class="relative z-10">Please Add Me to the List!</span>
             </a>
           </div>
         </div>
@@ -105,7 +121,7 @@ import StickyCTA from '../components/StickyCTA.astro';
        TESTIMONIALS — Personal, trustworthy, card grid
        ═══════════════════════════════════════════════════ -->
   <section class="relative overflow-hidden py-12 sm:py-16 bg-brand-warm">
-    <div class="absolute inset-0 opacity-[0.08]" style="background-image: url('/images/faded-photo-background.webp'); background-size: cover;"></div>
+    <div class="absolute inset-0 opacity-[0.08]" style={`background-image: url('${fadedPhotoBg.src}'); background-size: cover;`}></div>
     <div class="absolute inset-0 bg-brand-warm/60 pointer-events-none"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
 
@@ -157,8 +173,8 @@ import StickyCTA from '../components/StickyCTA.astro';
       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
 
         <div class="flex-shrink-0 about-portrait" data-reveal="left">
-          <img
-            src="/images/kellee-splat-portrait.png"
+          <Image
+            src={kelleeSplatSrc}
             alt="Kellee Wynne"
             class="w-52 sm:w-64 md:w-72 drop-shadow-xl"
             loading="lazy"
@@ -200,9 +216,9 @@ import StickyCTA from '../components/StickyCTA.astro';
     <div class="max-w-6xl mx-auto px-6 lg:px-10">
       <GoldSeparator />
       <div class="mt-10 grid grid-cols-3 gap-3 sm:gap-4" data-reveal-stagger>
-        <img src="/images/kellee-brand-1.jpg" alt="Kellee Wynne in her creative space" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
-        <img src="/images/kellee-brand-2.jpg" alt="Kellee Wynne teaching artists" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
-        <img src="/images/kellee-brand-3.jpg" alt="Kellee Wynne's art studio" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
+        <Image src={kelleeBrand1Src} alt="Kellee Wynne in her creative space" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
+        <Image src={kelleeBrand2Src} alt="Kellee Wynne teaching artists" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
+        <Image src={kelleeBrand3Src} alt="Kellee Wynne's art studio" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
       </div>
     </div>
   </section>
@@ -239,9 +255,9 @@ import StickyCTA from '../components/StickyCTA.astro';
         </p>
         <a
           href="#waitlist-form"
-          class="bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+          class="cta-shine bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
         >
-          Save My Spot on the List
+          <span class="relative z-10">Save My Spot on the List</span>
         </a>
       </div>
 
@@ -257,8 +273,8 @@ import StickyCTA from '../components/StickyCTA.astro';
   <section id="waitlist-form" class="py-12 sm:py-16 bg-brand-warm dark:bg-brand-dark">
     <div class="max-w-xl mx-auto px-6 lg:px-10 text-center" data-reveal>
 
-      <img
-        src="/images/build-it-remarkable-logo.png"
+      <Image
+        src={birLogoSrc}
         alt="Build It Remarkable"
         class="w-40 sm:w-48 mx-auto mb-6 drop-shadow-lg bg-white/90 rounded-lg px-4 py-2"
         loading="lazy"
@@ -310,9 +326,9 @@ import StickyCTA from '../components/StickyCTA.astro';
           <div class="pt-2">
             <button
               type="submit"
-              class="w-full bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              class="cta-shine w-full bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
-              Yes, Put Me on the List!
+              <span class="relative z-10">Yes, Put Me on the List!</span>
             </button>
           </div>
           <p class="text-brand-dark/50 dark:text-white/50 text-xs pt-1">
@@ -336,13 +352,13 @@ import StickyCTA from '../components/StickyCTA.astro';
 
 <style>
   /* Hero entrance animations */
-  .hero-visual    { animation: fadeInLeft 0.9s ease-out 0.05s both; }
-  .hero-eyebrow   { animation: fadeInUp  0.7s ease-out 0.15s both; }
-  .hero-headline  { animation: fadeInUp  0.8s ease-out 0.25s both; }
-  .hero-sub       { animation: fadeInUp  0.8s ease-out 0.38s both; }
-  .hero-desc      { animation: fadeInUp  0.8s ease-out 0.48s both; }
-  .hero-urgency   { animation: fadeInUp  0.8s ease-out 0.58s both; }
-  .hero-cta       { animation: fadeInUp  0.8s ease-out 0.68s both; }
+  .hero-visual    { animation: fadeInLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both; }
+  .hero-eyebrow   { animation: fadeInUp  0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+  .hero-headline  { animation: fadeInUp  0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
+  .hero-sub       { animation: fadeInUp  0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.38s both; }
+  .hero-desc      { animation: fadeInUp  0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.48s both; }
+  .hero-urgency   { animation: fadeInUp  0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.58s both; }
+  .hero-cta       { animation: fadeInUp  0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.68s both; }
 
   /* Scroll-reveal for qualifying items */
   @keyframes revealItem {
@@ -352,7 +368,7 @@ import StickyCTA from '../components/StickyCTA.astro';
 
   .qualify-item {
     opacity: 0;
-    animation: revealItem 0.5s ease-out forwards;
+    animation: revealItem 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   .qualify-item:nth-child(1) { animation-delay: 0.05s; }

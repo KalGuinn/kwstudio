@@ -9,9 +9,9 @@ interface Props {
 const { quote, name, title, initial } = Astro.props;
 ---
 
-<div class="testimonial-card group relative bg-brand-warm border border-brand-gold/20 rounded-2xl p-8 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-  <div class="text-brand-gold/40 font-display text-5xl leading-none select-none mb-4" aria-hidden="true">&ldquo;</div>
-  <blockquote class="text-brand-dark/75 text-base leading-relaxed mb-6">
+<div class="testimonial-card group relative bg-brand-warm border border-brand-gold/20 rounded-2xl p-8 polished-card dark:bg-[#242120] dark:border-brand-gold/15">
+  <div class="text-brand-gold/40 font-display text-5xl leading-none select-none mb-4 dark:text-brand-gold/30" aria-hidden="true">&ldquo;</div>
+  <blockquote class="text-brand-dark/80 text-base leading-relaxed mb-6 dark:text-white/80">
     <Fragment set:html={quote} />
   </blockquote>
   <div class="flex items-center gap-3">
@@ -19,8 +19,8 @@ const { quote, name, title, initial } = Astro.props;
       <span class="font-display text-brand-pink text-base">{initial}</span>
     </div>
     <div>
-      <p class="font-semibold text-sm text-brand-dark">{name}</p>
-      <p class="text-xs text-brand-dark/40 tracking-wide">{title}</p>
+      <p class="font-semibold text-sm text-brand-dark dark:text-white">{name}</p>
+      <p class="text-xs text-brand-dark/40 tracking-wide dark:text-white/40">{title}</p>
     </div>
   </div>
   <!-- Accent corner -->

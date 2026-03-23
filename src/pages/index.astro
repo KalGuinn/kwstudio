@@ -1,10 +1,19 @@
 ---
+import { Image, getImage } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import CallToAction from '../components/CallToAction.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Footer from '../components/Footer.astro';
 import BrushDivider from '../components/BrushDivider.astro';
+
+import artBackgroundSrc from '../assets/images/art-background.jpg';
+import kelleePortraitStanding from '../assets/images/kellee-portrait-standing.png';
+import buildItRemarkableLogo from '../assets/images/build-it-remarkable-logo.png';
+import stealMyIdeasGraphics from '../assets/images/steal-my-ideas-graphics.png';
+import kelleeSplatPortrait from '../assets/images/kellee-splat-portrait.png';
+
+const artBackground = await getImage({ src: artBackgroundSrc });
 ---
 
 <Layout title="Kellee Wynne Studios — Artist, Author, Mentor" description="Kellee Wynne helps artists and makers turn their creative talent into profitable course businesses. Explore programs, grab the free guide, or listen to the podcast.">
@@ -12,17 +21,17 @@ import BrushDivider from '../components/BrushDivider.astro';
 
   <!-- ═══════════════════════════════════════════════════
        HERO — Immersive, painterly, artist's welcome
-       Uses real art-background.jpg texture + standing portrait
+       Warm ambient + bold entrance + polished details
        ═══════════════════════════════════════════════════ -->
-  <section class="relative min-h-[65vh] flex items-end -mt-20 pt-20" data-dark-overlay>
-    <!-- Layer 1: Painterly art background texture -->
+  <section class="relative flex items-end -mt-20 pt-20 overflow-hidden" data-dark-overlay>
+    <!-- Layer 1: Painterly art background with ambient breathing -->
     <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('/images/art-background.jpg');"
+      class="absolute inset-0 bg-cover bg-center ambient-bg"
+      style={`background-image: url('${artBackground.src}');`}
     ></div>
 
-    <!-- Layer 2: Soft white wash overlay (matches original's rgba 0.34) -->
-    <div class="absolute inset-0 bg-white/[.34]"></div>
+    <!-- Layer 2: Soft white wash overlay -->
+    <div class="absolute inset-0 bg-white/[.34] dark:bg-transparent"></div>
 
     <!-- Layer 3: Subtle warm gradient for depth at edges -->
     <div class="absolute inset-0" style="background:
@@ -30,36 +39,51 @@ import BrushDivider from '../components/BrushDivider.astro';
       linear-gradient(to bottom, transparent 60%, rgba(250,245,240,0.5) 100%);">
     </div>
 
+    <!-- Floating ambient blobs -->
+    <div class="ambient-blob" style="width: 300px; height: 300px; background: rgba(242,48,106,0.08); top: 10%; left: -5%; animation: blobDrift1 18s ease-in-out infinite; z-index: 1;" aria-hidden="true"></div>
+    <div class="ambient-blob" style="width: 250px; height: 250px; background: rgba(201,161,24,0.1); top: 30%; right: -3%; animation: blobDrift2 22s ease-in-out infinite; z-index: 1;" aria-hidden="true"></div>
+    <div class="ambient-blob" style="width: 200px; height: 200px; background: rgba(253,247,242,0.3); bottom: 15%; left: 40%; animation: blobDrift3 25s ease-in-out infinite; z-index: 1;" aria-hidden="true"></div>
+
+    <!-- Gold line extends on load -->
+    <div class="gold-line" aria-hidden="true"></div>
+
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full flex items-end">
       <div class="flex flex-col lg:flex-row items-end w-full gap-6 lg:gap-8">
 
-        <!-- Portrait — large, grounded at bottom, flush to hero edge -->
-        <div class="order-2 lg:order-1 flex-shrink-0 lg:w-[42%] self-end relative">
-          <img
-            src="/images/kellee-portrait-standing.png"
+        <!-- Portrait — dramatic entrance + warm glow -->
+        <div class="order-2 lg:order-1 flex-shrink-0 lg:w-[48%] self-end relative">
+          <div class="portrait-glow" aria-hidden="true"></div>
+          <Image
+            src={kelleePortraitStanding}
             alt="Kellee Wynne"
-            class="w-72 sm:w-80 lg:w-full lg:object-contain mx-auto lg:mx-0 drop-shadow-[0_16px_48px_rgba(0,0,0,0.2)]"
+            class="portrait-entrance w-80 sm:w-96 lg:w-full lg:object-contain mx-auto lg:mx-0 drop-shadow-[0_16px_48px_rgba(0,0,0,0.2)] relative z-10"
             loading="eager"
+            fetchpriority="high"
             style="object-position: bottom; display: block; margin-bottom: -1px;"
           />
         </div>
 
-        <!-- Text — right side, vertically centered -->
-        <div class="order-1 lg:order-2 lg:w-[58%] text-center lg:text-left pt-8 pb-6 lg:pb-8 lg:pt-0 self-center">
+        <!-- Text — word-by-word headline + staggered content -->
+        <div class="order-1 lg:order-2 lg:w-[52%] text-center lg:text-left pt-8 pb-6 lg:pb-8 lg:pt-0 self-center">
           <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl tracking-tight uppercase text-brand-pink leading-tight mb-6">
-            I'm so happy that you're here!
+            <span class="word" style="animation-delay: 0s;">I'm</span>{" "}
+            <span class="word" style="animation-delay: 0.1s;">so</span>{" "}
+            <span class="word" style="animation-delay: 0.2s;">happy</span>{" "}
+            <span class="word" style="animation-delay: 0.3s;">that</span>{" "}
+            <span class="word" style="animation-delay: 0.4s;">you're</span>{" "}
+            <span class="word" style="animation-delay: 0.5s;">here!</span>
           </h1>
-          <p class="font-semibold text-lg sm:text-xl lg:text-2xl text-brand-dark leading-snug mb-4 max-w-xl lg:max-w-none">
+          <p class="hero-text font-semibold text-lg sm:text-xl lg:text-2xl text-brand-dark leading-snug mb-4 max-w-xl lg:max-w-none" style="animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;">
             Hey, Artists and Makers, Welcome to the place where your wild, weird and brilliant ideas come to life!
           </p>
-          <p class="text-brand-dark/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg lg:max-w-none">
+          <p class="hero-text-2 text-brand-dark/80 text-base sm:text-lg leading-relaxed mb-8 max-w-lg lg:max-w-none" style="animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;">
             I want to help you turn your talent into a profitable course business.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-center lg:items-start gap-3">
-            <a href="/priority" class="bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300">
-              Build It Remarkable
+          <div class="hero-cta flex flex-col sm:flex-row items-center lg:items-start gap-3" style="animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards;">
+            <a href="/priority" class="cta-shine bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg">
+              <span class="relative z-10">Build It Remarkable</span>
             </a>
           </div>
         </div>
@@ -69,7 +93,7 @@ import BrushDivider from '../components/BrushDivider.astro';
 
   <!-- ═══════════════════════════════════════════════════
        CONNECT — "3 Ways We Can Connect Right Now"
-       Warm section with offerings cards — large image-dominant layout
+       Polished card hovers with arrow reveals
        ═══════════════════════════════════════════════════ -->
   <section class="py-12 sm:py-16 bg-white">
     <div class="max-w-6xl mx-auto px-6 lg:px-10">
@@ -85,23 +109,24 @@ import BrushDivider from '../components/BrushDivider.astro';
         <!-- Card 1: Build It Remarkable -->
         <a
           href="/priority"
-          class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-brand-warm"
+          class="polished-card group relative flex flex-col rounded-2xl overflow-hidden bg-brand-warm"
         >
           <div class="flex items-center justify-center bg-brand-dark px-6 aspect-video">
-            <img
-              src="/images/build-it-remarkable-logo.png"
+            <Image
+              src={buildItRemarkableLogo}
               alt="Build It Remarkable"
-              class="h-24 sm:h-20 lg:h-28 w-auto object-contain drop-shadow-md group-hover:scale-[1.03] transition-transform duration-300 bg-white/90 rounded-lg px-4 py-2"
+              class="h-24 sm:h-20 lg:h-28 w-auto object-contain drop-shadow-md group-hover:scale-[1.03] transition-transform duration-500 bg-white/90 rounded-lg px-4 py-2"
+              style="transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);"
               loading="lazy"
             />
           </div>
           <div class="flex flex-col flex-1 p-6 text-center">
-            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-200 mb-2">
+            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-300 mb-2">
               Build It Remarkable
             </h3>
             <p class="text-sm text-brand-dark/80 leading-relaxed mb-4 flex-1">Our signature coaching program to help you turn your creative talent into a thriving course business.</p>
-            <span class="text-brand-gold text-sm font-semibold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              Learn More &rarr;
+            <span class="card-arrow text-brand-gold text-sm font-semibold tracking-wide uppercase flex items-center justify-center gap-1">
+              Learn More <span class="arrow-icon">&rarr;</span>
             </span>
           </div>
         </a>
@@ -109,23 +134,24 @@ import BrushDivider from '../components/BrushDivider.astro';
         <!-- Card 2: 100 Ways Free Guide -->
         <a
           href="/free-guide"
-          class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-brand-warm"
+          class="polished-card group relative flex flex-col rounded-2xl overflow-hidden bg-brand-warm"
         >
           <div class="overflow-hidden aspect-video">
-            <img
-              src="/images/steal-my-ideas-graphics.png"
+            <Image
+              src={stealMyIdeasGraphics}
               alt="100 Ways to Steal My Ideas"
-              class="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300"
+              class="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+              style="transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);"
               loading="lazy"
             />
           </div>
           <div class="flex flex-col flex-1 p-6 text-center">
-            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-200 mb-2">
+            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-300 mb-2">
               100 Ways Free Guide
             </h3>
             <p class="text-sm text-brand-dark/80 leading-relaxed mb-4 flex-1">Download the free guide packed with creative business ideas you can start using today.</p>
-            <span class="text-brand-gold text-sm font-semibold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              Get It Free &rarr;
+            <span class="card-arrow text-brand-gold text-sm font-semibold tracking-wide uppercase flex items-center justify-center gap-1">
+              Get It Free <span class="arrow-icon">&rarr;</span>
             </span>
           </div>
         </a>
@@ -133,7 +159,7 @@ import BrushDivider from '../components/BrushDivider.astro';
         <!-- Card 3: Podcast -->
         <a
           href="/podcast"
-          class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-brand-warm"
+          class="polished-card group relative flex flex-col rounded-2xl overflow-hidden bg-brand-warm"
         >
           <div class="flex items-center justify-center bg-brand-dark px-6 aspect-video">
             <div class="text-center">
@@ -146,12 +172,12 @@ import BrushDivider from '../components/BrushDivider.astro';
             </div>
           </div>
           <div class="flex flex-col flex-1 p-6 text-center">
-            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-200 mb-2">
+            <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-300 mb-2">
               Podcast
             </h3>
             <p class="text-sm text-brand-dark/80 leading-relaxed mb-4 flex-1">Listen to the podcast for real conversations about creativity, business, and showing up boldly.</p>
-            <span class="text-brand-gold text-sm font-semibold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              Listen Now &rarr;
+            <span class="card-arrow text-brand-gold text-sm font-semibold tracking-wide uppercase flex items-center justify-center gap-1">
+              Listen Now <span class="arrow-icon">&rarr;</span>
             </span>
           </div>
         </a>
@@ -162,15 +188,14 @@ import BrushDivider from '../components/BrushDivider.astro';
 
   <!-- ═══════════════════════════════════════════════════
        ABOUT — Meet Kellee, warm and personal
-       Art background texture with portrait
        ═══════════════════════════════════════════════════ -->
   <section class="py-12 sm:py-16 bg-white">
     <div class="max-w-6xl mx-auto px-6 lg:px-10">
       <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-        <!-- Splat portrait — the artistic circular one with paint splatters -->
+        <!-- Splat portrait -->
         <div class="flex-shrink-0" data-reveal="left">
-          <img
-            src="/images/kellee-splat-portrait.png"
+          <Image
+            src={kelleeSplatPortrait}
             alt="Kellee Wynne"
             class="w-56 sm:w-72 drop-shadow-xl"
             loading="lazy"
@@ -194,7 +219,7 @@ import BrushDivider from '../components/BrushDivider.astro';
             class="text-brand-pink font-semibold hover:text-brand-gold transition-colors duration-200 inline-flex items-center gap-1"
           >
             Get to know me
-            <span>→</span>
+            <span class="arrow-icon">&rarr;</span>
           </a>
         </div>
       </div>
@@ -205,9 +230,9 @@ import BrushDivider from '../components/BrushDivider.astro';
        NEWSLETTER — Email signup for weekly notes
        ═══════════════════════════════════════════════════ -->
   <section class="relative py-12 sm:py-16 bg-brand-warm overflow-hidden">
-    <!-- Subtle paint splatter accents -->
-    <div class="absolute -left-10 top-1/3 w-36 h-36 rounded-full bg-brand-pink/[0.06] blur-2xl pointer-events-none hidden sm:block" aria-hidden="true"></div>
-    <div class="absolute -right-12 bottom-1/4 w-28 h-28 rounded-full bg-brand-gold/[0.08] blur-2xl pointer-events-none hidden sm:block" aria-hidden="true"></div>
+    <!-- Subtle floating accents -->
+    <div class="ambient-blob hidden sm:block" style="width: 280px; height: 280px; background: rgba(242,48,106,0.06); top: 20%; left: -8%; animation: blobDrift1 20s ease-in-out infinite;" aria-hidden="true"></div>
+    <div class="ambient-blob hidden sm:block" style="width: 220px; height: 220px; background: rgba(201,161,24,0.08); bottom: 10%; right: -6%; animation: blobDrift2 24s ease-in-out infinite;" aria-hidden="true"></div>
 
     <div class="relative max-w-2xl mx-auto px-6 lg:px-10">
       <div data-reveal>
@@ -250,9 +275,9 @@ import BrushDivider from '../components/BrushDivider.astro';
         </div>
         <button
           type="submit"
-          class="w-full bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
+          class="cta-shine w-full bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg"
         >
-          Sign Me Up!
+          <span class="relative z-10">Sign Me Up!</span>
         </button>
       </form>
 
@@ -276,19 +301,3 @@ import BrushDivider from '../components/BrushDivider.astro';
 
   <Footer />
 </Layout>
-
-<style>
-  /* Fade-in animation for hero content — @keyframes fadeInUp is defined globally in Layout */
-  section:first-of-type h1 {
-    animation: fadeInUp 0.8s ease-out both;
-  }
-  section:first-of-type p {
-    animation: fadeInUp 0.8s ease-out 0.15s both;
-  }
-  section:first-of-type a {
-    animation: fadeInUp 0.8s ease-out 0.3s both;
-  }
-  section:first-of-type img {
-    animation: fadeInUp 1s ease-out 0.1s both;
-  }
-</style>

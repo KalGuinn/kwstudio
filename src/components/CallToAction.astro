@@ -30,9 +30,9 @@ const { headline, subtitle, buttonText, buttonHref, variant = 'dark' } = Astro.p
     )}
     <a
       href={buttonHref}
-      class="inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+      class="cta-shine inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg"
     >
-      {buttonText}
+      <span class="relative z-10">{buttonText}</span>
     </a>
   </div>
 </section>

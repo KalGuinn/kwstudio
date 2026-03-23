@@ -1,9 +1,23 @@
 ---
+import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import BackToTop from '../components/BackToTop.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+
+import stealMyIdeasGraphicsSrc from '../assets/images/steal-my-ideas-graphics.png';
+import testimonialTishSrc from '../assets/images/testimonial-tish.png';
+import testimonialBrookeSrc from '../assets/images/testimonial-brooke.png';
+import kelleeSplatSrc from '../assets/images/kellee-splat-portrait.png';
+import kelleeBrand1Src from '../assets/images/kellee-brand-1.jpg';
+import kelleeBrand2Src from '../assets/images/kellee-brand-2.jpg';
+import kelleeBrand3Src from '../assets/images/kellee-brand-3.jpg';
+import stealMyIdeasBottomSrc from '../assets/images/steal-my-ideas-bottom.png';
+import fadedPhotoBgSrc from '../assets/images/faded-photo-background.jpg';
+
+const fadedPhotoBg = await getImage({ src: fadedPhotoBgSrc });
 ---
 
 <Layout
@@ -38,9 +52,12 @@ import StickyCTA from '../components/StickyCTA.astro';
 
           <!-- Big punchy headline -->
           <h1 class="font-display text-[2.8rem] sm:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] text-brand-dark uppercase leading-[0.9] mb-6 tracking-tight hero-item">
-            Would Somebody<br />
-            <span class="text-brand-pink">Please Steal</span><br />
-            My Ideas?
+            <span class="word" style="animation-delay: 0s;">Would</span>{" "}
+            <span class="word" style="animation-delay: 0.08s;">Somebody</span><br />
+            <span class="word" style="animation-delay: 0.2s; color: #f2306a;">Please</span>{" "}
+            <span class="word" style="animation-delay: 0.3s; color: #f2306a;">Steal</span><br />
+            <span class="word" style="animation-delay: 0.42s;">My</span>{" "}
+            <span class="word" style="animation-delay: 0.5s;">Ideas?</span>
           </h1>
 
           <!-- Sub-copy -->
@@ -61,11 +78,12 @@ import StickyCTA from '../components/StickyCTA.astro';
         <div class="lg:w-[50%] flex flex-col gap-6">
           <!-- Product graphic — large and prominent -->
           <div class="hero-item">
-            <img
-              src="/images/steal-my-ideas-graphics.png"
+            <Image
+              src={stealMyIdeasGraphicsSrc}
               alt="Steal My Ideas — 100 Ways PDF by Kellee Wynne"
-              class="w-full max-w-md mx-auto lg:max-w-none drop-shadow-[0_12px_40px_rgba(0,0,0,0.18)]"
+              class="portrait-entrance w-full max-w-md mx-auto lg:max-w-none drop-shadow-[0_12px_40px_rgba(0,0,0,0.18)]"
               loading="eager"
+              fetchpriority="high"
             />
           </div>
 
@@ -84,7 +102,7 @@ import StickyCTA from '../components/StickyCTA.astro';
                   type="text"
                   name="first_name"
                   placeholder="Your first name"
-                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
+                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/50 transition"
                 />
               </div>
               <div>
@@ -96,14 +114,14 @@ import StickyCTA from '../components/StickyCTA.astro';
                   type="email"
                   name="email"
                   placeholder="Your best email"
-                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
+                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/50 transition"
                 />
               </div>
               <button
                 type="submit"
-                class="w-full bg-brand-gold text-brand-dark font-display text-base sm:text-lg uppercase tracking-widest py-4 rounded-lg hover:brightness-110 hover:scale-[1.02] active:scale-[.98] transition-all duration-200 shadow-md mt-2"
+                class="cta-shine w-full bg-brand-gold text-brand-dark font-display text-base sm:text-lg uppercase tracking-widest py-4 rounded-lg hover:brightness-110 hover:scale-[1.02] active:scale-[.98] transition-all duration-300 shadow-md mt-2"
               >
-                YES! Send Me the 100 Ways PDF!
+                <span class="relative z-10">YES! Send Me the 100 Ways PDF!</span>
               </button>
             </form>
           </div>
@@ -181,7 +199,7 @@ import StickyCTA from '../components/StickyCTA.astro';
        ═══════════════════════════════════════════════════ -->
   <section class="relative bg-white py-12 sm:py-16 overflow-hidden">
     <!-- Faded photo background at low opacity for warmth -->
-    <div class="absolute inset-0 opacity-[0.12]" style="background-image: url('/images/faded-photo-background.webp'); background-size: cover;"></div>
+    <div class="absolute inset-0 opacity-[0.12]" style={`background-image: url('${fadedPhotoBg.src}'); background-size: cover;`}></div>
     <!-- Warm overlay to blend photo into section -->
     <div class="absolute inset-0 bg-brand-warm/40 pointer-events-none"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-12">
@@ -190,16 +208,16 @@ import StickyCTA from '../components/StickyCTA.astro';
       </h2>
       <div class="flex flex-col gap-6" data-reveal-stagger>
         <div class="rounded-xl overflow-hidden shadow-md border border-brand-dark/5">
-          <img
-            src="/images/testimonial-tish.png"
+          <Image
+            src={testimonialTishSrc}
             alt="Testimonial from Tish"
             class="w-full"
             loading="lazy"
           />
         </div>
         <div class="rounded-xl overflow-hidden shadow-md border border-brand-dark/5">
-          <img
-            src="/images/testimonial-brooke.png"
+          <Image
+            src={testimonialBrookeSrc}
             alt="Testimonial from Brooke"
             class="w-full"
             loading="lazy"
@@ -212,14 +230,14 @@ import StickyCTA from '../components/StickyCTA.astro';
   <!-- ═══════════════════════════════════════════════════
        MID-PAGE CTA BAND
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-brand-warm py-10 sm:py-12">
+  <section class="bg-brand-warm py-12 sm:py-16">
     <div class="max-w-3xl mx-auto px-6 text-center" data-reveal>
       <p class="font-accent italic text-brand-dark/80 text-lg sm:text-xl mb-5">Ready to get started?</p>
       <a
         href="#signup-top"
-        class="inline-block bg-brand-gold text-brand-dark font-display text-lg sm:text-xl uppercase tracking-widest px-12 py-5 rounded-lg hover:brightness-110 hover:scale-[1.02] active:scale-[.98] transition-all duration-200 shadow-lg"
+        class="cta-shine inline-block bg-brand-gold text-brand-dark font-display text-lg sm:text-xl uppercase tracking-widest px-12 py-5 rounded-lg hover:brightness-110 hover:scale-[1.02] active:scale-[.98] transition-all duration-300 shadow-lg"
       >
-        Grab 100 Ideas You Can Use Today!
+        <span class="relative z-10">Grab 100 Ideas You Can Use Today!</span>
       </a>
     </div>
   </section>
@@ -233,8 +251,8 @@ import StickyCTA from '../components/StickyCTA.astro';
 
         <!-- Splat portrait -->
         <div class="flex-shrink-0" data-reveal="left">
-          <img
-            src="/images/kellee-splat-portrait.png"
+          <Image
+            src={kelleeSplatSrc}
             alt="Kellee Wynne"
             class="w-52 sm:w-64 drop-shadow-xl"
             loading="lazy"
@@ -287,20 +305,20 @@ import StickyCTA from '../components/StickyCTA.astro';
   <section class="bg-white py-12 sm:py-16">
     <div class="max-w-6xl mx-auto px-6 lg:px-12">
       <div class="grid grid-cols-3 gap-3 sm:gap-4" data-reveal-stagger>
-        <img
-          src="/images/kellee-brand-1.jpg"
+        <Image
+          src={kelleeBrand1Src}
           alt="Kellee Wynne lifestyle"
           class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300"
           loading="lazy"
         />
-        <img
-          src="/images/kellee-brand-2.jpg"
+        <Image
+          src={kelleeBrand2Src}
           alt="Kellee Wynne lifestyle"
           class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300"
           loading="lazy"
         />
-        <img
-          src="/images/kellee-brand-3.jpg"
+        <Image
+          src={kelleeBrand3Src}
           alt="Kellee Wynne lifestyle"
           class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300"
           loading="lazy"
@@ -323,8 +341,8 @@ import StickyCTA from '../components/StickyCTA.astro';
 
         <!-- Bottom product graphic -->
         <div class="flex-shrink-0 lg:w-48 xl:w-56" data-reveal="left">
-          <img
-            src="/images/steal-my-ideas-bottom.png"
+          <Image
+            src={stealMyIdeasBottomSrc}
             alt="100 Ways PDF Guidebook"
             class="w-40 sm:w-48 lg:w-full mx-auto drop-shadow-lg"
             loading="lazy"
@@ -333,7 +351,7 @@ import StickyCTA from '../components/StickyCTA.astro';
 
         <!-- Text + form -->
         <div class="flex-1 text-center lg:text-left" data-reveal="right">
-          <p class="font-accent italic text-brand-dark/70 text-lg sm:text-xl leading-relaxed mb-3">
+          <p class="font-accent italic text-brand-dark/80 text-lg sm:text-xl leading-relaxed mb-3">
             Teaching your art is more than just throwing a course out into the world....
           </p>
           <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-8">
@@ -357,7 +375,7 @@ import StickyCTA from '../components/StickyCTA.astro';
                   type="text"
                   name="first_name"
                   placeholder="Your first name"
-                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
+                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/50 transition"
                 />
               </div>
               <div>
@@ -369,14 +387,14 @@ import StickyCTA from '../components/StickyCTA.astro';
                   type="email"
                   name="email"
                   placeholder="Your best email"
-                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition"
+                  class="w-full border border-brand-dark/20 rounded-lg px-4 py-3 text-sm font-body text-brand-dark placeholder:text-brand-dark/30 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/50 transition"
                 />
               </div>
               <button
                 type="submit"
-                class="w-full bg-brand-gold text-brand-dark font-display text-base sm:text-lg uppercase tracking-widest py-4 rounded-lg hover:brightness-110 hover:scale-[1.02] active:scale-[.98] transition-all duration-200 shadow-md mt-2"
+                class="cta-shine w-full bg-brand-gold text-brand-dark font-display text-base sm:text-lg uppercase tracking-widest py-4 rounded-lg hover:brightness-110 hover:scale-[1.02] active:scale-[.98] transition-all duration-300 shadow-md mt-2"
               >
-                YES! Send Me the 100 Ways PDF!
+                <span class="relative z-10">YES! Send Me the 100 Ways PDF!</span>
               </button>
             </form>
           </div>
@@ -398,7 +416,7 @@ import StickyCTA from '../components/StickyCTA.astro';
 <style>
   /* @keyframes fadeInUp is defined globally in Layout */
   .hero-item {
-    animation: fadeInUp 0.8s ease-out both;
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .hero-item:nth-child(1) { animation-delay: 0.0s; }
   .hero-item:nth-child(2) { animation-delay: 0.05s; }

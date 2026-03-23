@@ -11,20 +11,20 @@ const { overline, title, centered = true } = Astro.props;
 <div class:list={[centered && 'text-center']}>
   {overline && (
     <p class:list={[
-      'text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-pink mb-3',
+      'text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-brand-pink mb-3 dark:text-brand-pink',
       centered && 'text-center',
     ]}>
       {overline}
     </p>
   )}
   <h2 class:list={[
-    'font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4',
+    'font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-brand-dark leading-tight mb-4 dark:text-white',
     centered && 'text-center',
   ]}>
     <Fragment set:html={title} />
   </h2>
   <div class:list={[
-    'w-20 h-1 bg-brand-gold rounded-full mb-8',
+    'h-1 bg-brand-gold rounded-full mb-8 gold-bar-animated',
     centered && 'mx-auto',
   ]}></div>
 </div>

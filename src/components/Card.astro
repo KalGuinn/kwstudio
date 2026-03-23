@@ -1,10 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   title: string;
   subtitle?: string;
   href: string;
   icon?: string;
-  image?: string;
+  image?: ImageMetadata;
   dark?: boolean;
 }
 
@@ -14,13 +17,13 @@ const { title, subtitle, href, icon, image, dark = false } = Astro.props;
 <a
   href={href}
   class:list={[
-    'block rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group',
+    'polished-card block rounded-2xl overflow-hidden group',
     dark ? 'bg-brand-dark text-white' : 'bg-brand-warm text-brand-dark',
   ]}
 >
   {image && (
     <div class="aspect-video overflow-hidden">
-      <img
+      <Image
         src={image}
         alt=""
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

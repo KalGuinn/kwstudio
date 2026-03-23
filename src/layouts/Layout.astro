@@ -131,11 +131,11 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     scroll-behavior: smooth;
   }
 
-  /* Scroll reveal animations */
+  /* Scroll reveal animations — refined easing */
   [data-reveal] {
     opacity: 0;
     transform: translateY(2rem);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   [data-reveal="left"] {
@@ -159,7 +159,7 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
   [data-reveal-stagger] > * {
     opacity: 0;
     transform: translateY(1.5rem);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   [data-reveal-stagger].revealed > *:nth-child(1) { transition-delay: 0.05s; }
@@ -195,6 +195,199 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     animation: fadeSlideIn 0.3s ease-out forwards;
   }
 
+  /* ═══════════════════════════════════════════════════
+     Design elevation — Round 11 animations
+     ═══════════════════════════════════════════════════ */
+
+  /* Word-by-word headline reveal */
+  .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(1.5rem);
+    animation: wordReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes wordReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Refined fade up for hero sub-elements */
+  .hero-text, .hero-text-2, .hero-cta {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Portrait dramatic entrance */
+  .portrait-entrance {
+    opacity: 0;
+    transform: scale(0.9) translateY(2rem);
+    animation: portraitEntrance 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  }
+
+  @keyframes portraitEntrance {
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  /* Gold line extends on load */
+  .gold-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c9a118, transparent);
+    z-index: 5;
+    width: 0;
+    animation: goldLineExtend 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+  }
+
+  @keyframes goldLineExtend {
+    to { width: 100%; }
+  }
+
+  /* CTA button shine sweep */
+  .cta-shine {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .cta-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.3) 60%, transparent 100%);
+    z-index: 1;
+    transition: none;
+  }
+
+  .cta-shine:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 25px -5px rgba(201, 161, 24, 0.4), 0 0 20px rgba(201, 161, 24, 0.2);
+  }
+
+  .cta-shine:hover::before {
+    animation: shineSweep 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  @keyframes shineSweep {
+    to { left: 100%; }
+  }
+
+  /* Polished card hover */
+  .polished-card {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid transparent;
+  }
+
+  .polished-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1), 0 0 0 1px rgba(201,161,24,0.15), 0 0 20px rgba(201,161,24,0.08);
+    border-color: rgba(201, 161, 24, 0.3);
+  }
+
+  .card-arrow {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .polished-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .polished-card:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+
+  /* Ambient background breathing */
+  .ambient-bg {
+    animation: ambientBreathe 20s ease-in-out infinite;
+    transform-origin: center center;
+  }
+
+  @keyframes ambientBreathe {
+    0%, 100% { transform: scale(1); filter: brightness(1) saturate(1); }
+    25% { transform: scale(1.02); filter: brightness(1.04) saturate(1.05); }
+    50% { transform: scale(1.01); filter: brightness(0.98) saturate(1.08); }
+    75% { transform: scale(1.025); filter: brightness(1.03) saturate(1.02); }
+  }
+
+  /* Floating ambient blobs */
+  .ambient-blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(60px);
+  }
+
+  @keyframes blobDrift1 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(40px, 30px); }
+    66% { transform: translate(-20px, 50px); }
+  }
+
+  @keyframes blobDrift2 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-30px, 40px); }
+    66% { transform: translate(25px, -20px); }
+  }
+
+  @keyframes blobDrift3 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -25px); }
+    66% { transform: translate(-35px, 15px); }
+  }
+
+  /* Portrait warm glow */
+  .portrait-glow {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 70%;
+    background: radial-gradient(ellipse, rgba(201,161,24,0.15) 0%, rgba(242,48,106,0.08) 40%, transparent 70%);
+    filter: blur(40px);
+    z-index: 1;
+    animation: glowPulse 8s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+  }
+
+  /* Animated gold bar for SectionHeading */
+  .gold-bar-animated {
+    width: 0;
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .revealed .gold-bar-animated,
+  [data-reveal].revealed + .gold-bar-animated {
+    width: 5rem;
+  }
+
+  /* Responsive blob sizes */
+  @media (max-width: 640px) {
+    .ambient-blob { transform: scale(0.5); }
+    .portrait-glow { width: 100%; height: 60%; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -204,10 +397,15 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     }
 
     [data-reveal],
-    [data-reveal-stagger] > * {
+    [data-reveal-stagger] > *,
+    .word, .hero-text, .hero-text-2, .hero-cta,
+    .portrait-entrance, .card-arrow {
       opacity: 1 !important;
       transform: none !important;
     }
+
+    .gold-line { width: 100% !important; }
+    .gold-bar-animated { width: 5rem !important; }
   }
 
   /* Dark mode — warm artist studio feel */
@@ -220,11 +418,7 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     color: #e8e0d8;
   }
 
-  /* Nav in dark mode */
-  html.dark #main-nav {
-    background-color: rgba(26, 24, 21, 0.95);
-    border-bottom: 1px solid rgba(201, 161, 24, 0.15);
-  }
+  /* Nav — dark mode handled by inline dark: classes in Nav.astro */
 
   /* Cards and form containers */
   html.dark .bg-white {
@@ -305,10 +499,7 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
 
   /* Footer — dark mode handled by inline dark: classes in Footer.astro */
 
-  /* Mobile menu in dark mode */
-  html.dark #mobile-menu {
-    background-color: rgba(26, 24, 21, 0.95);
-  }
+  /* Mobile menu — dark mode handled by inline dark: classes in Nav.astro */
 
   /* Hero text shadows for readability in dark mode over images */
   html.dark section[data-dark-overlay] h1,
@@ -342,10 +533,7 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     background: rgba(253, 247, 242, 0.9) !important;
   }
 
-  /* Testimonial card accent corner — tone down in dark mode */
-  html.dark .testimonial-card .absolute {
-    opacity: 0.3;
-  }
+  /* Testimonial card — dark mode handled by inline dark: classes in TestimonialCard.astro */
 
   /* Gradient fades — swap light colors to dark in dark mode */
   html.dark .from-white {
@@ -366,18 +554,9 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     opacity: 0 !important;
   }
 
-  /* White overlay on homepage hero — hide in dark mode */
-  html.dark .bg-white\/\[\.34\] {
-    background-color: transparent;
-  }
+  /* Homepage hero overlay — dark mode handled by inline dark: classes in index.astro */
 
-  /* StickyCTA bar dark mode */
-  html.dark #sticky-cta .bg-white\/90 {
-    background-color: rgba(36, 33, 32, 0.92);
-  }
+  /* StickyCTA — dark mode handled by inline dark: classes in StickyCTA.astro */
 
-  /* BackToTop dark mode */
-  html.dark #back-to-top {
-    background-color: #c9a118;
-  }
+  /* BackToTop — already bg-brand-gold, works in both modes */
 </style>

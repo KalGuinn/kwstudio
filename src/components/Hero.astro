@@ -1,10 +1,14 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import artBackground from '../assets/images/art-background.jpg';
+
 interface Props {
   variant?: 'warm' | 'dark' | 'art';
   title: string;
   overline?: string;
   subtitle?: string;
-  image?: { src: string; alt: string };
+  image?: { src: ImageMetadata; alt: string };
   cta?: { text: string; href: string };
   className?: string;
 }
@@ -45,8 +49,8 @@ const overlineColor: Record<string, string> = {
 >
   {variant === 'art' && (
     <div class="absolute inset-0">
-      <img
-        src="/images/art-background.jpg"
+      <Image
+        src={artBackground}
         alt=""
         class="w-full h-full object-cover opacity-30"
         loading="eager"
@@ -75,11 +79,12 @@ const overlineColor: Record<string, string> = {
 
     {image && (
       <div class="mb-8">
-        <img
+        <Image
           src={image.src}
           alt={image.alt}
           class="mx-auto max-w-full rounded-lg shadow-lg"
           loading="eager"
+          fetchpriority="high"
         />
       </div>
     )}
