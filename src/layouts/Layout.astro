@@ -58,8 +58,8 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Kellee Wynne Studios",
-      "url": "https://www.kelleewynne.com",
-      "logo": "https://www.kelleewynne.com/images/kellee-wynne-logo.png",
+      "url": new URL(import.meta.env.BASE_URL, Astro.site).href,
+      "logo": new URL(import.meta.env.BASE_URL + 'favicon.svg', Astro.site).href,
       "sameAs": [
         "https://www.instagram.com/kelleewynne",
         "https://www.youtube.com/c/kelleewynne",

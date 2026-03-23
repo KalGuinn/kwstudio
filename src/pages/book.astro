@@ -9,7 +9,7 @@ import bookCover from '../assets/images/book-cover.jpg';
 import bookBannerSrc from '../assets/images/book-banner.jpg';
 
 const bookBanner = await getImage({ src: bookBannerSrc });
-const bookCoverUrl = new URL(bookCover.src, 'https://www.kelleewynne.com').href;
+const bookCoverUrl = new URL(bookCover.src, Astro.site).href;
 ---
 
 <Layout title="The Book" description="Mixed Media Color Studio by Kellee Wynne Conrad">
@@ -29,7 +29,7 @@ const bookCoverUrl = new URL(bookCover.src, 'https://www.kelleewynne.com').href;
       },
       "description": "Explore color theory and mixed media techniques with colorful projects, creative exercises, and full-color examples.",
       "image": bookCoverUrl,
-      "url": "https://www.kelleewynne.com/book"
+      "url": new URL(import.meta.env.BASE_URL + 'book', Astro.site).href
     })} />
   </Fragment>
   <Nav currentPage="/book" />
