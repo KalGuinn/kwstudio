@@ -5,11 +5,18 @@ Redesigning kelleewynne.com from Simplero to Astro + Tailwind CSS static site.
 Original site: https://www.kelleewynne.com/
 
 ## Tech Stack
-- Astro 5.18.1 with Tailwind CSS 3.4.19
-- astro-icon + @iconify-json/simple-icons for SVG icons
-- @tailwindcss/typography for prose styling
-- Playwright for visual QA screenshots
-- View Transitions enabled for smooth page navigation
+- **Astro 5.18.1** with **Tailwind CSS 3.4.19** (`@astrojs/tailwind` integration)
+- **astro-icon** + `@iconify-json/simple-icons` for SVG social icons (Instagram, YouTube, Pinterest)
+- **@tailwindcss/typography** for prose styling (used on terms page)
+- **Playwright** for visual QA — 3 scripts in project root:
+  - `pw-screenshot.mjs` — viewport screenshot (1440x900)
+  - `pw-screenshot-full.mjs` — full-page screenshot
+  - `pw-scrape.mjs` — render JS-heavy pages, extract text + images + screenshot
+- **View Transitions** enabled in Layout.astro for smooth page-to-page navigation
+- **TypeScript** with `astro/tsconfigs/strictest`
+
+## Quick Start
+See `QUICKSTART.md` for fast onboarding, commands, and component reference.
 
 ## Brand Identity
 - **Pink**: #f2306a (headings, brand accent)
@@ -120,13 +127,21 @@ Use `shadow-md` base with `hover:shadow-lg hover:-translate-y-1 transition-all d
 ```
 src/
 ├── components/     # 11 reusable components
-├── data/           # navigation.ts (centralized data)
-├── layouts/        # Layout.astro (base HTML shell)
-└── pages/          # 9 pages
+├── data/           # navigation.ts (centralized nav/social data)
+├── layouts/        # Layout.astro (base HTML, global animations, ViewTransitions, OG tags)
+└── pages/          # 9 pages (index, book, podcast, priority, free-guide, contact, links, terms, 404)
 public/
-├── images/         # ~25 scraped + downloaded media assets
+├── images/         # 17 media assets (scraped from original site + downloaded)
 ├── favicon.svg     # Pink asterisk favicon
 └── robots.txt      # SEO
+scraped-content/    # Raw HTML from original site (7 files, reference only)
 docs/
-└── superpowers/    # Design spec + implementation plans
+└── superpowers/    # HISTORICAL: original design spec + implementation plan (superseded by CLAUDE.md)
 ```
+
+## Reference Files
+- `CLAUDE.md` — This file. Comprehensive project documentation.
+- `QUICKSTART.md` — Fast onboarding guide with commands and component reference.
+- `AGENTS.md` — Guidelines for AI agents working on this project.
+- `docs/superpowers/specs/` — HISTORICAL: original design spec from initial planning.
+- `docs/superpowers/plans/` — HISTORICAL: original implementation plan (completed).

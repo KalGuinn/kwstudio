@@ -1,4 +1,6 @@
-# Kellee Wynne Studios Website Redesign — Design Spec
+# HISTORICAL — Kellee Wynne Studios Website Redesign — Design Spec
+
+> **This document is from the initial planning phase and has been superseded by `CLAUDE.md` in the project root.** The project evolved through 8 rounds of iteration to 9 pages and 11 components. Use `CLAUDE.md` for the current design system and architecture. This file is kept for historical reference of the original design intent.
 
 ## Context
 

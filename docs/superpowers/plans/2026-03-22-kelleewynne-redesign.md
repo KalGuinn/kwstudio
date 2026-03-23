@@ -1,4 +1,6 @@
-# Kellee Wynne Studios Website Redesign — Implementation Plan
+# HISTORICAL — Kellee Wynne Studios Website Redesign — Implementation Plan
+
+> **This plan has been completed and superseded.** The project evolved through 8 rounds of iteration beyond the original 13 tasks. See `CLAUDE.md` in the project root for the current architecture and `QUICKSTART.md` for development workflow.
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
