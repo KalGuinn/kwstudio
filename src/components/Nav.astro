@@ -1,26 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { navLinks, socialLinks } from '../data/navigation';
 
 interface Props {
   currentPage?: string;
 }
 
 const { currentPage = '' } = Astro.props;
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/book', label: 'Book' },
-  { href: '/podcast', label: 'Podcast' },
-  { href: '/priority', label: 'Build It Remarkable', cta: true },
-  { href: '/free-guide', label: 'Free Guide' },
-  { href: '/contact', label: 'Contact' },
-];
-
-const socialLinks = [
-  { href: 'https://www.instagram.com/kelleewynne', label: 'Instagram', icon: 'simple-icons:instagram' },
-  { href: 'https://www.youtube.com/c/kelleewynne', label: 'YouTube', icon: 'simple-icons:youtube' },
-  { href: 'https://www.pinterest.com/kelleewynne/', label: 'Pinterest', icon: 'simple-icons:pinterest' },
-];
 ---
 
 <nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm" id="main-nav">

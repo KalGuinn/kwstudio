@@ -31,10 +31,11 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     <title>{title} | Kellee Wynne Studios</title>
     <ViewTransitions />
   </head>
-  <body class="font-body text-brand-dark bg-white antialiased scroll-pt-20">
+  <body class="font-body text-brand-dark bg-white antialiased scroll-pt-20 text-[17px]">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-4 focus:left-4 focus:bg-white focus:text-brand-dark focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
       Skip to main content
     </a>
+    <!-- Pages can add transition:name="page-title" to h1 elements for smooth cross-page transitions -->
     <main id="main-content">
       <slot />
     </main>

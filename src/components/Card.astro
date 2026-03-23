@@ -1,21 +1,51 @@
 ---
 interface Props {
-  icon: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   href: string;
+  icon?: string;
+  image?: string;
+  dark?: boolean;
 }
 
-const { icon, title, subtitle, href } = Astro.props;
+const { title, subtitle, href, icon, image, dark = false } = Astro.props;
 ---
 
 <a
   href={href}
-  class="block bg-brand-warm rounded-2xl p-8 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+  class:list={[
+    'block rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group',
+    dark ? 'bg-brand-dark text-white' : 'bg-brand-warm text-brand-dark',
+  ]}
 >
-  <div class="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">{icon}</div>
-  <h3 class="font-display text-xl uppercase text-brand-dark group-hover:text-brand-gold transition-colors duration-200 mb-2">
-    {title}
-  </h3>
-  <p class="text-sm text-brand-dark/50 font-medium">{subtitle}</p>
+  {image && (
+    <div class="aspect-video overflow-hidden">
+      <img
+        src={image}
+        alt=""
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+      />
+    </div>
+  )}
+
+  <div class:list={['p-8 text-center', image && 'pt-6']}>
+    {icon && (
+      <div class="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">{icon}</div>
+    )}
+    <h3 class:list={[
+      'font-display text-xl uppercase group-hover:text-brand-gold transition-colors duration-200 mb-2',
+      dark ? 'text-white' : 'text-brand-dark',
+    ]}>
+      {title}
+    </h3>
+    {subtitle && (
+      <p class:list={[
+        'text-sm font-medium',
+        dark ? 'text-white/50' : 'text-brand-dark/50',
+      ]}>
+        {subtitle}
+      </p>
+    )}
+  </div>
 </a>
