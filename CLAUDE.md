@@ -6,6 +6,7 @@ Original site: https://www.kelleewynne.com/
 
 ## Tech Stack
 - **Astro 5.18.1** with **Tailwind CSS 3.4.19** (`@astrojs/tailwind` integration)
+- **Astro Image** (`astro:assets`) — automatic WebP optimization, responsive sizing
 - **astro-icon** + `@iconify-json/simple-icons` for SVG social icons (Instagram, YouTube, Pinterest)
 - **@tailwindcss/typography** for prose styling (used on terms page)
 - **Playwright** for visual QA — 3 scripts in project root:
@@ -13,7 +14,15 @@ Original site: https://www.kelleewynne.com/
   - `pw-screenshot-full.mjs` — full-page screenshot
   - `pw-scrape.mjs` — render JS-heavy pages, extract text + images + screenshot
 - **View Transitions** enabled in Layout.astro for smooth page-to-page navigation
+- **GitHub Pages** deployment via GitHub Actions (`.github/workflows/deploy.yml`)
 - **TypeScript** with `astro/tsconfigs/strictest`
+
+## GitHub
+- **Repo**: https://github.com/KalGuinn/kwstudio
+- **Live demo**: https://KalGuinn.github.io/kwstudio/
+- **Branches**: `main` (production, auto-deploys) / `dev` (staging/experimental)
+- **Base URL**: All internal links MUST use `import.meta.env.BASE_URL` prefix for subpath hosting
+- **Astro config**: `site: 'https://KalGuinn.github.io'`, `base: '/kwstudio'`
 
 ## Quick Start
 See `QUICKSTART.md` for fast onboarding, commands, and component reference.
@@ -115,14 +124,21 @@ Use `shadow-md` base with `hover:shadow-lg hover:-translate-y-1 transition-all d
 - No hardcoded hex colors in markup
 - Commit before presenting changes (enables easy revert)
 
-## Interactive Features (Round 9)
-- **Dark mode**: Class-based toggle (Tailwind `darkMode: 'class'`), warm studio palette, sun/moon toggle in Nav, persists via localStorage + `astro:after-swap`
-- **Scroll reveal**: `data-reveal` / `data-reveal="left|right|scale"` / `data-reveal-stagger` attributes, IntersectionObserver in Layout.astro
+## Interactive Features (Round 11)
+- **Dark mode**: Class-based toggle (Tailwind `darkMode: 'class'`), OS-preference aware, warm studio palette, sun/moon toggle in Nav, persists via localStorage + `astro:after-swap`
+- **Word-by-word headlines**: Hero headlines animate word-by-word on load (`.word` class with staggered `animation-delay`)
+- **Ambient motion**: Floating blur blobs (`.ambient-blob`), breathing art background (`.ambient-bg`), portrait glow (`.portrait-glow`)
+- **Portrait entrance**: Dramatic scale-up animation (`.portrait-entrance`) on hero images
+- **CTA shine**: Gold buttons with hover shine sweep (`.cta-shine` — requires `<span class="relative z-10">` wrapper)
+- **Polished cards**: Border glow + refined lift on hover (`.polished-card`), arrow reveal (`.card-arrow` + `.arrow-icon`)
+- **Animated gold bar**: SectionHeading separator animates width on scroll reveal (`.gold-bar-animated`)
+- **Scroll reveal**: `data-reveal` / `data-reveal="left|right|scale"` / `data-reveal-stagger` with refined cubic-bezier easing
 - **Page transitions**: Custom fadeSlide animations via Astro View Transitions
 - **BackToTop**: Floating gold button on priority + free-guide pages
 - **StickyCTA**: Fixed bottom bar on priority ("Join the Priority List") + free-guide ("Get the Free PDF")
 - **BrushDivider**: SVG paint-stroke dividers between sections (book, contact)
 - **SEO**: JSON-LD structured data (Organization global, Book on /book, PodcastSeries on /podcast), `<slot name="head" />` for page-specific head content
+- **Reduced motion**: All animations respect `prefers-reduced-motion: reduce`
 
 ### Dark Mode Notes
 - CSS overrides in Layout.astro handle broad changes (body bg, nav, inputs)
@@ -147,14 +163,15 @@ Use `shadow-md` base with `hover:shadow-lg hover:-translate-y-1 transition-all d
 ## Key Directories
 ```
 src/
+├── assets/images/  # 19 images (auto-optimized to WebP by Astro Image pipeline)
 ├── components/     # 14 reusable components
-├── data/           # navigation.ts (centralized nav/social data)
-├── layouts/        # Layout.astro (base HTML, scroll animations, dark mode, ViewTransitions, OG tags, JSON-LD)
+├── data/           # navigation.ts (centralized nav/social data, uses BASE_URL)
+├── layouts/        # Layout.astro (base HTML, global animations, dark mode, ViewTransitions, OG tags, JSON-LD)
 └── pages/          # 9 pages (index, book, podcast, priority, free-guide, contact, links, terms, 404)
 public/
-├── images/         # 19 media assets (scraped + downloaded from kelleewynne.com and maderemarkable.com)
 ├── favicon.svg     # Pink asterisk favicon
 └── robots.txt      # SEO
+.github/workflows/  # deploy.yml — GitHub Pages auto-deploy on push to main
 scraped-content/    # Raw HTML from original site (7 files, reference only)
 docs/
 └── superpowers/    # HISTORICAL: original design spec + implementation plan (superseded by CLAUDE.md)
