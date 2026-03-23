@@ -102,8 +102,12 @@ import ChecklistItem from '../components/ChecklistItem.astro';
   <!-- ═══════════════════════════════════════════════════
        TESTIMONIALS — Personal, trustworthy, card grid
        ═══════════════════════════════════════════════════ -->
-  <section class="py-12 sm:py-16 bg-brand-warm">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+  <GoldSeparator />
+
+  <section class="relative overflow-hidden py-12 sm:py-16 bg-brand-warm">
+    <div class="absolute inset-0 opacity-[0.08]" style="background-image: url('/images/faded-photo-background.webp'); background-size: cover;"></div>
+    <div class="absolute inset-0 bg-brand-warm/60 pointer-events-none"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
 
       <SectionHeading
         overline="Real Results. Real Builders."
@@ -188,6 +192,21 @@ import ChecklistItem from '../components/ChecklistItem.astro';
 
 
   <!-- ═══════════════════════════════════════════════════
+       LIFESTYLE PHOTOS — Visual break / social proof
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-white py-12 sm:py-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <GoldSeparator />
+      <div class="mt-10 grid grid-cols-3 gap-3 sm:gap-4">
+        <img src="/images/kellee-brand-1.jpg" alt="Kellee Wynne in her creative space" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
+        <img src="/images/kellee-brand-2.jpg" alt="Kellee Wynne teaching artists" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
+        <img src="/images/kellee-brand-3.jpg" alt="Kellee Wynne's art studio" class="w-full aspect-square object-cover rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
        IS THIS RIGHT FOR YOU? — Qualifying checklist
        ═══════════════════════════════════════════════════ -->
   <section class="py-12 sm:py-16 bg-brand-warm">
@@ -225,6 +244,8 @@ import ChecklistItem from '../components/ChecklistItem.astro';
     </div>
   </section>
 
+
+  <GoldSeparator />
 
   <!-- ═══════════════════════════════════════════════════
        WAITLIST FORM — Bottom anchor, high-contrast, urgent
