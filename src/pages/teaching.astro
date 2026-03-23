@@ -1,0 +1,320 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ChecklistItem from '../components/ChecklistItem.astro';
+
+import teachingLogoSrc from '../assets/images/teaching-workshop-logo.png';
+import teachingImageSrc from '../assets/images/teaching-workshop-image.png';
+import teachingPortraitSrc from '../assets/images/teaching-kellee-portrait.png';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout
+  title="The Teaching Artist Workshop — Free Strategy Workshop with Kellee Wynne"
+  description="Join Kellee Wynne for a free strategy workshop: discover the 5 blocks quietly holding your teaching artist business back and the one principle that changes everything."
+>
+  <Nav currentPage="/teaching" />
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 1: HERO — Workshop intro, warm background
+       ═══════════════════════════════════════════════════ -->
+  <section class="relative bg-brand-warm overflow-hidden -mt-20">
+    <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none dark:from-brand-dark"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 w-full pt-28 sm:pt-32 pb-12 text-center">
+
+      <!-- Workshop logo -->
+      <div class="hero-logo mb-8">
+        <Image
+          src={teachingLogoSrc}
+          alt="The Teaching Artist Workshop"
+          class="portrait-entrance mx-auto w-full max-w-[520px] drop-shadow-[0_10px_36px_rgba(0,0,0,0.16)]"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+
+      <!-- Overline -->
+      <p class="hero-overline text-xs sm:text-sm font-semibold tracking-[0.22em] text-brand-pink uppercase mb-4">
+        Free Strategy Workshop for Teaching Artists
+      </p>
+
+      <!-- Headline -->
+      <h1 class="hero-headline font-display text-5xl sm:text-6xl lg:text-7xl uppercase text-brand-pink leading-tight tracking-tight mb-6">
+        <span class="word" style="animation-delay: 0s;">Calling</span>{" "}
+        <span class="word" style="animation-delay: 0.08s;">All</span>{" "}
+        <span class="word text-brand-dark" style="animation-delay: 0.18s;">Artists</span>{" "}
+        <span class="word text-brand-dark" style="animation-delay: 0.26s;">&amp;</span>{" "}
+        <span class="word text-brand-dark" style="animation-delay: 0.34s;">Makers!</span>
+      </h1>
+
+      <!-- Intro paragraphs -->
+      <div class="max-w-2xl mx-auto">
+        <p class="hero-para font-semibold text-base sm:text-lg text-brand-dark leading-snug mb-4">
+          It's time for a reset...
+        </p>
+        <p class="hero-para text-brand-dark/80 text-base sm:text-lg leading-relaxed mb-4">
+          After mentoring dozens of teaching artists over the last 4 years, I've seen what it really
+          takes to get traction in your educator business. I know so many of you are still struggling
+          to figure out why things feel scattered and why your wheels are always spinning.
+        </p>
+        <p class="hero-para text-brand-dark/80 text-base sm:text-lg leading-relaxed">
+          In this workshop we'll discuss the <strong class="text-brand-dark">5 blocks</strong> that
+          are quietly holding you back and the <strong class="text-brand-dark">one simple principle</strong>
+          that will help your business grow.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 2: WHAT YOU'LL LEARN — Checklist
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-white py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12">
+      <div data-reveal>
+        <SectionHeading
+          overline="Workshop Details"
+          title="IN THIS WORKSHOP, I'LL WALK YOU THROUGH:"
+        />
+      </div>
+
+      <ul class="space-y-3" data-reveal-stagger>
+        <ChecklistItem text="Why doing more doesn't fix the problem." />
+        <ChecklistItem text="How being pulled in too many directions is quietly slowing your growth." />
+        <ChecklistItem text='What it actually means to work within your <strong class="text-brand-dark">Zone of Genius</strong>.' />
+        <ChecklistItem text='A simple framework I call the <strong class="text-brand-dark">Rule of One</strong>, and why it changes everything.' />
+        <ChecklistItem text="Walk away with clarity and new insights for growth on your terms." />
+      </ul>
+
+      <!-- Closing paragraph -->
+      <p class="mt-8 text-brand-dark/80 text-base sm:text-lg leading-relaxed text-center max-w-xl mx-auto" data-reveal>
+        You don't need to figure everything out in this one workshop. But you will start to see what's
+        holding you back and how to start moving in the direction of your
+        <strong class="text-brand-dark">Big Audacious Dreams!</strong>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 3: CHOOSE YOUR TIME — Session cards + CTA
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-brand-warm py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+      <div data-reveal>
+        <SectionHeading
+          overline="Free Workshop"
+          title="JOIN KELLEE WYNNE FOR A FREE STRATEGY WORKSHOP!"
+        />
+      </div>
+
+      <!-- Session cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10" data-reveal-stagger>
+
+        <!-- Session 1 -->
+        <article class="polished-card bg-white rounded-2xl overflow-hidden shadow-md group">
+          <div class="overflow-hidden">
+            <Image
+              src={teachingImageSrc}
+              alt="The Teaching Artist Workshop"
+              class="w-full aspect-video object-cover group-hover:scale-[1.03] transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-base sm:text-lg uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-300">
+              The Teaching Artist Workshop
+            </h3>
+            <p class="text-brand-pink font-semibold text-sm mb-1">Monday, March 30</p>
+            <p class="text-brand-dark/80 text-sm">7–8:30pm EDT</p>
+          </div>
+        </article>
+
+        <!-- Session 2 -->
+        <article class="polished-card bg-white rounded-2xl overflow-hidden shadow-md group">
+          <div class="overflow-hidden">
+            <Image
+              src={teachingImageSrc}
+              alt="The Teaching Artist Workshop"
+              class="w-full aspect-video object-cover group-hover:scale-[1.03] transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-base sm:text-lg uppercase text-brand-dark tracking-wide mb-2 group-hover:text-brand-gold transition-colors duration-300">
+              The Teaching Artist Workshop
+            </h3>
+            <p class="text-brand-pink font-semibold text-sm mb-1">Tuesday, March 31</p>
+            <p class="text-brand-dark/80 text-sm">12–1:30pm EDT</p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Gold CTA button -->
+      <div class="text-center mb-6" data-reveal>
+        <a
+          href="#"
+          class="cta-shine inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+        >
+          <span class="relative z-10">Choose Your Time</span>
+        </a>
+      </div>
+
+      <!-- Replay note + consent -->
+      <div class="text-center space-y-2" data-reveal>
+        <p class="font-display text-xs sm:text-sm uppercase tracking-widest text-brand-pink font-semibold">
+          Replays Will Be Available If You're Registered!
+        </p>
+        <p class="text-brand-dark/60 text-xs max-w-md mx-auto leading-relaxed">
+          By registering you are agreeing to receive email notifications. We hate spam too.
+          Unsubscribe at any time.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 4: QUOTE — James McCrae
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-white py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center" data-reveal>
+      <div class="text-brand-gold/30 font-display text-[9rem] leading-none select-none -mb-10 block" aria-hidden="true">&ldquo;</div>
+      <blockquote class="font-accent text-xl sm:text-2xl lg:text-3xl text-brand-dark leading-snug mb-6 italic">
+        Now is the time for weirdos, artists, and independent thinkers. Everything that made you an
+        outsider in the old world has prepared you to be a leader in the new one.
+      </blockquote>
+      <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-4 rounded-full"></div>
+      <cite class="not-italic font-semibold text-xs sm:text-sm tracking-widest uppercase text-brand-dark/60">
+        James McCrae
+      </cite>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 5: ABOUT KELLEE — Portrait + bio
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-brand-warm py-12 sm:py-16">
+    <div class="max-w-5xl mx-auto px-6 lg:px-12">
+      <div data-reveal>
+        <SectionHeading
+          overline="Meet Your Host"
+          title="HI! I'M KELLEE WYNNE"
+        />
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+
+        <!-- Text — left on desktop -->
+        <div class="flex-1 text-center md:text-left order-2 md:order-1" data-reveal="left">
+          <p class="font-accent text-lg sm:text-xl text-brand-dark/80 leading-relaxed mb-4 italic">
+            Artist, Writer and Strategy Expert for Course Creators
+          </p>
+          <p class="text-brand-dark/80 text-base leading-relaxed mb-4">
+            After more than 12 years of online business experience and mentoring some of the best known
+            course creators, I've distilled everything I know into a sensible approach that helps
+            Artists and Makers finally reach their financial goals without burning out.
+          </p>
+          <p class="text-brand-dark/80 text-base leading-relaxed mb-4">
+            I'm the host of the <strong class="text-brand-dark">Made Remarkable&trade; Podcast</strong>,
+            which explores creativity and entrepreneurship. I write a kickass newsletter called
+            <strong class="text-brand-dark">Build it with Kellee Wynne</strong>. I've hosted more than
+            <strong class="text-brand-dark">20,000 students</strong> in my online art courses. And I
+            wrote a book, <em class="font-medium not-italic text-brand-dark/80">Mixed Media Color Workshop</em>
+            published by Quarto Books, which dives into modern color theory.
+          </p>
+          <p class="text-brand-dark/80 text-base leading-relaxed">
+            I'd love to connect with you on{" "}
+            <a
+              href="https://www.instagram.com/kelleewynne/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-brand-pink font-semibold hover:text-brand-gold transition-colors duration-200"
+            >Instagram</a>.
+          </p>
+        </div>
+
+        <!-- Portrait — right on desktop -->
+        <div class="flex-shrink-0 order-1 md:order-2" data-reveal="right">
+          <Image
+            src={teachingPortraitSrc}
+            alt="Kellee Wynne — Teaching Artist Workshop host"
+            class="w-56 sm:w-72 md:w-80 rounded-2xl shadow-xl drop-shadow-xl"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION 6: FINAL CTA — Dark, repeat session info
+       ═══════════════════════════════════════════════════ -->
+  <section class="bg-brand-dark py-12 sm:py-16">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center" data-reveal>
+
+      <p class="text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-brand-pink mb-4">
+        Free Workshop
+      </p>
+
+      <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase text-white leading-tight mb-6">
+        Register Now &amp; Save Your Spot
+      </h2>
+
+      <!-- Session times -->
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+        <div class="bg-white/10 rounded-xl px-6 py-4 border border-white/15">
+          <p class="font-display text-xs uppercase tracking-widest text-white/60 mb-1">Session 1</p>
+          <p class="font-semibold text-white text-sm">Monday, March 30</p>
+          <p class="text-white/70 text-sm">7–8:30pm EDT</p>
+        </div>
+        <div class="bg-white/10 rounded-xl px-6 py-4 border border-white/15">
+          <p class="font-display text-xs uppercase tracking-widest text-white/60 mb-1">Session 2</p>
+          <p class="font-semibold text-white text-sm">Tuesday, March 31</p>
+          <p class="text-white/70 text-sm">12–1:30pm EDT</p>
+        </div>
+      </div>
+
+      <a
+        href="#"
+        class="cta-shine inline-block bg-brand-gold text-brand-dark font-display uppercase tracking-widest px-10 py-4 rounded-lg shadow-lg hover:brightness-110 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 mb-6"
+      >
+        <span class="relative z-10">Choose Your Time &amp; Register</span>
+      </a>
+
+      <p class="font-display text-xs sm:text-sm uppercase tracking-widest text-brand-pink font-semibold mb-2">
+        Replays Will Be Available If You're Registered!
+      </p>
+      <p class="text-white/70 text-xs max-w-sm mx-auto leading-relaxed">
+        By registering you are agreeing to receive email notifications. We hate spam too.
+        Unsubscribe at any time.
+      </p>
+
+    </div>
+  </section>
+
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero entrance animations */
+  .hero-logo     { animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.0s both; }
+  .hero-overline { animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both; }
+  .hero-headline { animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+  .hero-para     { animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both; }
+  .hero-para:nth-of-type(2) { animation-delay: 0.42s; }
+  .hero-para:nth-of-type(3) { animation-delay: 0.52s; }
+</style>

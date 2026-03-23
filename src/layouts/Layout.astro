@@ -4,9 +4,12 @@ import { ViewTransitions } from 'astro:transitions';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' } = Astro.props;
+const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor', ogImage } = Astro.props;
+const defaultOgImage = new URL(import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'og-default.jpg', Astro.site).href;
+const resolvedOgImage = ogImage || defaultOgImage;
 ---
 
 <!doctype html>
@@ -23,6 +26,11 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} | Kellee Wynne Studios`} />
     <meta name="twitter:description" content={description} />
+    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}favicon.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,8 +66,8 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Kellee Wynne Studios",
-      "url": "https://www.kelleewynne.com",
-      "logo": "https://www.kelleewynne.com/images/kellee-wynne-logo.png",
+      "url": new URL(import.meta.env.BASE_URL, Astro.site).href,
+      "logo": new URL(import.meta.env.BASE_URL + 'favicon.svg', Astro.site).href,
       "sameAs": [
         "https://www.instagram.com/kelleewynne",
         "https://www.youtube.com/c/kelleewynne",
@@ -369,6 +377,29 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
   @keyframes glowPulse {
     0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
     50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+  }
+
+  /* 404 page — warm gradient background */
+  .bg-404-gradient {
+    background: linear-gradient(135deg, #fdf7f2 0%, #fef0e6 40%, #fdf0f5 70%, #fdf7f2 100%);
+  }
+
+  /* 404 page — text-stroke "404" display */
+  .text-stroke-pink {
+    color: transparent;
+    -webkit-text-stroke: 3px #f2306a;
+    paint-order: stroke fill;
+  }
+
+  @supports not (-webkit-text-stroke: 1px black) {
+    .text-stroke-pink {
+      color: #f2306a;
+      text-shadow:
+        -1px -1px 0 #f2306a,
+         1px -1px 0 #f2306a,
+        -1px  1px 0 #f2306a,
+         1px  1px 0 #f2306a;
+    }
   }
 
   /* Animated gold bar for SectionHeading */

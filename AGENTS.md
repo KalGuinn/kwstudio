@@ -9,8 +9,6 @@ This is a website redesign for an artist/creative entrepreneur. The site must fe
 3. Use existing components instead of writing inline markup:
    - `SectionHeading` for overline + title + animated gold bar patterns
    - `TestimonialCard` for quote cards (`.polished-card` hover built-in)
-   - `Card` for offering/feature cards (supports image, icon, and dark variants)
-   - `Hero` for page hero sections (supports warm, dark, art variants)
    - `CallToAction` for full-width CTA sections (`.cta-shine` built-in)
    - `GoldSeparator` for decorative separators
    - `ChecklistItem` for gold-checkmark list items

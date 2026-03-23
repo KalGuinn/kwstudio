@@ -9,6 +9,7 @@ Original site: https://www.kelleewynne.com/
 - **Astro Image** (`astro:assets`) — automatic WebP optimization, responsive sizing
 - **astro-icon** + `@iconify-json/simple-icons` for SVG social icons (Instagram, YouTube, Pinterest)
 - **@tailwindcss/typography** for prose styling (used on terms page)
+- **@astrojs/sitemap** for XML sitemap generation (pre-built for production)
 - **Playwright** for visual QA — 3 scripts in project root:
   - `pw-screenshot.mjs` — viewport screenshot (1440x900)
   - `pw-screenshot-full.mjs` — full-page screenshot
@@ -75,11 +76,9 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 
 | Component | File | Purpose | Props |
 |-----------|------|---------|-------|
-| `Layout` | `src/layouts/Layout.astro` | Base HTML shell, scroll animations, ViewTransitions, dark mode, OG tags, JSON-LD | `title, description?` |
+| `Layout` | `src/layouts/Layout.astro` | Base HTML shell, scroll animations, ViewTransitions, dark mode, OG tags, JSON-LD | `title, description?, ogImage?` |
 | `Nav` | `src/components/Nav.astro` | Fixed nav, 6 links + gold BIR pill, mobile menu, dark mode toggle | `currentPage?` |
 | `Footer` | `src/components/Footer.astro` | Warm (light) / dark (dark mode) footer, gradient accent bar, social icons | none |
-| `Hero` | `src/components/Hero.astro` | Page hero with variant system | `variant (warm/dark/art), title, overline?, subtitle?, image?, cta?` |
-| `Card` | `src/components/Card.astro` | Flexible card (image/icon/dark variants) | `title, subtitle?, href, icon?, image?, dark?` |
 | `CallToAction` | `src/components/CallToAction.astro` | Full-width CTA section (warm in light, dark in dark mode) | `headline, subtitle?, buttonText, buttonHref, variant (dark/warm)` |
 | `SectionHeading` | `src/components/SectionHeading.astro` | Overline + title + gold bar | `title, overline?, centered?` |
 | `TestimonialCard` | `src/components/TestimonialCard.astro` | Quote card with avatar | `quote, name, title, initial` |
@@ -89,6 +88,7 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 | `BackToTop` | `src/components/BackToTop.astro` | Floating gold "back to top" button (appears after 500px scroll) | none |
 | `StickyCTA` | `src/components/StickyCTA.astro` | Fixed bottom CTA bar with glass-morphism (sales pages) | `buttonText, buttonHref, label?` |
 | `BrushDivider` | `src/components/BrushDivider.astro` | SVG paint-stroke section divider | `color? (pink/gold/warm), flip?` |
+| `FaqItem` | `src/components/FaqItem.astro` | Collapsible Q&A accordion (zero-JS, details/summary) | `question` (slot for answer) |
 
 ## Data Files
 - `src/data/navigation.ts` — Centralized nav links and social links (edit here to add/remove nav items)
@@ -103,8 +103,14 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 | `/free-guide` | `free-guide.astro` | "100 Ways" PDF lead magnet: signup forms, features |
 | `/contact` | `contact.astro` | Contact form + 14-day promise |
 | `/links` | `links.astro` | Link-in-bio standalone page (no Nav/Footer) |
+| `/bir` | `bir.astro` | BUILD IT REMARKABLE enrollment: sales page, pricing, modules, testimonials, FAQ |
+| `/teaching` | `teaching.astro` | Teaching Artist Workshop: free strategy workshop, session registration |
+| `/privacy-policy` | `privacy-policy.astro` | Privacy policy |
+| `/faq` | `faq.astro` | Frequently asked questions (grouped by topic) |
 | `/terms` | `terms.astro` | Legal terms & conditions |
 | `/404` | `404.astro` | Custom error page |
+
+> **Note:** All forms on the site are non-functional placeholders (demo site). Forms use `onsubmit="return false;"` or a Formspree placeholder ID.
 
 ## Adding a New Page
 1. Create `src/pages/new-page.astro`
@@ -169,10 +175,10 @@ Card headings use `group-hover:text-brand-gold` — no per-card color variation.
 ```
 src/
 ├── assets/images/  # 19 images (auto-optimized to WebP by Astro Image pipeline)
-├── components/     # 14 reusable components
+├── components/     # 13 reusable components
 ├── data/           # navigation.ts (centralized nav/social data, uses BASE_URL)
 ├── layouts/        # Layout.astro (base HTML, global animations, dark mode, ViewTransitions, OG tags, JSON-LD)
-└── pages/          # 9 pages (index, book, podcast, priority, free-guide, contact, links, terms, 404)
+└── pages/          # 13 pages (index, book, podcast, priority, free-guide, contact, links, terms, 404, bir, teaching, privacy-policy, faq)
 public/
 ├── favicon.svg     # Pink asterisk favicon
 └── robots.txt      # SEO
@@ -188,3 +194,14 @@ docs/
 - `AGENTS.md` — Guidelines for AI agents working on this project.
 - `docs/superpowers/specs/` — HISTORICAL: original design spec from initial planning.
 - `docs/superpowers/plans/` — HISTORICAL: original implementation plan (completed).
+
+## Safety
+
+### Deny Rules
+- `rm -rf /`, `rm -rf ~`
+- `git push --force`, `git reset --hard`
+- `sudo`
+
+### Sensitive Paths
+Do not read or modify:
+- `~/.ssh/`, `~/.aws/`, `~/.gnupg/`, `~/.netrc`

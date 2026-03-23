@@ -1,4 +1,11 @@
-User-agent: *
-Allow: /
+# DEMO MODE — block all search engine crawlers
+# When ready for production, swap the blocks below
 
-Sitemap: https://www.kelleewynne.com/sitemap-index.xml
+User-agent: *
+Disallow: /
+
+# --- PRODUCTION VERSION (uncomment when deploying for real) ---
+# User-agent: *
+# Allow: /
+#
+# Sitemap: https://KalGuinn.github.io/kwstudio/sitemap-index.xml
