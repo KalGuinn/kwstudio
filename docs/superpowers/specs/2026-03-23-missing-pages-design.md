@@ -12,7 +12,8 @@ The original Simplero site had pages not linked in the sitemap that were missed 
 
 - **Forms**: All form CTAs are demo placeholders (no backend). Use `onsubmit="return false;"` or link externally.
 - **Images**: Download from Simplero CDN into `src/assets/images/` for Astro optimization.
-- **Navigation**: `/bir` is linked from `/priority` CTA, not directly in Nav. `/teaching` TBD (homepage card or Nav link). `/privacy-policy` and `/faq` go in Footer.
+- **Navigation**: `/bir` is linked from `/priority` CTA, not directly in Nav. `/teaching` is linked from homepage offerings section (new card) and cross-linked from `/priority` — NOT in the main Nav (it's a time-limited workshop, not a permanent page). `/privacy-policy` and `/faq` go in Footer.
+- **Placeholder CTAs**: Buttons that would link to external services (Simplero registration, payment) use `href="#"` with no action. Same demo-site approach as forms using `onsubmit="return false;"`.
 - **Phase B**: After all 4 pages ship, rebuild `/teaching` on a separate branch in the new design language as a theming proof-of-concept.
 
 ---
@@ -96,8 +97,8 @@ The original Simplero site had pages not linked in the sitemap that were missed 
 
 11. **Qualification (bg-white)**
     - Two-column layout:
-      - Left (green accent): "BIR IS RIGHT FOR YOU IF..." — 7 ChecklistItems
-      - Right (muted): "BIR might NOT be right if..." — 4 items
+      - Left (gold left border): "BIR IS RIGHT FOR YOU IF..." — 7 ChecklistItems
+      - Right (muted, gray left border): "BIR might NOT be right if..." — 4 items
     - Uses ChecklistItem component for the positive list
 
 12. **FAQ (bg-brand-warm)**
@@ -164,7 +165,7 @@ From Simplero CDN (`img.simplerousercontent.net`):
    - 2 session cards (polished-card):
      - Monday, March 30 · 7–8:30pm EDT
      - Tuesday, March 31 · 12–1:30pm EDT
-   - Gold CTA: "CHOOSE YOUR TIME" (demo placeholder)
+   - Gold CTA: "CHOOSE YOUR TIME" (placeholder, `href="#"`)
    - Note: "REPLAYS WILL BE AVAILABLE IF YOU'RE REGISTERED!"
    - Small print: email notification consent
 
@@ -282,12 +283,8 @@ Answer content passed via default slot.
 </details>
 ```
 
-### CSS (in Layout.astro global styles)
-```css
-.faq-item summary { /* styling */ }
-.faq-item[open] summary { /* gold accent */ }
-.faq-item .answer { /* padding, typography */ }
-```
+### CSS
+Use Astro's scoped `<style>` block within `FaqItem.astro` (consistent with how other components handle their styles). No global CSS needed.
 
 ---
 
