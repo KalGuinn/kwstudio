@@ -8,19 +8,25 @@ interface Props {
 }
 
 const { headline, subtitle, buttonText, buttonHref, variant = 'dark' } = Astro.props;
-
-const bgClass = variant === 'warm' ? 'bg-brand-warm' : 'bg-brand-dark';
-const textColor = variant === 'warm' ? 'text-brand-dark' : 'text-white';
-const subtitleColor = variant === 'warm' ? 'text-brand-dark/50' : 'text-white/70';
 ---
 
-<section class={`${bgClass} ${textColor} py-20 sm:py-28`}>
+<section class:list={[
+  'py-20 sm:py-28',
+  variant === 'warm'
+    ? 'bg-brand-warm text-brand-dark'
+    : 'bg-brand-warm dark:bg-brand-dark text-brand-dark dark:text-white',
+]}>
   <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
     <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase mb-4 leading-tight">
       {headline}
     </h2>
     {subtitle && (
-      <p class={`text-base sm:text-lg ${subtitleColor} mb-10 max-w-xl mx-auto`}>{subtitle}</p>
+      <p class:list={[
+        'text-base sm:text-lg mb-10 max-w-xl mx-auto',
+        variant === 'warm'
+          ? 'text-brand-dark/50'
+          : 'text-brand-dark/70 dark:text-white/70',
+      ]}>{subtitle}</p>
     )}
     <a
       href={buttonHref}

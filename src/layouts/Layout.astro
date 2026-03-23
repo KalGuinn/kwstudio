@@ -310,6 +310,12 @@ const { title, description = 'Kellee Wynne Studios — Artist, Author, Mentor' }
     background-color: rgba(26, 24, 21, 0.95);
   }
 
+  /* Hero text shadows for readability in dark mode over images */
+  html.dark section[data-dark-overlay] h1,
+  html.dark section[data-dark-overlay] p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
   /* Homepage hero only — darken the light art-background.jpg in dark mode */
   html.dark section[data-dark-overlay]::before {
     content: '';
