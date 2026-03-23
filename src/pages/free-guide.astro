@@ -8,31 +8,27 @@ import Footer from '../components/Footer.astro';
   title="100 Ways to Build a Profitable Creative Educator Business"
   description="Get Kellee Wynne's free PDF: 100 Ways to Build a Profitable Creative Educator Business. Grab your free instant download now!"
 >
-  <Nav />
+  <Nav currentPage="/free-guide" />
 
   <!-- ═══════════════════════════════════════════════════
        HERO — "Would Somebody Please Steal My Ideas?"
        Warm background — fun, energetic, lead magnet focus
        ═══════════════════════════════════════════════════ -->
   <section class="relative bg-brand-warm overflow-hidden -mt-20">
+    <!-- Painterly warmth overlays for visual texture -->
+    <div class="absolute inset-0 pointer-events-none" style="background:
+      radial-gradient(ellipse at 15% 30%, rgba(242,48,106,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 70%, rgba(201,161,24,0.08) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 90%, rgba(240,72,31,0.04) 0%, transparent 40%);">
+    </div>
     <!-- Bottom fade into next section -->
-    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 w-full pt-28 pb-12 lg:pb-16">
-      <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
+      <div class="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
 
-        <!-- Product graphic -->
-        <div class="flex-shrink-0 w-full max-w-sm lg:max-w-none lg:w-[46%] hero-item">
-          <img
-            src="/images/steal-my-ideas-graphics.png"
-            alt="Steal My Ideas — 100 Ways PDF by Kellee Wynne"
-            class="w-full drop-shadow-[0_12px_40px_rgba(0,0,0,0.18)]"
-            loading="eager"
-          />
-        </div>
-
-        <!-- Text + form -->
-        <div class="lg:w-[54%] text-center lg:text-left">
+        <!-- LEFT COLUMN: Text content -->
+        <div class="lg:w-[50%] text-center lg:text-left">
           <!-- Pink overline label -->
           <p class="text-xs sm:text-sm font-semibold tracking-[0.22em] text-brand-pink uppercase mb-4 hero-item">
             Free PDF Download
@@ -51,15 +47,28 @@ import Footer from '../components/Footer.astro';
             <span class="text-brand-pink">100 of my best ideas</span> that you can take and build
             your creative educator business with today!
           </p>
-          <p class="text-brand-dark/80 text-sm sm:text-base leading-relaxed mb-6 max-w-xl hero-item">
+          <p class="text-brand-dark/80 text-sm sm:text-base leading-relaxed max-w-xl hero-item">
             Whether you've already created a course and you're seeking new ideas to invigorate your
             business, or you're brand new to the creative educator industry... You're in for a
             mind-expanding list of ideas that you can take to the bank!
             <strong class="text-brand-dark"> And I'm giving them away for FREE!</strong>
           </p>
+        </div>
 
-          <!-- Signup form -->
-          <div class="bg-white rounded-2xl shadow-xl px-6 py-7 sm:px-8 sm:py-8 max-w-lg mx-auto lg:mx-0 hero-item" id="signup-top">
+        <!-- RIGHT COLUMN: Product image + signup form -->
+        <div class="lg:w-[50%] flex flex-col gap-6">
+          <!-- Product graphic — large and prominent -->
+          <div class="hero-item">
+            <img
+              src="/images/steal-my-ideas-graphics.png"
+              alt="Steal My Ideas — 100 Ways PDF by Kellee Wynne"
+              class="w-full max-w-md mx-auto lg:max-w-none drop-shadow-[0_12px_40px_rgba(0,0,0,0.18)]"
+              loading="eager"
+            />
+          </div>
+
+          <!-- Signup form — directly below image -->
+          <div class="bg-white rounded-2xl shadow-xl px-6 py-7 sm:px-8 sm:py-8 hero-item" id="signup-top">
             <p class="font-display text-lg sm:text-xl uppercase text-brand-dark text-center mb-6 tracking-wide">
               Easy Peasy — Sign Up &amp; Get the Instant Download
             </p>
@@ -104,7 +113,7 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        WHAT'S INSIDE — 3-column content breakdown
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-brand-warm py-12 sm:py-16">
+  <section class="bg-white py-12 sm:py-16">
     <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
       <p class="text-xs font-semibold tracking-[0.2em] text-brand-orange uppercase mb-3">
         Inside the PDF
@@ -139,7 +148,7 @@ import Footer from '../components/Footer.astro';
           <h3 class="font-display text-base sm:text-lg uppercase text-white leading-snug tracking-wide">
             100 Real Ideas You Can Take to the Bank
           </h3>
-          <p class="text-white/85 text-sm leading-relaxed">
+          <p class="text-white/80 text-sm leading-relaxed">
             Seriously real ideas that I came up with myself (without the help of ChatGPT!).
             Many are taken from real businesses and any one of them has real potential.
           </p>
@@ -213,7 +222,7 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        ABOUT KELLEE — Portrait + bio
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-white py-12 sm:py-16">
+  <section class="bg-brand-warm py-12 sm:py-16">
     <div class="max-w-5xl mx-auto px-6 lg:px-12">
       <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
 
@@ -237,7 +246,7 @@ import Footer from '../components/Footer.astro';
             <span class="text-brand-pink">Artist, Writer &amp; Strategy Expert</span><br />
             for Course Creators
           </h2>
-          <p class="text-brand-dark/70 text-base leading-relaxed mb-4">
+          <p class="text-brand-dark/80 text-base leading-relaxed mb-4">
             After more than a decade of online business experience and mentorship to some of the
             best known course creators, I've distilled everything I know into a sensible approach
             that helps Artists, Makers and Creatives finally reach their financial goals without
@@ -270,7 +279,7 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        LIFESTYLE PHOTOS — Brand images strip
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-brand-warm py-12 sm:py-16">
+  <section class="bg-white py-12 sm:py-16">
     <div class="max-w-6xl mx-auto px-6 lg:px-12">
       <div class="grid grid-cols-3 gap-3 sm:gap-4">
         <img
@@ -298,8 +307,13 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        BOTTOM CTA SECTION — Repeat signup + bottom graphic
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-brand-warm">
-    <div class="max-w-5xl mx-auto px-6 lg:px-12 py-12 sm:py-16">
+  <section class="relative bg-brand-warm overflow-hidden">
+    <!-- Subtle warmth texture -->
+    <div class="absolute inset-0 pointer-events-none" style="background:
+      radial-gradient(ellipse at 20% 50%, rgba(242,48,106,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 30%, rgba(201,161,24,0.06) 0%, transparent 45%);">
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 py-12 sm:py-16">
       <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
 
         <!-- Bottom product graphic -->
@@ -364,6 +378,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
       </div>
+    </div>
     </div>
   </section>
 
