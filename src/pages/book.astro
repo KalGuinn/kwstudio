@@ -80,6 +80,21 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <!-- Wave divider: hero → book banner -->
+  <div class="relative -mt-1 overflow-hidden leading-none" aria-hidden="true">
+    <svg
+      viewBox="0 0 1440 60"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      class="w-full h-12 sm:h-16"
+    >
+      <path
+        d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z"
+        fill="rgba(43,26,26,0.18)"
+      />
+    </svg>
+  </div>
+
   <!-- ═══════════════════════════════════════════════════
        BOOK BANNER — Full-width immersive section break
        ═══════════════════════════════════════════════════ -->
@@ -262,12 +277,7 @@ import Footer from '../components/Footer.astro';
       0 40px 70px rgba(0, 0, 0, 0.16);
   }
 
-  /* Hero fade-in */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(1.25rem); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
+  /* Hero fade-in — @keyframes fadeInUp is defined globally in Layout */
   section:first-of-type h1 {
     animation: fadeInUp 0.8s ease-out 0.1s both;
   }

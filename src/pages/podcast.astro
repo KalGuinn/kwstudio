@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import CTA from '../components/CTA.astro';
+import CallToAction from '../components/CallToAction.astro';
 import Footer from '../components/Footer.astro';
 import { Icon } from 'astro-icon/components';
 
@@ -110,16 +110,14 @@ const platforms = [
     <div class="max-w-5xl mx-auto px-6 lg:px-12">
       <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
-        <!-- Decorative mic / quote block -->
+        <!-- Podcast card image -->
         <div class="flex-shrink-0 text-center lg:text-left">
-          <div
-            class="w-52 h-52 sm:w-64 sm:h-64 rounded-full flex items-center justify-center mx-auto lg:mx-0"
-            style="background: linear-gradient(135deg, #fe3676 0%, #ff5031 50%, #e6b81d 100%);"
-          >
-            <span class="font-display text-white text-[5rem] sm:text-[6rem] uppercase leading-none select-none">
-              MR
-            </span>
-          </div>
+          <img
+            src="/images/made-remarkable-podcast.png"
+            alt="Made Remarkable Podcast"
+            class="w-52 sm:w-64 rounded-lg shadow-xl mx-auto lg:mx-0"
+            loading="lazy"
+          />
         </div>
 
         <!-- Text -->
@@ -236,7 +234,7 @@ const platforms = [
   <!-- ═══════════════════════════════════════════════════
        CTA — Drive to business mentorship
        ═══════════════════════════════════════════════════ -->
-  <CTA
+  <CallToAction
     headline="Ready to Build Your Creative Business?"
     subtitle="Join the artists and makers turning their passion into profit — one remarkable step at a time."
     buttonText="Work With Kellee →"
@@ -257,14 +255,5 @@ const platforms = [
   .hero-item:nth-child(4) { animation-delay: 0.3s; }
   .hero-item:nth-child(5) { animation-delay: 0.4s; }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(1.25rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  /* @keyframes fadeInUp is defined globally in Layout */
 </style>

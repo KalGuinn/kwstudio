@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import CTA from '../components/CTA.astro';
+import CallToAction from '../components/CallToAction.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -33,7 +33,15 @@ import Footer from '../components/Footer.astro';
       <div class="flex flex-col lg:flex-row items-end w-full gap-6 lg:gap-8">
 
         <!-- Portrait — large, grounded at bottom, flush to hero edge -->
-        <div class="order-2 lg:order-1 flex-shrink-0 lg:w-[42%] self-end">
+        <div class="order-2 lg:order-1 flex-shrink-0 lg:w-[42%] self-end relative">
+          <!-- Subtle scatter dots accent near portrait -->
+          <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+            <div class="absolute w-2 h-2 rounded-full bg-black opacity-50" style="top: 18%; left: 6%;"></div>
+            <div class="absolute w-1.5 h-1.5 rounded-full bg-black opacity-40" style="top: 32%; left: 2%;"></div>
+            <div class="absolute w-2.5 h-2.5 rounded-full bg-black opacity-45" style="top: 12%; right: 8%;"></div>
+            <div class="absolute w-1.5 h-1.5 rounded-full bg-black opacity-55" style="top: 45%; right: 4%;"></div>
+            <div class="absolute w-2 h-2 rounded-full bg-black opacity-40" style="top: 25%; right: 14%;"></div>
+          </div>
           <img
             src="/images/kellee-portrait-standing.png"
             alt="Kellee Wynne"
@@ -74,11 +82,15 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <!-- Wave divider between hero and 3 Ways section -->
+  <img src="/images/wave-divider.svg" alt="" class="w-full h-auto -mt-1" aria-hidden="true" />
+
   <!-- ═══════════════════════════════════════════════════
        CONNECT — "3 Ways We Can Connect Right Now"
        Warm section with offerings cards
        ═══════════════════════════════════════════════════ -->
   <section class="relative py-12 sm:py-16 overflow-hidden bg-white">
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: url('/images/squiggle-background.webp'); background-size: cover; background-position: center;"></div>
     <div class="max-w-5xl mx-auto px-6 lg:px-10">
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark text-center uppercase mb-4">
         Here are 3 Ways We Can Connect Right Now
@@ -113,7 +125,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Card 2: 100 Ways Free Guide -->
         <a
-          href="/100"
+          href="/free-guide"
           class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border-t-4 border-brand-pink bg-brand-warm"
         >
           <div class="overflow-hidden">
@@ -216,7 +228,7 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        CTA — Bold, warm, action-oriented
        ═══════════════════════════════════════════════════ -->
-  <CTA
+  <CallToAction
     headline="Turn Your Creativity Into a Business"
     subtitle="Join the community of artists building something remarkable."
     buttonText="Start Here →"
@@ -227,18 +239,7 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
-  /* Fade-in animation for hero content */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(1.5rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
+  /* Fade-in animation for hero content — @keyframes fadeInUp is defined globally in Layout */
   section:first-of-type h1 {
     animation: fadeInUp 0.8s ease-out both;
   }

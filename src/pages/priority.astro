@@ -14,7 +14,7 @@ import Footer from '../components/Footer.astro';
        HERO — Premium dark gradient — sales page energy, no art texture
        BIR logo + cohort portrait + headline
        ═══════════════════════════════════════════════════ -->
-  <section class="relative min-h-screen flex items-end overflow-hidden -mt-20">
+  <section class="relative min-h-[70vh] flex items-end overflow-hidden -mt-20">
     <!-- Layer 1: Warm light gradient -->
     <div
       class="absolute inset-0"
@@ -53,16 +53,26 @@ import Footer from '../components/Footer.astro';
         <!-- RIGHT: Headline + tagline + CTA -->
         <div class="text-center lg:text-left lg:w-[56%]">
 
+          <!-- Dream Catalyst branding banner -->
+          <div class="flex justify-center lg:justify-start mb-5">
+            <img
+              src="/images/dream-catalyst-branding.jpg"
+              alt="Dream Catalyst"
+              class="w-4/5 h-auto rounded"
+              loading="eager"
+            />
+          </div>
+
           <!-- Eyebrow label -->
           <p class="hero-eyebrow inline-block text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase text-brand-gold mb-5 px-4 py-1.5 border border-brand-gold/40 rounded-full bg-brand-gold/10">
             A Heart-Led Program for Creative Educators
           </p>
 
           <!-- Main headline -->
-          <h1 class="hero-headline font-display text-[2.8rem] sm:text-6xl lg:text-7xl uppercase leading-[0.92] text-brand-dark mb-6 tracking-tight">
-            Don't Let<br />
+          <h1 class="hero-headline font-display text-[2.8rem] sm:text-6xl lg:text-7xl uppercase leading-[0.92] mb-6 tracking-tight">
+            <span class="text-brand-dark">Don't Let</span><br />
             <span class="text-brand-pink">Another Day</span><br />
-            Pass Without<br />
+            <span class="text-brand-dark">Pass Without</span><br />
             <span class="text-brand-gold">Your Dreams</span>
           </h1>
 
@@ -103,6 +113,8 @@ import Footer from '../components/Footer.astro';
     <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-brand-warm to-transparent pointer-events-none"></div>
   </section>
 
+
+  <img src="/images/wave-divider.svg" alt="" class="w-full h-auto -mt-1" aria-hidden="true" />
 
   <!-- ═══════════════════════════════════════════════════
        QUOTE — Howard Thurman. Big, atmospheric, serif.
@@ -545,16 +557,6 @@ import Footer from '../components/Footer.astro';
 
 <style>
   /* ── Hero entrance animations ─────────────────────── */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(1.5rem); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-1.5rem); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-
   .hero-visual    { animation: fadeInLeft 0.9s ease-out 0.05s both; }
   .hero-eyebrow   { animation: fadeInUp  0.7s ease-out 0.15s both; }
   .hero-headline  { animation: fadeInUp  0.8s ease-out 0.25s both; }
@@ -585,11 +587,6 @@ import Footer from '../components/Footer.astro';
   .qualify-item:nth-child(8) { animation-delay: 0.54s; }
 
   /* ── Testimonial card entrance ────────────────────── */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(1rem); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
   .testimonial-card {
     opacity: 0;
     animation: fadeIn 0.6s ease-out forwards;

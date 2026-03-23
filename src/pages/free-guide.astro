@@ -128,7 +128,7 @@ import Footer from '../components/Footer.astro';
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-left">
 
         <!-- Column 1 -->
-        <div class="bg-white rounded-xl p-7 shadow-sm border border-brand-dark/5 flex flex-col gap-4">
+        <div class="bg-white rounded-xl p-7 shadow-sm border border-brand-dark/5 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
           <div
             class="w-12 h-12 rounded-full flex items-center justify-center text-white font-display text-xl flex-shrink-0"
             style="background: linear-gradient(135deg, #fe3676 0%, #ff5031 100%);"
@@ -146,7 +146,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Column 2 — featured / center -->
         <div
-          class="rounded-xl p-7 shadow-md flex flex-col gap-4 relative overflow-hidden"
+          class="rounded-xl p-7 shadow-md flex flex-col gap-4 relative overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
           style="background: linear-gradient(145deg, #fe3676 0%, #ff5031 60%, #e6b81d 100%);"
         >
           <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white font-display text-xl flex-shrink-0">
@@ -162,7 +162,7 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- Column 3 -->
-        <div class="bg-white rounded-xl p-7 shadow-sm border border-brand-dark/5 flex flex-col gap-4">
+        <div class="bg-white rounded-xl p-7 shadow-sm border border-brand-dark/5 flex flex-col gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
           <div
             class="w-12 h-12 rounded-full flex items-center justify-center text-white font-display text-xl flex-shrink-0"
             style="background: linear-gradient(135deg, #e6b81d 0%, #ff5031 100%);"
@@ -185,8 +185,12 @@ import Footer from '../components/Footer.astro';
   <!-- ═══════════════════════════════════════════════════
        TESTIMONIALS — Social proof
        ═══════════════════════════════════════════════════ -->
-  <section class="bg-white py-10 sm:py-12">
-    <div class="max-w-3xl mx-auto px-6 lg:px-12">
+  <section class="relative bg-white py-10 sm:py-12 overflow-hidden">
+    <!-- Faded photo background at low opacity for warmth -->
+    <div class="absolute inset-0 opacity-[0.12]" style="background-image: url('/images/faded-photo-background.webp'); background-size: cover;"></div>
+    <!-- Warm overlay to blend photo into section -->
+    <div class="absolute inset-0 bg-brand-warm/40 pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-12">
       <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl text-brand-dark uppercase text-center mb-8 tracking-wide">
         What Creative Educators Are Saying
       </h2>
@@ -408,6 +412,7 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
+  /* @keyframes fadeInUp is defined globally in Layout */
   .hero-item {
     animation: fadeInUp 0.8s ease-out both;
   }
@@ -417,16 +422,4 @@ import Footer from '../components/Footer.astro';
   .hero-item:nth-child(4) { animation-delay: 0.25s; }
   .hero-item:nth-child(5) { animation-delay: 0.35s; }
   .hero-item:nth-child(6) { animation-delay: 0.45s; }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(1.25rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
 </style>
